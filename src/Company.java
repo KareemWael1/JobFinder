@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Company {
     private String name;
     private int ID;
     private int numberOfEmployees = 1;
+    private float seekerReviews;
     private int numberOfReviews;
     private float reviewRate;
     private String companyDescription;
@@ -30,13 +33,16 @@ public class Company {
         return this.numberOfEmployees;
     }
 
+    public float getSeekerReviews() {
+        return seekerReviews;
+    }
+
     public int getNumberOfReviews() {
         return this.numberOfReviews;
     }
 
-    public float calculateReviewRate() {
-        return this.reviewRate; //wrongCalculation
-        //incomplete
+    public void calculateReviewRate() {
+        this.reviewRate = seekerReviews/numberOfReviews;
     }
 
     public float getReviewRate() {
