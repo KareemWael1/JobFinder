@@ -5,8 +5,8 @@ public class Company {
     private int numberOfReviews;
     private float reviewRate;
     private String companyDescription;
-    //private JobPoster[] jobPosters;
-    // private JobVacancy[] jobVacancies;
+    //private ArrayList<JobPoster> jobPosters = new ArrayList<JobPoster>();
+    //private ArrayList<JobVacancy> jobVacancies = new ArrayList<JobVacancy>();
 
 
     public Company(String name, String description) {
@@ -30,6 +30,10 @@ public class Company {
         return this.numberOfEmployees;
     }
 
+    public int getNumberOfReviews() {
+        return this.numberOfReviews;
+    }
+
     public float calculateReviewRate() {
         return this.reviewRate; //wrongCalculation
         //incomplete
@@ -47,19 +51,19 @@ public class Company {
         return this.companyDescription;
     }
     
-    public void addJobPoster() {
-        //incomplete
+    public void addJobPoster(/*JobPoster name*/) {
+        //jobPosters.add(name);
     }
 
-    public void addVacancy() {
-        //incomplete
+    public void addVacancy(/*JobVacancy name*/) {
+        //jobVacancies.add(name);
     }
 
-    /*public JobVacancy[] getJobVacancies() {
+    /*public ArrayList<jobVacancies> getJobVacancies() {
         return this.jobVacancies;
     }*/
 
     /*public int getNumberOfVacancies() {
-        return this.jobVacancies.length();
+        return this.jobVacancies.size();
     }*/
 }

@@ -1,9 +1,15 @@
+import java.util.ArrayList;
+
 public class CompanyAdmin {
-    private Company companies[];
+    private ArrayList<Company> companies = new ArrayList<Company>();
 
 
-    public void addCompany(String name) {
-        //incomplete
+    public ArrayList<Company> getCompanies() {
+        return this.companies;
+    }
+
+    public void addCompany(Company name) {
+        companies.add(name);
     }
 
     public void updateCompanyDescription(Company chosenCompany, String newDescription) {
