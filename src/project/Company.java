@@ -1,3 +1,4 @@
+package project;
 //import java.util.ArrayList;
 
 public class Company implements Comparable<Company> {

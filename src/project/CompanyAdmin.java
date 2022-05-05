@@ -1,3 +1,4 @@
+package project;
 import java.util.ArrayList;
 
 public class CompanyAdmin {
@@ -18,7 +19,7 @@ public class CompanyAdmin {
 
     @Override
     public String toString() {
-        for (int i = 0; i < companies.size(); i++) {
+        for (int i = 0; i < companies.size();) {
             return companies.get(i).getName();
         }
         return null;
