@@ -15,4 +15,12 @@ public class CompanyAdmin {
     public void updateCompanyDescription(Company chosenCompany, String newDescription) {
         chosenCompany.setCompanyDescription(newDescription);
     }
+
+    @Override
+    public String toString() {
+        for (int i = 0; i < companies.size(); i++) {
+            return companies.get(i).getName();
+        }
+        return null;
+    }
 }

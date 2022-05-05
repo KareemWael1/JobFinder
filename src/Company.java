@@ -1,6 +1,6 @@
 //import java.util.ArrayList;
 
-public class Company {
+public class Company implements Comparable<Company> {
     private String name;
     private int ID;
     private int numberOfEmployees = 1;
@@ -72,4 +72,26 @@ public class Company {
     /*public int getNumberOfVacancies() {
         return this.jobVacancies.size();
     }*/
+
+    @Override
+    public int compareTo(Company C) {
+        return this.name.compareTo(C.name);
+    }
+
+    @Override
+    public boolean equals(Object C) {
+        if (C instanceof Company) {
+            return this.name.equals(((Company)C).name);
+        }
+        else return  false;
+    }
+
+    @Override
+    public String toString() {
+        return "Company Name: " + this.name + "\n"
+             + "Company ID: " + this.ID + "\n"
+             + "Company Review Rate: " + this.reviewRate + "\n"
+             + "Company Description: " + this.companyDescription + "\n"
+             + "Number of Employees: " + this.numberOfEmployees;
+    }
 }
