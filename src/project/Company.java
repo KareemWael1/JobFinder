@@ -5,8 +5,8 @@ public class Company implements Comparable<Company> {
     private String name;
     private int ID;
     private int numberOfEmployees = 1;
-    private float seekerReviews;
-    private int numberOfReviews;
+    private float seekerReviews=0;
+    private int numberOfReviews=0;
     private float reviewRate;
     private String companyDescription;
     //private ArrayList<JobPoster> jobPosters = new ArrayList<JobPoster>();
@@ -32,6 +32,11 @@ public class Company implements Comparable<Company> {
 
     public int getNumberOfEmployees() {
         return this.numberOfEmployees;
+    }
+
+    public void setSeekerReviews(float seekerReviews) {
+        this.seekerReviews += seekerReviews;
+        this.numberOfReviews++;
     }
 
     public float getSeekerReviews() {
@@ -60,6 +65,7 @@ public class Company implements Comparable<Company> {
     
     public void addJobPoster(/*JobPoster name*/) {
         //jobPosters.add(name);
+        numberOfEmployees++;
     }
 
     public void addVacancy(/*JobVacancy name*/) {

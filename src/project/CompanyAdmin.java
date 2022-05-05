@@ -2,11 +2,12 @@ package project;
 import java.util.ArrayList;
 
 public class CompanyAdmin {
-    private ArrayList<Company> companies = new ArrayList<Company>();
+    // made it final so companies do not point to other list
+    final static private ArrayList<Company> companies = new ArrayList<>();
 
 
-    public ArrayList<Company> getCompanies() {
-        return this.companies;
+    public static ArrayList<Company> getCompanies() {
+        return companies;
     }
 
     public void addCompany(Company name) {

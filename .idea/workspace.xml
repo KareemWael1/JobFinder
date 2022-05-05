@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added job seeker and poster">
+    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added all classes in package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/CompanyAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651718111294</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added all classes in package">
+      <created>1651719011891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651719011891</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added all classes in package">
+      <created>1651719088305</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651719088305</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing commit :)" />
     <MESSAGE value="Added job seeker and poster" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added job seeker and poster" />
+    <MESSAGE value="Added all classes in package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all classes in package" />
   </component>
 </project>

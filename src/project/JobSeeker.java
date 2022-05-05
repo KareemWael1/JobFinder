@@ -75,6 +75,63 @@ public class JobSeeker extends Person
         return yearsOfExperience;
     }
 
+    public void updateInfo(String field){
+        Scanner input = new Scanner(System.in);
+        switch (field.toLowerCase()) {
+            case "age" -> setAge(input.nextInt());
+            case "degree" -> setDegree(input.nextLine()); //there is error when using nextline after or before other next inputs
+            case "university" -> setUniversity(input.nextLine());
+            case "years of experience" -> setYearsOfExperience(input.nextInt());
+        }
+    }
+    public void browseCompanies(){
+        ArrayList<Company> companies =  CompanyAdmin.getCompanies();
+        for (Company i : companies){
+            System.out.println("Company name: "+i.getName());
+            System.out.println("Company ID: "+i.getID());
+            System.out.println("Company Description: "+i.getCompanyDescription());
+            System.out.println("Company Rating: "+ i.getReviewRate());
+            //System.out.println();  #comapny job vacancies
+            System.out.println("*********************************************");
+        }
+    }
+
+    public void browseCompanies(String name) {
+        ArrayList<Company> companies = CompanyAdmin.getCompanies();
+        for (Company i : companies) {
+            if (name.equalsIgnoreCase(i.getName())) {
+                System.out.println("Company name: " + i.getName());
+                System.out.println("Company ID: " + i.getID());
+                System.out.println("Company Description: " + i.getCompanyDescription());
+                System.out.println("Company Rating: " + i.getReviewRate());
+                //System.out.println();  #comapny job vacancies
+                System.out.println("*********************************************");
+            }
+        }
+    }
+
+    public void addReview(float rate,int ID){
+        boolean canAddReview = false;
+        for (JobApplication i: jobApplications){
+            if (i.getCOMPANY_ID()==ID){
+                canAddReview = true;
+                break;
+            }
+        }
+        if(canAddReview){
+            ArrayList<Company> companies = CompanyAdmin.getCompanies();
+            for (Company j : companies){
+                if (j.getID()==ID){
+                    j.setSeekerReviews(rate);
+                    break;
+                }
+            }
+        }else {
+            System.out.println("you can not add a review to this company as you did not submit an application to it");
+        }
+
+    }
+
     @Override
     public String toString(){
         return "I am a Job Seeker";
