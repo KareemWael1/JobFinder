@@ -1,3 +1,5 @@
+package project;
+
 public abstract class Person implements Comparable<Person> {
 
     protected final String NAME;

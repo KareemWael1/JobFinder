@@ -1,3 +1,5 @@
+package project;
+
 public class JobApplication {
     private int COMPANY_ID;
     private String applicationState = "Pending";

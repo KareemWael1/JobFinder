@@ -1,3 +1,7 @@
+package project;
+
+import project.JobApplication;
+
 import java.util.*;
 public class JobSeeker extends Person
 
