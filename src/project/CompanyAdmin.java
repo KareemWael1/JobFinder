@@ -1,12 +1,16 @@
 package project;
 import java.util.ArrayList;
 
-public class CompanyAdmin {
-    private ArrayList<Company> companies = new ArrayList<Company>();
+public class CompanyAdmin extends Person {
+    static private ArrayList<Company> companies = new ArrayList<Company>();
 
+
+    CompanyAdmin(String name, String email, String gender, String password) {
+        super(name, email, gender, password);
+    }
 
     public ArrayList<Company> getCompanies() {
-        return this.companies;
+        return CompanyAdmin.companies;
     }
 
     public void addCompany(Company name) {
@@ -18,10 +22,22 @@ public class CompanyAdmin {
     }
 
     @Override
-    public String toString() {
-        for (int i = 0; i < companies.size();) {
-            return companies.get(i).getName();
+    public int compareTo(Person p) {
+        return this.NAME.compareTo(p.NAME);
+    }
+
+    @Override
+    public boolean equals(Object p) {
+        if (p instanceof CompanyAdmin){
+            return this.NAME.equals(((CompanyAdmin)p).NAME);
         }
-        return null;
+        return  false;
+    }
+
+    @Override
+    public String toString() {
+        return "Company Admin name: " + this.NAME + "\n"
+             + "Company Admin email: " + this.EMAIL + "\n"
+             + "Company Admin gender: " + this.GENDER;
     }
 }
