@@ -1,3 +1,5 @@
+package project;
+
 public class JobFinder {
     public static void main(String[] args){
 

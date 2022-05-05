@@ -1,3 +1,5 @@
+package project;
+
 public abstract class Person implements Comparable<Person> {
 
     protected final String NAME;
@@ -36,10 +38,7 @@ public abstract class Person implements Comparable<Person> {
     }
 
     Boolean checkLogInInfo(String email, String password){
-        if (this.EMAIL.equals(email) && this.password.equals(password)){
-            return true;
-        }
-        return false;
+        return this.EMAIL.equals(email) && this.password.equals(password);
     }
 
     @Override
