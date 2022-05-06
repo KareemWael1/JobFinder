@@ -1,3 +1,5 @@
+package project;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -13,58 +15,58 @@ import java.util.ArrayList;
 public class JobVacancy {
     
     
-   int COMPANY_ID;
-    String jobtitle;
-    String jobdescription;
+   int companyID;
+    String jobTitle;
+    String jobDescription;
     
-    public ArrayList<jobapplication>   applications()= new ArrayList<>();
+    public ArrayList<JobApplication> applications = new ArrayList<JobApplication>();
     
    
-    public Arraylist<jobapplication> get jobapplications()
+    public ArrayList<JobApplication> getJobApplications()
     {
     return applications;
     }
     
     
     
-    public void addapplication (jobApplication application){
+    public void addApplication (JobApplication application){
         
         
     }
     
-    public String getjobdescription(){
+    public String getJobDescription(){
     
-    return jobdescription;
+    return jobDescription;
     
     }
     
     
     public void updateapplication (String info){
         
-        info.setinfo(newinfo);
+        info.setinfo(info);
     
     
     }
     
     
-   String getjobtitle(){
+   String getJobTitle(){
         
-        return jobtitle;
+        return jobTitle;
     }
             
             
-   private getAllApplications()
+   private Object getAllApplications()
    
    {
-       for (int i=0;i<jobapplications.size();i++)
+       for (int i=0;i<applications.size();i++)
            
-           return jobapplications.get(i).getname();
+           return applications.get(i).getname();
            
    }
     
     void removeapplication(int jobapplicationidx)
     {
-    jobapplications.remove(jobapplicationidx);
+    applications.remove(jobapplicationidx);
     
     }
     
