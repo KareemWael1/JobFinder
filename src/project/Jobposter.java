@@ -11,7 +11,7 @@
 import java.util.ArrayList;
 
 
-public class Jobposter extends person {
+public class JobPoster extends person {
     
     int COMPANY_id;
     

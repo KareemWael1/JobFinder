@@ -1,16 +1,16 @@
 package project;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Company implements Comparable<Company> {
     private String name;
     private int ID;
     private int numberOfEmployees = 1;
-    private float seekerReviews=0;
-    private int numberOfReviews=0;
+    private float seekerReviews = 0;
+    private int numberOfReviews = 0;
     private float reviewRate;
     private String companyDescription;
-    //private ArrayList<JobPoster> jobPosters = new ArrayList<JobPoster>();
-    //private ArrayList<JobVacancy> jobVacancies = new ArrayList<JobVacancy>();
+    private ArrayList<JobPoster> jobPosters = new ArrayList<JobPoster>();
+    private ArrayList<JobVacancy> jobVacancies = new ArrayList<JobVacancy>();
 
 
     public Company(String name, String description) {
@@ -63,22 +63,26 @@ public class Company implements Comparable<Company> {
         return this.companyDescription;
     }
     
-    public void addJobPoster(/*JobPoster name*/) {
-        //jobPosters.add(name);
+    public void addJobPoster(JobPoster name) {
+        jobPosters.add(name);
         numberOfEmployees++;
     }
 
-    public void addVacancy(/*JobVacancy name*/) {
-        //jobVacancies.add(name);
+    public void addVacancy(JobVacancy name) {
+        jobVacancies.add(name);
     }
 
-    /*public ArrayList<jobVacancies> getJobVacancies() {
-        return this.jobVacancies;
-    }*/
+    public ArrayList<JobPoster> getJobPoster() {
+        return this.jobPosters;
+    }
 
-    /*public int getNumberOfVacancies() {
+    public ArrayList<JobVacancy> getJobVacancy() {
+        return this.jobVacancies;
+    }
+
+    public int getNumberOfVacancies() {
         return this.jobVacancies.size();
-    }*/
+    }
 
     @Override
     public int compareTo(Company C) {
