@@ -1,76 +1,67 @@
 package project;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Ali
- */
-
 import java.util.ArrayList;
 
-public class JobVacancy {
-    
-    
-   int companyID;
-    String jobTitle;
-    String jobDescription;
-    
-    public ArrayList<JobApplication> applications = new ArrayList<JobApplication>();
-    
-   
+public class JobVacancy implements Comparable<JobVacancy>{
+    private final int COMPANY_ID;
+    private String jobTitle;
+    private String jobDescription;
+    private final ArrayList<JobApplication> applications = new ArrayList<>();
+
+    JobVacancy(int companyID, String title, String description){
+        this.COMPANY_ID = companyID;
+        this.jobTitle = title;
+        this.jobDescription = description;
+    }
+
+    public void addApplication (JobApplication application){
+        applications.add(application);
+    }
+
+    public int getCOMPANY_ID(){
+        return COMPANY_ID;
+    }
+
+    public String getJobDescription(){
+        return jobDescription;
+    }
+
+    public void setJobDescription(String description){
+        this.jobDescription = description;
+    }
+
+    public String getJobTitle(){
+        return jobTitle;
+    }
+
+    public void setJobTitle(String title){
+        this.jobTitle = title;
+    }
+
+    public void removeApplication(int jobApplicationIdx){
+        applications.remove(jobApplicationIdx);
+    }
+
     public ArrayList<JobApplication> getJobApplications()
     {
     return applications;
     }
-    
-    
-    
-    public void addApplication (JobApplication application){
-        
-        
+
+    @Override
+    public int compareTo(JobVacancy v){
+        return this.jobTitle.compareTo(v.jobTitle);
     }
-    
-    public String getJobDescription(){
-    
-    return jobDescription;
-    
+
+    @Override
+    public boolean equals(Object v){
+        if (v instanceof JobVacancy){
+            return this.jobTitle.equals(((JobVacancy)v).jobTitle);
+        }
+        return false;
     }
-    
-    
-    public void updateapplication (String info){
-        
-        info.setinfo(info);
-    
-    
+    @Override
+    public String toString(){
+        return "Title: " + jobTitle + "\nDescription: " + jobDescription +
+                "\nCompany: " + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
     }
-    
-    
-   String getJobTitle(){
-        
-        return jobTitle;
-    }
-            
-            
-   private Object getAllApplications()
-   
-   {
-       for (int i=0;i<applications.size();i++)
-           
-           return applications.get(i).getname();
-           
-   }
-    
-    void removeapplication(int jobapplicationidx)
-    {
-    applications.remove(jobapplicationidx);
-    
-    }
-    
-    
-    
-    
 }

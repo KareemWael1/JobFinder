@@ -1,7 +1,5 @@
 package project;
 
-import project.JobApplication;
-
 import java.util.*;
 public class JobSeeker extends Person
 
@@ -79,7 +77,7 @@ public class JobSeeker extends Person
         Scanner input = new Scanner(System.in);
         switch (field.toLowerCase()) {
             case "age" -> setAge(input.nextInt());
-            case "degree" -> setDegree(input.nextLine()); //there is error when using nextline after or before other next inputs
+            case "degree" -> setDegree(input.nextLine()); //there is error when using nextLine after or before other next inputs
             case "university" -> setUniversity(input.nextLine());
             case "years of experience" -> setYearsOfExperience(input.nextInt());
         }
@@ -126,7 +124,8 @@ public class JobSeeker extends Person
                     break;
                 }
             }
-        }else {
+        }
+        else {
             System.out.println("you can not add a review to this company as you did not submit an application to it");
         }
 
@@ -134,7 +133,8 @@ public class JobSeeker extends Person
 
     @Override
     public String toString(){
-        return "I am a Job Seeker";
+        return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER + "\n Age: " + age + "\nDegree: " + degree +
+                "\nUniversity: " + university + "\nYears of Experience: " + yearsOfExperience + "\n";
     }
 
 }

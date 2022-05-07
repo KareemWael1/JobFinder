@@ -8,7 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/CompanyAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobVacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobVacancy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Jobposter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobPoster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +58,8 @@
       <option name="presentableId" value="Default" />
       <updated>1651634209311</updated>
       <workItem from="1651634319056" duration="4549000" />
+      <workItem from="1651882539190" duration="818000" />
+      <workItem from="1651886054581" duration="6827000" />
     </task>
     <task id="LOCAL-00001" summary="testing commit :)">
       <created>1651707137795</created>

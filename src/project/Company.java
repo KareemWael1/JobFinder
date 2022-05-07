@@ -90,9 +90,9 @@ public class Company implements Comparable<Company> {
     }
 
     @Override
-    public boolean equals(Object C) {
-        if (C instanceof Company) {
-            return this.name.equals(((Company)C).name);
+    public boolean equals(Object c) {
+        if (c instanceof Company) {
+            return this.name.equals(((Company)c).name);
         }
         else return  false;
     }

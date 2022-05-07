@@ -1,10 +1,11 @@
 package project;
 
-public class JobApplication {
+public class JobApplication implements Comparable<JobApplication>{
     private int COMPANY_ID;
     private String applicationState = "Pending";
     private String applicantInfo;
-    JobApplication(String applicantInfo,int COMPANY_ID){
+
+    public JobApplication(String applicantInfo,int COMPANY_ID){
         this.applicantInfo = applicantInfo;
         this.COMPANY_ID = COMPANY_ID;
     }
@@ -32,5 +33,23 @@ public class JobApplication {
 
     public String getApplicantInfo() {
         return applicantInfo;
+    }
+
+    @Override
+    public int compareTo(JobApplication a){
+        return this.applicantInfo.compareTo(a.applicantInfo);
+    }
+
+    @Override
+    public boolean equals(Object a){
+        if (a instanceof JobVacancy){
+            return this.applicantInfo.equals(((JobApplication)a).applicantInfo);
+        }
+        return false;
+    }
+    @Override
+    public String toString(){
+        return "Applicant info: " + applicantInfo + "\nApplication State: " + applicationState +
+                "\nCompany: " + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
     }
 }

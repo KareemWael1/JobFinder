@@ -1,7 +1,6 @@
 package project;
 
 public abstract class Person implements Comparable<Person> {
-
     protected final String NAME;
     protected final String EMAIL;
     protected final String GENDER;
@@ -10,34 +9,34 @@ public abstract class Person implements Comparable<Person> {
     // It is assumed that the user can't change their name, email, and gender once a new account is created.
     // but they can change their password.
 
-    Person(String name, String email, String gender, String password){
+    public Person(String name, String email, String gender, String password){
         this.NAME = name;
         this.EMAIL = email;
         this.GENDER = gender;
         this.password = password;
     }
 
-    String getNAME(){
+    public String getNAME(){
         return NAME;
     }
 
-    String getEMAIL(){
+    public String getEMAIL(){
         return EMAIL;
     }
 
-    String getGENDER(){
+    public String getGENDER(){
         return GENDER;
     }
 
-    String getPassword(){
+    public String getPassword(){
         return password;
     }
 
-    void setPassword(String password){
+    public void setPassword(String password){
         this.password = password;
     }
 
-    Boolean checkLogInInfo(String email, String password){
+    public Boolean checkLogInInfo(String email, String password){
         return this.EMAIL.equals(email) && this.password.equals(password);
     }
 
@@ -51,7 +50,7 @@ public abstract class Person implements Comparable<Person> {
         if (p instanceof Person){
             return this.NAME.equals(((Person)p).NAME);
         }
-        return  false;
+        return false;
     }
 
     @Override

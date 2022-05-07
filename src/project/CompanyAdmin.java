@@ -1,10 +1,12 @@
 package project;
 import java.util.ArrayList;
 
-public class CompanyAdmin {
-    // made it final so companies do not point to other list
-    final static private ArrayList<Company> companies = new ArrayList<>();
+public class CompanyAdmin extends Person {
+    final static private ArrayList<Company> companies = new ArrayList<>(); // final so companies do not point to other list
 
+    CompanyAdmin(String name, String email, String gender, String password){
+        super(name, email, gender, password);
+    }
 
     public static ArrayList<Company> getCompanies() {
         return companies;
@@ -20,9 +22,6 @@ public class CompanyAdmin {
 
     @Override
     public String toString() {
-        for (int i = 0; i < companies.size();) {
-            return companies.get(i).getName();
-        }
-        return null;
+        return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER + "\n";
     }
 }
