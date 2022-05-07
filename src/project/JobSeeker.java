@@ -20,6 +20,7 @@ public class JobSeeker extends Person
         this.university = university;
         this.yearsOfExperience = yearsOfExperience;
     }
+
     public void addApplication(int COMPANY_ID){
           String info = "My name is "+ getNAME() + ", And I have " +getAge()+ " years old " + "\n I got a " + getDegree() +
                 " degree " + "from " + getUniversity() + " university " + "also I have " + getYearsOfExperience()
@@ -27,19 +28,18 @@ public class JobSeeker extends Person
 
         jobApplications.add(new JobApplication(info,COMPANY_ID));
     }
-    // return the array itself
+
     public ArrayList<JobApplication> viewMyApplications(){
         return jobApplications;
     }
-    // update the info in specific application
+
     public void updateApplication(int applicationIdx,String updatedInfo){
         jobApplications.get(applicationIdx).setApplicantInfo(updatedInfo);
     }
-    // delete specific application based on index
+
     public void deleteApplication(int applicationIdx){
         jobApplications.remove(applicationIdx);
     }
-
 
     public void setAge(int age) {
         this.age = age;
@@ -82,6 +82,7 @@ public class JobSeeker extends Person
             case "years of experience" -> setYearsOfExperience(input.nextInt());
         }
     }
+
     public void browseCompanies(){
         ArrayList<Company> companies =  CompanyAdmin.getCompanies();
         for (Company i : companies){
@@ -131,6 +132,14 @@ public class JobSeeker extends Person
 
     }
 
+    public ArrayList<JobVacancy> browseJobs(){
+        ArrayList<JobVacancy> allJobVacancies = new ArrayList<>();
+        ArrayList<Company> companies = CompanyAdmin.getCompanies();
+        for (Company i : companies ){
+            allJobVacancies.addAll(i.getJobVacancy());
+        }
+        return allJobVacancies;
+    }
     @Override
     public String toString(){
         return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER + "\n Age: " + age + "\nDegree: " + degree +

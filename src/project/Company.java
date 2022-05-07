@@ -9,8 +9,8 @@ public class Company implements Comparable<Company> {
     private int numberOfReviews = 0;
     private float reviewRate;
     private String companyDescription;
-    private ArrayList<JobPoster> jobPosters = new ArrayList<JobPoster>();
-    private ArrayList<JobVacancy> jobVacancies = new ArrayList<JobVacancy>();
+    private final ArrayList<JobPoster> jobPosters = new ArrayList<>();
+    private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
 
 
     public Company(String name, String description) {
