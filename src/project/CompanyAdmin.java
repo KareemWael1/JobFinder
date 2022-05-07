@@ -13,6 +13,7 @@ public class CompanyAdmin extends Person {
     }
 
     public void addCompany(Company name) {
+        name.setID(companies.size());
         companies.add(name);
     }
 

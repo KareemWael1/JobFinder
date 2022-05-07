@@ -18,6 +18,10 @@ public class Company implements Comparable<Company> {
         this.companyDescription = description;
     }
 
+    public void setID(int ID){
+        this.ID = ID;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -64,6 +68,7 @@ public class Company implements Comparable<Company> {
     }
     
     public void addJobPoster(JobPoster name) {
+        name.setCOMPANY_ID(this.ID);
         jobPosters.add(name);
         numberOfEmployees++;
     }

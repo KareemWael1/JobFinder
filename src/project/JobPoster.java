@@ -4,16 +4,19 @@ import java.util.ArrayList;
 
 public class JobPoster extends Person{
 
-    private final int COMPANY_ID;
+    private int COMPANY_ID;
     private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
 
-    public JobPoster(String name, String email, String gender, String password, int companyId) {
+    public JobPoster(String name, String email, String gender, String password) {
         super(name, email, gender, password);
-        this.COMPANY_ID = companyId;
     }
-
+    public void setCOMPANY_ID(int COMPANY_ID){
+        this.COMPANY_ID = COMPANY_ID;
+    }
     public void addJobVacancy(String title, String info){
+        ArrayList<Company> companies = CompanyAdmin.getCompanies();
         jobVacancies.add(new JobVacancy(COMPANY_ID, title, info));
+        companies.get(COMPANY_ID).addVacancy(jobVacancies.get(jobVacancies.size()-1));
     }
 
     public void deleteJob(int jobVacancyIdx){

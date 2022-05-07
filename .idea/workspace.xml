@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added all classes in package">
+    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="added browseJobs in JobSeeker class&#10;made some arrays final in company class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JobFinder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/CompanyAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobPoster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobPoster.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,26 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="JobFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.JobFinder" />
+      <module name="JobFinder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JobFinder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651719088305</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added browseJobs in JobSeeker class&#10;made some arrays final in company class">
+      <created>1651958597445</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651958597445</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +155,7 @@
     <MESSAGE value="testing commit :)" />
     <MESSAGE value="Added job seeker and poster" />
     <MESSAGE value="Added all classes in package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all classes in package" />
+    <MESSAGE value="added browseJobs in JobSeeker class&#10;made some arrays final in company class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added browseJobs in JobSeeker class&#10;made some arrays final in company class" />
   </component>
 </project>
