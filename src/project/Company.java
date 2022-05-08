@@ -41,6 +41,7 @@ public class Company implements Comparable<Company> {
     public void setSeekerReviews(float seekerReviews) {
         this.seekerReviews += seekerReviews;
         this.numberOfReviews++;
+        calculateReviewRate();
     }
 
     public float getSeekerReviews() {

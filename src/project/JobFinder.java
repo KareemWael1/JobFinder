@@ -19,7 +19,6 @@ public class JobFinder {
         jobSeekers.add(ahmed);
         jobSeekers.add(yara);
         //two companies
-        ArrayList<Company> companies = new ArrayList<>();
         Company dell = new Company("Dell","Tech company");
         Company edx = new Company("edx","Educational company");
         admin.addCompany(dell);
@@ -106,8 +105,36 @@ public class JobFinder {
                             System.out.println("enter the idx of application to be updated");
                             int idx = input.nextInt();
                             input.nextLine(); // must be called to avoid errors
+                            System.out.println("enter the updated info");
                             String info = input.nextLine();
                             theOne.updateApplication(idx,info);
+                        }else if (choice.equals("ui")){
+                            while (true){
+                                System.out.println("""
+                                    enter what to update: age, degree or years of experience
+                                    when you finish press 'f'
+                                  """);
+                                String what = input.nextLine();
+                                if (what.equals("f")) break;
+                                System.out.println("enter the new value");
+                                theOne.updateInfo(what);
+                            }
+                        }else if (choice.equals("bc")){
+                            theOne.browseCompanies();
+                        }else if (choice.equals("sc")){
+                            System.out.println("enter the company name to search for it");
+                            String name = input.nextLine();
+                            theOne.browseCompanies(name);
+                        }else if (choice.equals("ar")){
+                            System.out.println("enter the company id you want to rate out of ");
+                            int id = input.nextInt();
+                            input.nextLine(); // must be called to avoid errors
+                            System.out.println("enter the rate you want to give");
+                            float review = input.nextFloat();
+                            input.nextLine();
+                            theOne.addReview(review,id);
+                        }else{
+                            System.out.println("error try again");
                         }
 
                     }

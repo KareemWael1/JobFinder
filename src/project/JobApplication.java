@@ -50,7 +50,7 @@ public class JobApplication implements Comparable<JobApplication>{
     }
     @Override
     public String toString(){
-        return "Job Title"+ jobTitle+ "Applicant info: " + applicantInfo + "\nApplication State: " + applicationState +
+        return "Job Title "+ jobTitle+ "\nApplicant info: " + applicantInfo + "\nApplication State: " + applicationState +
                 "\n" + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
     }
 }

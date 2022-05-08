@@ -88,10 +88,15 @@ public class JobSeeker extends Person
     public void updateInfo(String field){
         Scanner input = new Scanner(System.in);
         switch (field.toLowerCase()) {
-            case "age" -> setAge(input.nextInt());
+            case "age" -> {
+                setAge(input.nextInt());
+                input.nextLine();
+            }
             case "degree" -> setDegree(input.nextLine()); //there is error when using nextLine after or before other next inputs
             case "university" -> setUniversity(input.nextLine());
             case "years of experience" -> setYearsOfExperience(input.nextInt());
+            default -> {
+            }
         }
     }
 
@@ -102,15 +107,17 @@ public class JobSeeker extends Person
             System.out.println("Company ID: "+i.getID());
             System.out.println("Company Description: "+i.getCompanyDescription());
             System.out.println("Company Rating: "+ i.getReviewRate());
-            //System.out.println();  #comapny job vacancies
+            System.out.println("available vacancies"+i.getJobVacancy());  //comapny job vacancies
             System.out.println("*********************************************");
         }
     }
 
     public void browseCompanies(String name) {
         ArrayList<Company> companies = CompanyAdmin.getCompanies();
+        boolean found = false;
         for (Company i : companies) {
             if (name.equalsIgnoreCase(i.getName())) {
+                found = true;
                 System.out.println("Company name: " + i.getName());
                 System.out.println("Company ID: " + i.getID());
                 System.out.println("Company Description: " + i.getCompanyDescription());
@@ -119,12 +126,15 @@ public class JobSeeker extends Person
                 System.out.println("*********************************************");
             }
         }
+        if (! found){
+            System.out.println("Not found");
+        }
     }
 
-    public void addReview(float rate,int ID){
+    public void addReview(float rate,int COMPANY_ID){
         boolean canAddReview = false;
         for (JobApplication i: jobApplications){
-            if (i.getCOMPANY_ID()==ID){
+            if (i.getCOMPANY_ID()==COMPANY_ID){
                 canAddReview = true;
                 break;
             }
@@ -132,7 +142,7 @@ public class JobSeeker extends Person
         if(canAddReview){
             ArrayList<Company> companies = CompanyAdmin.getCompanies();
             for (Company j : companies){
-                if (j.getID()==ID){
+                if (j.getID()==COMPANY_ID){
                     j.setSeekerReviews(rate);
                     break;
                 }
