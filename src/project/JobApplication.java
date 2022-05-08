@@ -4,10 +4,11 @@ public class JobApplication implements Comparable<JobApplication>{
     private int COMPANY_ID;
     private String applicationState = "Pending";
     private String applicantInfo;
-
-    public JobApplication(String applicantInfo,int COMPANY_ID){
+    private String jobTitle;
+    public JobApplication(String applicantInfo,int COMPANY_ID,String jobTitle){
         this.applicantInfo = applicantInfo;
         this.COMPANY_ID = COMPANY_ID;
+        this.jobTitle = jobTitle;
     }
 
 
@@ -49,7 +50,7 @@ public class JobApplication implements Comparable<JobApplication>{
     }
     @Override
     public String toString(){
-        return "Applicant info: " + applicantInfo + "\nApplication State: " + applicationState +
-                "\nCompany: " + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
+        return "Job Title"+ jobTitle+ "Applicant info: " + applicantInfo + "\nApplication State: " + applicationState +
+                "\n" + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
     }
 }

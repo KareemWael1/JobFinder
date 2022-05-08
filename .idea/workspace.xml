@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
+    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="fixed typo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/JobVacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobVacancy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651967754314</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed typo">
+      <created>1651968009120</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651968009120</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +171,7 @@
     <MESSAGE value="Added all classes in package" />
     <MESSAGE value="added browseJobs in JobSeeker class&#10;made some arrays final in company class" />
     <MESSAGE value="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
+    <MESSAGE value="fixed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed typo" />
   </component>
 </project>

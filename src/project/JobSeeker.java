@@ -21,12 +21,24 @@ public class JobSeeker extends Person
         this.yearsOfExperience = yearsOfExperience;
     }
 
-    public void addApplication(int COMPANY_ID){
+    public void addApplication(int COMPANY_ID,String jobTitle){
           String info = "My name is "+ getNAME() + ", And I have " +getAge()+ " years old " + "\n I got a " + getDegree() +
                 " degree " + "from " + getUniversity() + " university " + "also I have " + getYearsOfExperience()
                 + " years of experience.";
+          JobApplication application = new JobApplication(info,COMPANY_ID,jobTitle);
+          jobApplications.add(application);
+          ArrayList<Company> companies = CompanyAdmin.getCompanies();
+          ArrayList<JobVacancy> jobVacancies;
+          for (Company i : companies){
+            jobVacancies =i.getJobVacancy();
+            for (JobVacancy j : jobVacancies){
+                if (j.getJobTitle().equals(jobTitle)){
+                    j.addApplication(application);
+                }
+            }
+        }
 
-        jobApplications.add(new JobApplication(info,COMPANY_ID));
+
     }
 
     public ArrayList<JobApplication> viewMyApplications(){

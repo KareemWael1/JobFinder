@@ -7,7 +7,7 @@ public class JobFinder {
 
 
     public static void main(String[] args){
-        System.out.println("Welcome to Job Finder!");
+        System.out.println(" ******** Welcome to Job Finder! *************");
         //Admin
         CompanyAdmin admin = new CompanyAdmin("admin","admin@gmail.com","male","admin123");
         // two hard coded JobSeekers
@@ -33,7 +33,8 @@ public class JobFinder {
         allJobPosters.add(amr);
         allJobPosters.add(mai);
         //job vacancies
-        amr.addJobVacancy("Slave","to work as student in AinShams");
+        mai.addJobVacancy("Slave","to work as student in AinShams");
+        mai.addJobVacancy("Doctor","mange TAs in AinShams");
         amr.addJobVacancy("TA","Mange slaves in AinShams");
         //*****************************************************//
 
@@ -46,6 +47,7 @@ public class JobFinder {
             String s = input.nextLine();
             switch (s) {
                 case "s":
+                    JobSeeker theOne = null;
                     while (true) {
                         System.out.println("you are logging in as job seeker");
                         System.out.println("enter your email: ");
@@ -57,6 +59,7 @@ public class JobFinder {
                             if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
                                 System.out.println("logged in !");
                                 logged = true;
+                                theOne = i;
                                 break;
                             }
                         }
@@ -67,6 +70,47 @@ public class JobFinder {
                         }
                     }
                     // JobSeeker actions go here
+                    while (true) {
+                        System.out.println("""
+                                Press 'bj' to browse jobs
+                                press 'v' to view your applications
+                                press 'a' to add application
+                                press 'd' to delete application
+                                press 'ua' to update application
+                                press 'ui' to update info
+                                press 'bc' to browse companies
+                                press 'sc' to search for company
+                                press 'ar' to add review
+                                press 'q' to end
+                                """);
+                        String choice = input.nextLine();
+                        if (choice.equals("q")){
+                            break;
+                        }else if (choice.equals("bj")){
+                            System.out.println(theOne.browseJobs());
+                        }else if (choice.equals("v")){
+                            System.out.println(theOne.viewMyApplications());
+                        }else if (choice.equals("a")){
+                            System.out.println("enter the company id: ");
+                            int id = input.nextInt();
+                            input.nextLine(); //must be called to avoid errors
+                            System.out.println("enter the job title: ");
+                            String title = input.nextLine();
+                            theOne.addApplication(id,title);
+                        }else if (choice.equals("d")){
+                            System.out.println("enter the index you want to remove: ");
+                            int idx = input.nextInt();
+                            input.nextLine(); // must be called to avoid errors
+                            theOne.deleteApplication(idx);
+                        }else if (choice.equals("ua")){
+                            System.out.println("enter the idx of application to be updated");
+                            int idx = input.nextInt();
+                            input.nextLine(); // must be called to avoid errors
+                            String info = input.nextLine();
+                            theOne.updateApplication(idx,info);
+                        }
+
+                    }
 
 
                     break;
@@ -91,7 +135,6 @@ public class JobFinder {
                         }
                     }
                     // admin actions go here
-
 
                     break;
                 case "p":

@@ -18,6 +18,10 @@ public class JobVacancy implements Comparable<JobVacancy>{
         applications.add(application);
     }
 
+    public ArrayList<JobApplication> getApplications() {
+        return applications;
+    }
+
     public int getCOMPANY_ID(){
         return COMPANY_ID;
     }
@@ -62,6 +66,6 @@ public class JobVacancy implements Comparable<JobVacancy>{
     @Override
     public String toString(){
         return "Title: " + jobTitle + "\nDescription: " + jobDescription +
-                "\nCompany: " + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
+                "\n"+ CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
     }
 }
