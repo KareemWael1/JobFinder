@@ -96,7 +96,7 @@ public class JobFinder {
                     break;
                 case "p":
                     while (true) {
-                        System.out.println("you are logging in as job seeker");
+                        System.out.println("you are logging in as job Poster");
                         System.out.println("enter your email: ");
                         String email = input.nextLine();
                         System.out.println("enter your password: ");

@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="added browseJobs in JobSeeker class&#10;made some arrays final in company class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/CompanyAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobPoster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobPoster.java" afterDir="false" />
-    </list>
+    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651958597445</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons">
+      <created>1651967754314</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651967754314</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +157,7 @@
     <MESSAGE value="Added job seeker and poster" />
     <MESSAGE value="Added all classes in package" />
     <MESSAGE value="added browseJobs in JobSeeker class&#10;made some arrays final in company class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added browseJobs in JobSeeker class&#10;made some arrays final in company class" />
+    <MESSAGE value="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method setID in Company class&#10;made addJobPoster assign the id of company automatic to the job poster&#10;changed addCompany to make it set the ID automatic&#10;changed addJobVacancy method in JopPoster to make it add&#10;the vacancy to the company job vacancies array&#10;changed the JobPoster constructor&#10;Started the main code and done with the log in section and hard coded persons" />
   </component>
 </project>
