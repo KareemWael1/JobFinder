@@ -107,7 +107,7 @@ public class JobSeeker extends Person
             System.out.println("Company ID: "+i.getID());
             System.out.println("Company Description: "+i.getCompanyDescription());
             System.out.println("Company Rating: "+ i.getReviewRate());
-            System.out.println("available vacancies"+i.getJobVacancy());  //comapny job vacancies
+            System.out.println("available vacancies"+i.getJobVacancy());  //company job vacancies
             System.out.println("*********************************************");
         }
     }
