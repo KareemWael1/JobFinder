@@ -73,6 +73,8 @@ public class JobFinder {
                         }
                     }
                     // JobSeeker actions go here
+                    //noinspection TextLabelInSwitchStatement
+                    label1:
                     while (true) {
                         System.out.println("""
                                 Press 'bj' to browse jobs
@@ -87,58 +89,77 @@ public class JobFinder {
                                 press 'q' to end
                                 """);
                         String choice = input.nextLine();
-                        if (choice.equals("q")){
-                            break;
-                        }else if (choice.equals("bj")){
-                            System.out.println(theOne.browseJobs());
-                        }else if (choice.equals("v")){
-                            System.out.println(theOne.viewMyApplications());
-                        }else if (choice.equals("a")){
-                            System.out.println("enter the company id: ");
-                            int id = input.nextInt();
-                            input.nextLine(); //must be called to avoid errors
-                            System.out.println("enter the job title: ");
-                            String title = input.nextLine();
-                            theOne.addApplication(id,title);
-                        }else if (choice.equals("d")){
-                            System.out.println("enter the index you want to remove: ");
-                            int idx = input.nextInt();
-                            input.nextLine(); // must be called to avoid errors
-                            theOne.deleteApplication(idx);
-                        }else if (choice.equals("ua")){
-                            System.out.println("enter the idx of application to be updated");
-                            int idx = input.nextInt();
-                            input.nextLine(); // must be called to avoid errors
-                            System.out.println("enter the updated info");
-                            String info = input.nextLine();
-                            theOne.updateApplication(idx,info);
-                        }else if (choice.equals("ui")){
-                            while (true){
-                                System.out.println("""
-                                    enter what to update: age, degree or years of experience
-                                    when you finish press 'f'
-                                  """);
-                                String what = input.nextLine();
-                                if (what.equals("f")) break;
-                                System.out.println("enter the new value");
-                                theOne.updateInfo(what);
+                        switch (choice) {
+                            case "q":
+                                break label1;
+                            case "bj":
+                                System.out.println(theOne.browseJobs());
+                                break;
+                            case "v":
+                                System.out.println(theOne.viewMyApplications());
+                                break;
+                            case "a": {
+                                System.out.println("enter the company id: ");
+                                int id = input.nextInt();
+                                input.nextLine(); //must be called to avoid errors
+
+                                System.out.println("enter the job title: ");
+                                String title = input.nextLine();
+                                theOne.addApplication(id, title);
+                                break;
                             }
-                        }else if (choice.equals("bc")){
-                            theOne.browseCompanies();
-                        }else if (choice.equals("sc")){
-                            System.out.println("enter the company name to search for it");
-                            String name = input.nextLine();
-                            theOne.browseCompanies(name);
-                        }else if (choice.equals("ar")){
-                            System.out.println("enter the company id you want to rate out of ");
-                            int id = input.nextInt();
-                            input.nextLine(); // must be called to avoid errors
-                            System.out.println("enter the rate you want to give");
-                            float review = input.nextFloat();
-                            input.nextLine();
-                            theOne.addReview(review,id);
-                        }else{
-                            System.out.println("error try again");
+                            case "d": {
+                                System.out.println("enter the index you want to remove: ");
+                                int idx = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
+
+                                theOne.deleteApplication(idx);
+                                break;
+                            }
+                            case "ua": {
+                                System.out.println("enter the idx of application to be updated");
+                                int idx = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
+
+                                System.out.println("enter the updated info");
+                                String info = input.nextLine();
+                                theOne.updateApplication(idx, info);
+                                break;
+                            }
+                            case "ui":
+                                while (true) {
+                                    System.out.println("""
+                                              enter what to update: age, degree or years of experience
+                                              when you finish press 'f'
+                                            """);
+                                    String what = input.nextLine();
+                                    if (what.equals("f")) break;
+                                    System.out.println("enter the new value");
+                                    theOne.updateInfo(what);
+                                }
+                                break;
+                            case "bc":
+                                theOne.browseCompanies();
+                                break;
+                            case "sc":
+                                System.out.println("enter the company name to search for it");
+                                String name = input.nextLine();
+                                theOne.browseCompanies(name);
+                                break;
+                            case "ar": {
+                                System.out.println("enter the company id you want to rate out of ");
+                                int id = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
+
+                                System.out.println("enter the rate you want to give");
+                                float review = input.nextFloat();
+                                input.nextLine();
+                                theOne.addReview(review, id);
+                                break;
+                            }
+                            default:
+                                System.out.println("error try again");
+                                break;
                         }
 
                     }
@@ -166,6 +187,8 @@ public class JobFinder {
                         }
                     }
 
+                    //noinspection TextLabelInSwitchStatement
+                    label2:
                     while (true) {
                         System.out.println("""
                                 press 'a' to add company
@@ -173,42 +196,39 @@ public class JobFinder {
                                 press 'q' to end
                                 """);
 
-                    String choice = input.next();
+                    String choice = input.nextLine();
 
-                    if (choice.equals("a")) {
-                            System.out.print("Enter the new company name: ");
-                            String companyName = input.nextLine();
-                            input.nextLine();
-                            System.out.print("Enter the new company description: ");
-                            String companyDescription = input.nextLine();
-                            input.nextLine();
-                            Company company = new Company(companyName, companyDescription);
-                            admin.addCompany(company);
-                    }
+                        switch (choice) {
+                            case "a":
+                                System.out.print("Enter the new company name: ");
+                                String companyName = input.nextLine();
+                                System.out.print("Enter the new company description: ");
+                                String companyDescription = input.nextLine();
+                                Company company = new Company(companyName, companyDescription);
+                                admin.addCompany(company);
+                                break;
+                            case "u":
+                                System.out.print("Enter the chosen company name: ");
+                                String chosenCompanyName = input.nextLine();
+                                System.out.print("Enter the chosen company updated description: ");
+                                String updatedDescription = input.nextLine();
 
-                    else if (choice.equals("u")) {
-                            System.out.print("Enter the chosen company name: ");
-                            String chosenCompanyName = input.nextLine();
-                            input.nextLine();
-                            System.out.print("Enter the chosen company updated description: ");
-                            String updatedDescription = input.nextLine();
-                            input.nextLine();
-
-                            for (int i = 0; i < CompanyAdmin.getCompanies().size(); i++)
-                            {
-                                if (CompanyAdmin.getCompanies().get(i).getName().equals(chosenCompanyName)) {
-                                CompanyAdmin.updateCompanyDescription(CompanyAdmin.getCompanies().get(i), updatedDescription);
-                                break; }
-                            }
-                    }
-
-                    else if (choice.equals("q"))
-                        break;
-                    
-                    else System.out.println("error try again");
+                                for (int i = 0; i < CompanyAdmin.getCompanies().size(); i++) {
+                                    if (CompanyAdmin.getCompanies().get(i).getName().equals(chosenCompanyName)) {
+                                        CompanyAdmin.updateCompanyDescription(CompanyAdmin.getCompanies().get(i), updatedDescription);
+                                        break;
+                                    }
+                                }
+                                break;
+                            case "q":
+                                break label2;
+                            default:
+                                System.out.println("error try again");
+                                break;
+                        }
                 }
 
-                break;
+                    break;
 
                 case "p":
                     JobPoster poster = null;
@@ -234,6 +254,8 @@ public class JobFinder {
                         }
                     }
 
+                    //noinspection TextLabelInSwitchStatement
+                    label3:
                     while (true) {
                         poster.viewJobVacancies();
                         System.out.println("""
@@ -243,41 +265,41 @@ public class JobFinder {
                                 press 'q' to end
                                 """);
 
-                        String choice = input.next();
+                        String choice = input.nextLine();
 
-                        if (choice.equals("a")) {
-                            System.out.print("Enter job title: ");
-                            String jobTitle = input.nextLine();
-                            input.nextLine();
-                            System.out.print("Enter job description: ");
-                            String jobDescription = input.nextLine();
-                            input.nextLine();
-                            poster.addJobVacancy(jobTitle, jobDescription);
+                        switch (choice) {
+                            case "a":
+                                System.out.print("Enter job title: ");
+                                String jobTitle = input.nextLine();
+                                System.out.print("Enter job description: ");
+                                String jobDescription = input.nextLine();
+                                poster.addJobVacancy(jobTitle, jobDescription);
+                                break;
+                            case "d":
+                                System.out.print("Enter job vacancy index: ");
+                                int idx = input.nextInt();
+                                input.nextLine();
+                                poster.deleteJob(idx);
+                                System.out.println("Deleted! \n");
+                                break;
+                            case "v":
+                                System.out.print("Enter job vacancy index: ");
+                                int vacancyIdx = input.nextInt();
+                                input.nextLine();
+                                poster.getJobVacancies().get(vacancyIdx).viewApplications();
+                                System.out.print("\nEnter application's index to update its status: ");
+                                int applicationIdx = input.nextInt();
+                                input.nextLine();
+                                System.out.print("\nEnter new status: ");
+                                String status = input.nextLine();
+                                poster.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                                break;
+                            case "q":
+                                break label3;
+                            default:
+                                System.out.println("error try again");
+                                break;
                         }
-
-                        else if (choice.equals("d")) {
-                            System.out.print("Enter job vacancy index: ");
-                            int idx = input.nextInt();
-                            poster.deleteJob(idx);
-                            System.out.println("Deleted! \n");
-                        }
-
-                        else if (choice.equals("v")) {
-                            System.out.print("Enter job vacancy index: ");
-                            int vacancyIdx = input.nextInt();
-                            poster.getJobVacancies().get(vacancyIdx).viewApplications();
-                            System.out.print("\nEnter application's index to update its status: ");
-                            int applicationIdx = input.nextInt();
-                            System.out.print("\nEnter new status: ");
-                            String status = input.nextLine();
-                            input.nextLine();
-                            poster.setApplicationStatus(status, vacancyIdx, applicationIdx);
-                        }
-
-                        else if (choice.equals("q"))
-                            break;
-
-                        else System.out.println("error try again");
                     }
 
                     break;

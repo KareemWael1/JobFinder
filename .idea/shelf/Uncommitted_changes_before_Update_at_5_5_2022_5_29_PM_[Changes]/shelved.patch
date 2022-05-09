@@ -1,0 +1,49 @@
+Index: src/CompanyAdmin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CompanyAdmin.java b/src/project/CompanyAdmin.java
+rename from src/CompanyAdmin.java
+rename to src/project/CompanyAdmin.java
+--- a/src/CompanyAdmin.java	
++++ b/src/project/CompanyAdmin.java	
+@@ -1,3 +1,7 @@
++package project;
++
++import project.Company;
++
+ import java.util.ArrayList;
+ 
+ public class CompanyAdmin {
+Index: src/Company.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Company.java b/src/project/Company.java
+rename from src/Company.java
+rename to src/project/Company.java
+--- a/src/Company.java	
++++ b/src/project/Company.java	
+@@ -1,4 +1,4 @@
+-//import java.util.ArrayList;
++package project;//import java.util.ArrayList;
+ 
+ public class Company implements Comparable<Company> {
+     private String name;
+@@ -88,10 +88,10 @@
+ 
+     @Override
+     public String toString() {
+-        return "Company Name: " + this.name + "\n"
+-             + "Company ID: " + this.ID + "\n"
+-             + "Company Review Rate: " + this.reviewRate + "\n"
+-             + "Company Description: " + this.companyDescription + "\n"
++        return "project.Company Name: " + this.name + "\n"
++             + "project.Company ID: " + this.ID + "\n"
++             + "project.Company Review Rate: " + this.reviewRate + "\n"
++             + "project.Company Description: " + this.companyDescription + "\n"
+              + "Number of Employees: " + this.numberOfEmployees;
+     }
+ }
