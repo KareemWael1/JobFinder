@@ -36,12 +36,13 @@ public class JobFinder {
         mai.addJobVacancy("Doctor","mange TAs in AinShams");
         amr.addJobVacancy("TA","Mange slaves in AinShams");
         //*****************************************************//
-
+        lab:
         while(true){
             System.out.println("""
                     Press 's' to login as job seeker
                     press 'a' to login as admin
-                    press 'p' to login as job poster""");
+                    press 'p' to login as job poster
+                    press 'q' to end""");
             Scanner input = new Scanner(System.in);
             String s = input.nextLine();
             switch (s) {
@@ -231,6 +232,8 @@ public class JobFinder {
 
 
                     break;
+                case   "q":
+                    break lab;
                 default:
                     System.out.println("wrong input try again");
                     break;
