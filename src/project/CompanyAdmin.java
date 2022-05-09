@@ -12,12 +12,12 @@ public class CompanyAdmin extends Person {
         return companies;
     }
 
-    public void addCompany(Company name) {
+    public static void addCompany(Company name) {
         name.setID(companies.size());
         companies.add(name);
     }
 
-    public void updateCompanyDescription(Company chosenCompany, String newDescription) {
+    public static void updateCompanyDescription(Company chosenCompany, String newDescription) {
         chosenCompany.setCompanyDescription(newDescription);
     }
 

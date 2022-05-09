@@ -162,8 +162,50 @@ public class JobFinder {
                         }
                     }
                     // admin actions go here
+                    while (true) {
+                        System.out.println("""
+                                press 'a' to add company
+                                press 'u' to update company
+                                press 'q' to end
+                                """);
 
-                    break;
+                    String choice = input.next();
+
+                    if (choice.equals("a")) {
+                            System.out.println("Enter the new company name: ");
+                            String companyName = input.nextLine();
+                            input.nextLine();
+                            System.out.println("Enter the new company description: ");
+                            String companyDescription = input.nextLine();
+                            input.nextLine();
+                            Company company = new Company(companyName, companyDescription);
+                            admin.addCompany(company);
+                    }
+
+                    else if (choice.equals("u")) {
+                            System.out.println("Enter the chosen company name: ");
+                            String chosenCompanyName = input.nextLine();
+                            input.nextLine();
+                            System.out.println("Enter the chosen company updated description: ");
+                            String updatedDescription = input.nextLine();
+                            input.nextLine();
+
+                            for (int i = 0; i < CompanyAdmin.getCompanies().size(); i++)
+                            {
+                                if (CompanyAdmin.getCompanies().get(i).getName().equals(chosenCompanyName)) {
+                                CompanyAdmin.updateCompanyDescription(CompanyAdmin.getCompanies().get(i), updatedDescription);
+                                break; }
+                            }
+                    }
+
+                    else if (choice.equals("q"))
+                        break;
+                    
+                    else System.out.println("error try again");
+                }
+
+                break;
+
                 case "p":
                     while (true) {
                         System.out.println("you are logging in as job Poster");
@@ -193,7 +235,6 @@ public class JobFinder {
                     System.out.println("wrong input try again");
                     break;
             }
-
         }
     }
 }
