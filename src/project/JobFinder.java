@@ -25,16 +25,19 @@ public class JobFinder {
         admin.addCompany(edx);
         // Job posters
         ArrayList<JobPoster> allJobPosters = new ArrayList<>();
-        JobPoster amr = new JobPoster("Amr","amr@gmail.com","male","amr123");
+        JobPoster amr = new JobPoster("Amr","amr@gmail.com","male","amr123", 1);
         edx.addJobPoster(amr);
-        JobPoster mai = new JobPoster("Mai","mai@gmail.com","female","mai123");
+        JobPoster mai = new JobPoster("Mai","mai@gmail.com","female","mai123", 0);
         dell.addJobPoster(mai);
         allJobPosters.add(amr);
         allJobPosters.add(mai);
         //job vacancies
         mai.addJobVacancy("Slave","to work as student in AinShams");
-        mai.addJobVacancy("Doctor","mange TAs in AinShams");
+        amr.addJobVacancy("Doctor","mange TAs in AinShams");
         amr.addJobVacancy("TA","Mange slaves in AinShams");
+
+        ahmed.addApplication(1, "TA");
+        yara.addApplication(1, "Doctor");
         //*****************************************************//
         lab:
         while(true){
@@ -50,21 +53,21 @@ public class JobFinder {
                     JobSeeker theOne = null;
                     while (true) {
                         System.out.println("you are logging in as job seeker");
-                        System.out.println("enter your email: ");
+                        System.out.print("enter your email: ");
                         String email = input.nextLine();
-                        System.out.println("enter your password: ");
+                        System.out.print("enter your password: ");
                         String pass = input.nextLine();
                         boolean logged = false;
                         for (JobSeeker i : jobSeekers) {
                             if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                                System.out.println("logged in !");
+                                System.out.println("\nlogged in !\n");
                                 logged = true;
                                 theOne = i;
                                 break;
                             }
                         }
                         if (!logged) {
-                            System.out.println("wrong mail or pass try again");
+                            System.out.println("\nwrong mail or pass try again\n");
                         } else {
                             break;
                         }
@@ -145,9 +148,9 @@ public class JobFinder {
                 case "a":
                     while (true) {
                         System.out.println("you are logging in as Admin");
-                        System.out.println("enter your email: ");
+                        System.out.print("enter your email: ");
                         String email = input.nextLine();
-                        System.out.println("enter your password: ");
+                        System.out.print("enter your password: ");
                         String pass = input.nextLine();
                         boolean logged = false;
                         if (admin.getEMAIL().equals(email) && admin.getPassword().equals(pass)) {
@@ -162,7 +165,7 @@ public class JobFinder {
                             System.out.println("try again");
                         }
                     }
-                    // admin actions go here
+
                     while (true) {
                         System.out.println("""
                                 press 'a' to add company
@@ -173,10 +176,10 @@ public class JobFinder {
                     String choice = input.next();
 
                     if (choice.equals("a")) {
-                            System.out.println("Enter the new company name: ");
+                            System.out.print("Enter the new company name: ");
                             String companyName = input.nextLine();
                             input.nextLine();
-                            System.out.println("Enter the new company description: ");
+                            System.out.print("Enter the new company description: ");
                             String companyDescription = input.nextLine();
                             input.nextLine();
                             Company company = new Company(companyName, companyDescription);
@@ -184,10 +187,10 @@ public class JobFinder {
                     }
 
                     else if (choice.equals("u")) {
-                            System.out.println("Enter the chosen company name: ");
+                            System.out.print("Enter the chosen company name: ");
                             String chosenCompanyName = input.nextLine();
                             input.nextLine();
-                            System.out.println("Enter the chosen company updated description: ");
+                            System.out.print("Enter the chosen company updated description: ");
                             String updatedDescription = input.nextLine();
                             input.nextLine();
 
@@ -208,28 +211,74 @@ public class JobFinder {
                 break;
 
                 case "p":
+                    JobPoster poster = null;
                     while (true) {
                         System.out.println("you are logging in as job Poster");
-                        System.out.println("enter your email: ");
+                        System.out.print("enter your email: ");
                         String email = input.nextLine();
-                        System.out.println("enter your password: ");
+                        System.out.print("enter your password: ");
                         String pass = input.nextLine();
                         boolean logged = false;
                         for (JobPoster i : allJobPosters) {
                             if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
                                 System.out.println("logged in !");
                                 logged = true;
+                                poster = i;
                                 break;
                             }
                         }
-                        if (!logged) {
-                            System.out.println("wrong mail or pass try again");
-                        } else {
-                            break;
+                            if (!logged) {
+                                System.out.println("wrong mail or pass try again");
+                            } else {
+                                break;
                         }
                     }
-                    // poster actions go here
 
+                    while (true) {
+                        poster.viewJobVacancies();
+                        System.out.println("""
+                                press 'a' to add job vacancy
+                                press 'd' to delete job vacancy
+                                press 'v' to view job vacancy's applications and update their status
+                                press 'q' to end
+                                """);
+
+                        String choice = input.next();
+
+                        if (choice.equals("a")) {
+                            System.out.print("Enter job title: ");
+                            String jobTitle = input.nextLine();
+                            input.nextLine();
+                            System.out.print("Enter job description: ");
+                            String jobDescription = input.nextLine();
+                            input.nextLine();
+                            poster.addJobVacancy(jobTitle, jobDescription);
+                        }
+
+                        else if (choice.equals("d")) {
+                            System.out.print("Enter job vacancy index: ");
+                            int idx = input.nextInt();
+                            poster.deleteJob(idx);
+                            System.out.println("Deleted! \n");
+                        }
+
+                        else if (choice.equals("v")) {
+                            System.out.print("Enter job vacancy index: ");
+                            int vacancyIdx = input.nextInt();
+                            poster.getJobVacancies().get(vacancyIdx).viewApplications();
+                            System.out.print("\nEnter application's index to update its status: ");
+                            int applicationIdx = input.nextInt();
+                            System.out.print("\nEnter new status: ");
+                            String status = input.nextLine();
+                            input.nextLine();
+                            poster.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                        }
+
+                        else if (choice.equals("q"))
+                            break;
+
+                        else System.out.println("error try again");
+                    }
 
                     break;
                 case   "q":
