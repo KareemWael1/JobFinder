@@ -68,9 +68,8 @@ public class Company implements Comparable<Company> {
         return this.companyDescription;
     }
     
-    public void addJobPoster(JobPoster name) {
-        name.setCOMPANY_ID(this.ID);
-        jobPosters.add(name);
+    public void addJobPoster(JobPoster poster) {
+        jobPosters.add(poster);
         numberOfEmployees++;
     }
 

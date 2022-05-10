@@ -122,7 +122,7 @@ public class JobSeeker extends Person
                 System.out.println("Company ID: " + i.getID());
                 System.out.println("Company Description: " + i.getCompanyDescription());
                 System.out.println("Company Rating: " + i.getReviewRate());
-                //System.out.println();  #comapny job vacancies
+                System.out.println("available vacancies"+i.getJobVacancy());  //company job vacancies
                 System.out.println("*********************************************");
             }
         }
@@ -162,6 +162,22 @@ public class JobSeeker extends Person
         }
         return allJobVacancies;
     }
+
+    public ArrayList<JobVacancy> browseJobs(String name){
+        ArrayList<JobVacancy> allJobVacancies = new ArrayList<>();
+        ArrayList<Company> companies = CompanyAdmin.getCompanies();
+        for (Company i : companies ){
+            for (JobVacancy j: i.getJobVacancy()) {
+                if(j.getJobTitle().equalsIgnoreCase(name))
+                allJobVacancies.add(j);
+            }
+        }
+        return allJobVacancies;
+    }
+
+
+
+
     @Override
     public String toString(){
         return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER + "\n Age: " + age + "\nDegree: " + degree +

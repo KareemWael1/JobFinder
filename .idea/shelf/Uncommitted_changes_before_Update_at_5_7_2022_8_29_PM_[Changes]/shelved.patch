@@ -1,0 +1,111 @@
+Index: src/project/JobSeeker.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package project;\r\n\r\nimport project.JobApplication;\r\n\r\nimport java.util.*;\r\npublic class JobSeeker extends Person\r\n\r\n{\r\n    private int age;\r\n    private String degree;\r\n    private String university;\r\n    private int yearsOfExperience;\r\n    // its assumed that the info in any application is this if the seeker want to change it he can use update info\r\n\r\n    private final ArrayList<JobApplication>  jobApplications = new ArrayList<>();\r\n\r\n    JobSeeker(String name, String email, String gender, String password,int age,String degree,\r\n              String university,int yearsOfExperience) {\r\n        super(name, email, gender, password);\r\n        this.age = age;\r\n        this.degree = degree;\r\n        this.university = university;\r\n        this.yearsOfExperience = yearsOfExperience;\r\n    }\r\n    public void addApplication(int COMPANY_ID){\r\n          String info = \"My name is \"+ getNAME() + \", And I have \" +getAge()+ \" years old \" + \"\\n I got a \" + getDegree() +\r\n                \" degree \" + \"from \" + getUniversity() + \" university \" + \"also I have \" + getYearsOfExperience()\r\n                + \" years of experience.\";\r\n\r\n        jobApplications.add(new JobApplication(info,COMPANY_ID));\r\n    }\r\n    // return the array itself\r\n    public ArrayList<JobApplication> viewMyApplications(){\r\n        return jobApplications;\r\n    }\r\n    // update the info in specific application\r\n    public void updateApplication(int applicationIdx,String updatedInfo){\r\n        jobApplications.get(applicationIdx).setApplicantInfo(updatedInfo);\r\n    }\r\n    // delete specific application based on index\r\n    public void deleteApplication(int applicationIdx){\r\n        jobApplications.remove(applicationIdx);\r\n    }\r\n\r\n\r\n    public void setAge(int age) {\r\n        this.age = age;\r\n    }\r\n\r\n    public int getAge() {\r\n        return age;\r\n    }\r\n\r\n    public void setDegree(String degree) {\r\n        this.degree = degree;\r\n    }\r\n\r\n    public String getDegree() {\r\n        return degree;\r\n    }\r\n\r\n    public void setUniversity(String university) {\r\n        this.university = university;\r\n    }\r\n\r\n    public String getUniversity() {\r\n        return university;\r\n    }\r\n\r\n    public void setYearsOfExperience(int yearsOfExperience) {\r\n        this.yearsOfExperience = yearsOfExperience;\r\n    }\r\n\r\n    public int getYearsOfExperience() {\r\n        return yearsOfExperience;\r\n    }\r\n\r\n    public void updateInfo(String field){\r\n        Scanner input = new Scanner(System.in);\r\n        switch (field.toLowerCase()) {\r\n            case \"age\" -> setAge(input.nextInt());\r\n            case \"degree\" -> setDegree(input.nextLine()); //there is error when using nextline after or before other next inputs\r\n            case \"university\" -> setUniversity(input.nextLine());\r\n            case \"years of experience\" -> setYearsOfExperience(input.nextInt());\r\n        }\r\n    }\r\n    public void browseCompanies(){\r\n        ArrayList<Company> companies =  CompanyAdmin.getCompanies();\r\n        for (Company i : companies){\r\n            System.out.println(\"Company name: \"+i.getName());\r\n            System.out.println(\"Company ID: \"+i.getID());\r\n            System.out.println(\"Company Description: \"+i.getCompanyDescription());\r\n            System.out.println(\"Company Rating: \"+ i.getReviewRate());\r\n            //System.out.println();  #comapny job vacancies\r\n            System.out.println(\"*********************************************\");\r\n        }\r\n    }\r\n\r\n    public void browseCompanies(String name) {\r\n        ArrayList<Company> companies = CompanyAdmin.getCompanies();\r\n        for (Company i : companies) {\r\n            if (name.equalsIgnoreCase(i.getName())) {\r\n                System.out.println(\"Company name: \" + i.getName());\r\n                System.out.println(\"Company ID: \" + i.getID());\r\n                System.out.println(\"Company Description: \" + i.getCompanyDescription());\r\n                System.out.println(\"Company Rating: \" + i.getReviewRate());\r\n                //System.out.println();  #comapny job vacancies\r\n                System.out.println(\"*********************************************\");\r\n            }\r\n        }\r\n    }\r\n\r\n    public void addReview(float rate,int ID){\r\n        boolean canAddReview = false;\r\n        for (JobApplication i: jobApplications){\r\n            if (i.getCOMPANY_ID()==ID){\r\n                canAddReview = true;\r\n                break;\r\n            }\r\n        }\r\n        if(canAddReview){\r\n            ArrayList<Company> companies = CompanyAdmin.getCompanies();\r\n            for (Company j : companies){\r\n                if (j.getID()==ID){\r\n                    j.setSeekerReviews(rate);\r\n                    break;\r\n                }\r\n            }\r\n        }else {\r\n            System.out.println(\"you can not add a review to this company as you did not submit an application to it\");\r\n        }\r\n\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return \"I am a Job Seeker\";\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/project/JobSeeker.java b/src/project/JobSeeker.java
+--- a/src/project/JobSeeker.java	(revision 8c085b36b7971d95ff89f467772907ef99ba8aa7)
++++ b/src/project/JobSeeker.java	(date 1651882129575)
+@@ -1,5 +1,6 @@
+ package project;
+ 
++import org.jetbrains.annotations.NotNull;
+ import project.JobApplication;
+ 
+ import java.util.*;
+Index: src/project/Jobposter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package project;\r\n\r\n/*\r\n * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license\r\n * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template\r\n */\r\n\r\n/**\r\n *\r\n * @author Ali\r\n */\r\n\r\nimport java.util.ArrayList;\r\n\r\n\r\npublic class JobPoster extends Person {\r\n        int companyID;\r\n        private ArrayList<JobVacancy> jobVacancies = new ArrayList <JobVacancy>();\r\n          \r\n  \r\n  JobPoster(String name, String email, String gender, String password) {\r\n        super(name, email, gender, password);\r\n        //TODO Auto-generated constructor stub\r\n}\r\n                   \r\n          addjobvacancy(string title)\r\n   \r\n   final static private ArrayList<JobVacancy> jobvacancies = new ArrayList<JobVacancy>();\r\n   \r\n   \r\n   public ArrayList<JobVacancy> getJobVacancies() {\r\n   \r\n   return this.jobvacancies;\r\n   }   \r\n   \r\n   public void addjobvacancy(String info,String title){\r\n           \r\n           jobVacancies.void add(String title, String info);\r\n                   }\r\n\r\n\r\nvoid setApplicationstatus(boolean status){\r\n\r\n        this.status= status;\r\n}\r\n\r\n\r\npublic void deletejob(int jobvacancyidx){\r\n\r\njobvacancies.remove (jobvacancyidx);\r\n}\r\n\r\n\r\n@Override\r\npublic String toString() {\r\n        // TODO Auto-generated method stub\r\n        return null;\r\n}\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/project/Jobposter.java b/src/project/Jobposter.java
+--- a/src/project/Jobposter.java	(revision 8c085b36b7971d95ff89f467772907ef99ba8aa7)
++++ b/src/project/Jobposter.java	(date 1651881962477)
+@@ -15,7 +15,7 @@
+ 
+ public class JobPoster extends Person {
+         int companyID;
+-        private ArrayList<JobVacancy> jobVacancies = new ArrayList <JobVacancy>();
++        private final ArrayList<JobVacancy> jobVacancies = new ArrayList <JobVacancy>();
+           
+   
+   JobPoster(String name, String email, String gender, String password) {
+Index: JobFinder.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JobFinder.iml b/JobFinder.iml
+--- a/JobFinder.iml	(revision 8c085b36b7971d95ff89f467772907ef99ba8aa7)
++++ b/JobFinder.iml	(date 1651881963106)
+@@ -7,5 +7,14 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d005a5e9-0512-45bc-a17f-fd962a383013\" name=\"Changes\" comment=\"Added all classes in package\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/project/Company.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/project/Company.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/project/CompanyAdmin.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/project/CompanyAdmin.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/project/JobSeeker.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/project/JobSeeker.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"28gNGSqNZffMbFwKCVsGFvlN80c\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.lookFeel\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d005a5e9-0512-45bc-a17f-fd962a383013\" name=\"Changes\" comment=\"\" />\r\n      <created>1651634209311</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1651634209311</updated>\r\n      <workItem from=\"1651634319056\" duration=\"4549000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"testing commit :)\">\r\n      <created>1651707137795</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651707137795</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"testing commit :)\">\r\n      <created>1651707497149</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651707497149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Added job seeker and poster\">\r\n      <created>1651718111294</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651718111294</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Added all classes in package\">\r\n      <created>1651719011891</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651719011891</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Added all classes in package\">\r\n      <created>1651719088305</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1651719088305</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"testing commit :)\" />\r\n    <MESSAGE value=\"Added job seeker and poster\" />\r\n    <MESSAGE value=\"Added all classes in package\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added all classes in package\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8c085b36b7971d95ff89f467772907ef99ba8aa7)
++++ b/.idea/workspace.xml	(date 1651882187116)
+@@ -6,9 +6,9 @@
+   <component name="ChangeListManager">
+     <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added all classes in package">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/CompanyAdmin.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/JobFinder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JobFinder.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/project/Jobposter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Jobposter.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,6 +35,10 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="Downloaded.Files.Path.Enabled" value="false" />
++    <property name="Repository.Attach.Annotations" value="false" />
++    <property name="Repository.Attach.JavaDocs" value="false" />
++    <property name="Repository.Attach.Sources" value="false" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+@@ -89,7 +93,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1651719088305</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="Added all classes in package">
++      <created>1651769138359</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1651769138359</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

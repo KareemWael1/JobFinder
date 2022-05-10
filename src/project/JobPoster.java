@@ -4,38 +4,37 @@ import java.util.ArrayList;
 
 public class JobPoster extends Person{
 
-    private int COMPANY_ID;
-    private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
+    private final int COMPANY_ID;
+    private final ArrayList<JobVacancy> jobVacancies;
 
-    public JobPoster(String name, String email, String gender, String password) {
+    public JobPoster(String name, String email, String gender, String password, int id) {
         super(name, email, gender, password);
+        this.COMPANY_ID = id;
+        jobVacancies = CompanyAdmin.getCompanies().get(COMPANY_ID).getJobVacancy();
+        CompanyAdmin.getCompanies().get(COMPANY_ID).addJobPoster(this);
     }
-    public void setCOMPANY_ID(int COMPANY_ID){
-        this.COMPANY_ID = COMPANY_ID;
-    }
+
     public void addJobVacancy(String title, String info){
         ArrayList<Company> companies = CompanyAdmin.getCompanies();
         jobVacancies.add(new JobVacancy(COMPANY_ID, title, info));
-        companies.get(COMPANY_ID).addVacancy(jobVacancies.get(jobVacancies.size()-1));
     }
 
     public void deleteJob(int jobVacancyIdx){
         jobVacancies.remove(jobVacancyIdx);
     }
 
-    public void setApplicationStatus(boolean status, int jobVacancyIdx, int jobApplicationIdx){
-        if (status)
-        {
-            this.jobVacancies.get(jobVacancyIdx).getJobApplications().get(jobApplicationIdx).setApplicationState("Accepted");
-        }
-        else
-        {
-            this.jobVacancies.get(jobVacancyIdx).getJobApplications().get(jobApplicationIdx).setApplicationState("Rejected");
-        }
+    public void setApplicationStatus(String status, int jobVacancyIdx, int jobApplicationIdx){
+        this.jobVacancies.get(jobVacancyIdx).getJobApplications().get(jobApplicationIdx).setApplicationState(status);
     }
 
-    public ArrayList<JobVacancy> getJobVacancies() {
-        return this.jobVacancies;
+    public ArrayList<JobVacancy> getJobVacancies() {return jobVacancies;}
+
+    public void viewJobVacancies() {
+        int idx = 0;
+        for (JobVacancy vacancy : jobVacancies){
+            System.out.println("Job " + idx + ": " + vacancy.getJobTitle() + ": " + vacancy.getJobDescription());
+            idx++;
+        }
     }
 
     @Override

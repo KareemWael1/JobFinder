@@ -22,6 +22,15 @@ public class JobVacancy implements Comparable<JobVacancy>{
         return applications;
     }
 
+    public void viewApplications() {
+        int idx = 0;
+        for (JobApplication application : applications){
+            System.out.println("Application " + idx + ": " + application.getApplicantInfo()
+                    + " - Status: " + application.getApplicationState() );
+            idx++;
+        }
+    }
+
     public int getCOMPANY_ID(){
         return COMPANY_ID;
     }
