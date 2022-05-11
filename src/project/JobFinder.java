@@ -207,7 +207,8 @@ public class JobFinder {
                             label2:
                             while (true) {
                                 System.out.println("""
-                                        press 'a' to add company
+                                        press 'c' to add company
+                                        press 'p' to add poster
                                         press 'u' to update company
                                         press 'q' to end
                                         """);
@@ -215,13 +216,28 @@ public class JobFinder {
                                 String choice = input.nextLine();
 
                                 switch (choice) {
-                                    case "a":
+                                    case "c":
                                         System.out.print("Enter the new company name: ");
                                         String companyName = input.nextLine();
                                         System.out.print("Enter the new company description: ");
                                         String companyDescription = input.nextLine();
                                         Company company = new Company(companyName, companyDescription);
                                         admin.addCompany(company);
+                                        break;
+                                    case "p":
+                                        System.out.print("Enter the new job poster name: ");
+                                        String jobPosterName = input.nextLine();
+                                        System.out.print("Enter the job poster email: ");
+                                        String jobPosterEmail = input.nextLine();
+                                        System.out.print("Enter the job poster password: ");
+                                        String jobPosterPassword = input.nextLine();
+                                        System.out.print("Enter the job poster gender: ");
+                                        String jobPosterGender = input.nextLine();
+                                        System.out.print("Enter the job poster ID: ");
+                                        int jobPosterID = input.nextInt();
+                                        input.nextLine();
+                                        JobPoster jobPoster = new JobPoster(jobPosterName, jobPosterEmail, jobPosterGender, jobPosterPassword, jobPosterID);
+                                        admin.addJobPoster(jobPoster);
                                         break;
                                     case "u":
                                         System.out.print("Enter the chosen company name: ");
