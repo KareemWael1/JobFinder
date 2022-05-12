@@ -104,7 +104,7 @@ public class JobSeeker extends Person
         ArrayList<Company> companies =  CompanyAdmin.getCompanies();
         for (Company i : companies){
             System.out.println("Company name: "+i.getName());
-            System.out.println("Company ID: "+i.getID());
+            System.out.println("Company ID: "+i.getId());
             System.out.println("Company Description: "+i.getCompanyDescription());
             System.out.println("Company Rating: "+ i.getReviewRate());
             System.out.println("available vacancies"+i.getJobVacancy());  //company job vacancies
@@ -119,7 +119,7 @@ public class JobSeeker extends Person
             if (name.equalsIgnoreCase(i.getName())) {
                 found = true;
                 System.out.println("Company name: " + i.getName());
-                System.out.println("Company ID: " + i.getID());
+                System.out.println("Company ID: " + i.getId());
                 System.out.println("Company Description: " + i.getCompanyDescription());
                 System.out.println("Company Rating: " + i.getReviewRate());
                 System.out.println("available vacancies"+i.getJobVacancy());  //company job vacancies
@@ -142,7 +142,7 @@ public class JobSeeker extends Person
         if(canAddReview){
             ArrayList<Company> companies = CompanyAdmin.getCompanies();
             for (Company j : companies){
-                if (j.getID()==COMPANY_ID){
+                if (j.getId()==COMPANY_ID){
                     j.setSeekerReviews(rate);
                     break;
                 }

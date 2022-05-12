@@ -18,7 +18,7 @@ public class JobPoster extends Person{
         JobVacancy vacancy = new JobVacancy(COMPANY_ID,title,info);
         ArrayList<Company> companies = CompanyAdmin.getCompanies();
         for(Company i : companies){
-            if (i.getID()==COMPANY_ID){
+            if (i.getId()==COMPANY_ID){
                 i.addVacancy(vacancy);
                 break;
             }

@@ -2,7 +2,13 @@ package project;
 import java.util.ArrayList;
 
 public class CompanyAdmin extends Person {
-    final static private ArrayList<Company> companies = new ArrayList<>(); // final so companies do not point to other list
+    final static private ArrayList<Company> companies = new ArrayList<>(){
+        {
+            add(new Company("Dell", "Tech company"));
+            add(new Company("edx", "Educational company"));
+        }
+
+    };
 
     CompanyAdmin(String name, String email, String gender, String password){
         super(name, email, gender, password);
@@ -13,14 +19,14 @@ public class CompanyAdmin extends Person {
     }
 
 
-    public static void addCompany(Company name) {
-        name.setID(companies.size());
-        companies.add(name);
+    public static void addCompany(Company company) {
+        company.setID(companies.size());
+        companies.add(company);
     }
 
     public static void addJobPoster(JobPoster jobPoster) {
         for (Company i : companies ){
-            if (jobPoster.getCOMPANY_ID()==i.getID()){
+            if (jobPoster.getCOMPANY_ID()==i.getId()){
                 i.addJobPoster(jobPoster);
             }
         }

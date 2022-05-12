@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Company implements Comparable<Company> {
     private String name;
-    private int ID;
+    private int Id;
     private int numberOfEmployees = 1;
     private float seekerReviews = 0;
     private int numberOfReviews = 0;
@@ -19,7 +19,7 @@ public class Company implements Comparable<Company> {
     }
 
     public void setID(int ID){
-        this.ID = ID;
+        this.Id = ID;
     }
 
     public void setName(String name) {
@@ -30,8 +30,8 @@ public class Company implements Comparable<Company> {
         return this.name;
     }
 
-    public int getID() {
-        return this.ID;
+    public int getId() {
+        return this.Id;
     }
 
     public int getNumberOfEmployees() {
@@ -105,7 +105,7 @@ public class Company implements Comparable<Company> {
     @Override
     public String toString() {
         return "Company Name: " + this.name + "\n"
-             + "Company ID: " + this.ID + "\n"
+             + "Company ID: " + this.Id + "\n"
              + "Company Review Rate: " + this.reviewRate + "\n"
              + "Company Description: " + this.companyDescription + "\n"
              + "Number of Employees: " + this.numberOfEmployees;

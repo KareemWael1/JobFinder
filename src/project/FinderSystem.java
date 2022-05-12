@@ -7,10 +7,11 @@ public class FinderSystem {
             , "Masters", "MIT", 15);
     JobSeeker yara = new JobSeeker("Yara", "yara@gmail.com", "female", "yara123", 19
             , "PHD", "Cairo", 5);
-    Company dell = new Company("Dell", "Tech company");
-    Company edx = new Company("edx", "Educational company");
     JobPoster mai = new JobPoster("Mai", "mai@gmail.com", "female", "mai123", 0);
     JobPoster amr = new JobPoster("Amr", "amr@gmail.com", "male", "amr123", 1);
+    CompanyAdmin admin = new CompanyAdmin("admin", "admin@gmail.com", "male", "admin123");
+
+
     private final ArrayList<JobPoster> allJobPosters = new ArrayList<>(){
         {
             add(mai);
@@ -44,6 +45,26 @@ public class FinderSystem {
     public void addJobPoster(JobPoster jobPoster){
         CompanyAdmin.addJobPoster(jobPoster);
         allJobPosters.add(jobPoster);
+    }
 
+    public void searchJobs(JobSeeker seeker, String toSearch){
+        System.out.println(seeker.browseJobs(toSearch));
+    }
+
+    public void browseJobs(JobSeeker seeker){
+        System.out.println(seeker.browseJobs());
+    }
+
+    public void addApplication(JobSeeker seeker, int id, String title){
+        seeker.addApplication(id, title);
+    }
+
+    public void deleteApplication(JobSeeker seeker, int idx)
+    {
+        seeker.deleteApplication(idx);
+    }
+
+    public void updateApplication(JobSeeker seeker, int idx, String info){
+        seeker.updateApplication(idx, info);
     }
 }
