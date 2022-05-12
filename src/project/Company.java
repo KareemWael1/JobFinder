@@ -3,24 +3,26 @@ import java.util.ArrayList;
 
 public class Company implements Comparable<Company> {
     private String name;
-    private int Id;
-    private int numberOfEmployees = 1;
+    private int Id=0;
+    static int companiesCount=0;
     private float seekerReviews = 0;
     private int numberOfReviews = 0;
     private float reviewRate;
     private String companyDescription;
     private final ArrayList<JobPoster> jobPosters = new ArrayList<>();
     private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
+    private int numberOfEmployees;
+
 
 
     public Company(String name, String description) {
         this.name = name;
         this.companyDescription = description;
+        this.Id = companiesCount;
+        companiesCount++;
     }
 
-    public void setID(int ID){
-        this.Id = ID;
-    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -70,7 +72,7 @@ public class Company implements Comparable<Company> {
     
     public void addJobPoster(JobPoster poster) {
         jobPosters.add(poster);
-        numberOfEmployees++;
+        numberOfEmployees = jobPosters.size();
     }
 
     public void addVacancy(JobVacancy jobVacancy) {

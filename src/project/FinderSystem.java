@@ -15,6 +15,8 @@ public class FinderSystem {
     static Company dell = new Company("Dell", "Tech company");
     static Company edx = new Company("edx", "Educational company");
     {
+        //addJobPoster(mai);
+       // addJobPoster(amr);
         dell.addVacancy(it);
         edx.addVacancy(instructor);
         dell.addJobPoster(mai);
@@ -169,18 +171,18 @@ public class FinderSystem {
         String jobTitle = ((JobSeeker) user).getJobApplications().get(idx).getJobTitle();
         int companyID = ((JobSeeker) user).getJobApplications().get(idx).getCOMPANY_ID();
         String mail = user.getEMAIL();
-        ArrayList<JobVacancy> vacancies = companies.get(companyID).getJobVacancy();
-        for (JobVacancy i : vacancies) {
+        for (JobVacancy i : companies.get(companyID).getJobVacancy()) {
             for (JobApplication j : i.getApplications()) {
                 if (j.getJobTitle().equalsIgnoreCase(jobTitle) && j.getApplicantMail().equals(mail)) {
                     i.removeApplication(j);
+                    ((JobSeeker) user).deleteApplication(idx);
                     return;
 
                 }
             }
         }
 
-        ((JobSeeker) user).deleteApplication(idx);
+
     }
 
     public void browseCompanies(String name) {
@@ -192,8 +194,7 @@ public class FinderSystem {
                 System.out.println("Company ID: " + i.getId());
                 System.out.println("Company Description: " + i.getCompanyDescription());
                 System.out.println("Company Rating: " + i.getReviewRate());
-                System.out.println("available vacancies" + i.getJobVacancy());  //company job vacancies
-                System.out.println("*********************************************");
+                System.out.println("available vacancies: " + i.getJobVacancy());  //company job vacancies
             }
         }
         if (!found) {
@@ -204,6 +205,8 @@ public class FinderSystem {
     public void browseCompanies() {
         for (Company company : companies) {
             System.out.println(company);
+            System.out.println(company.getJobVacancy());
+            System.out.println("--------------------------");
         }
     }
 
@@ -267,7 +270,7 @@ public class FinderSystem {
                 JobApplication application = new JobApplication(info, COMPANY_ID, jobTitle, email);
                 ((JobSeeker) user).getJobApplications().add(application);
                 J.addApplication(application);
-                System.out.println("Done :) hehe !");
+                System.out.println("Done :) hehehe !");
                 return;
             }
         }
@@ -280,8 +283,10 @@ public class FinderSystem {
 
     public void browseJobs(String name){
         for (JobVacancy j: allJobVacancies) {
-            if(j.getJobTitle().equalsIgnoreCase(name))
+            if(j.getJobTitle().equalsIgnoreCase(name)) {
                 System.out.println(j);
+                System.out.println("-------------------------");
+            }
         }
     }
 

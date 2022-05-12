@@ -195,16 +195,33 @@ public class JobFinder {
                             System.out.println("Deleted! \n");
                             break;
                         case "v":
-                            System.out.print("Enter job vacancy index: ");
-                            int vacancyIdx = input.nextInt();
-                            input.nextLine();
-                            finderSystem.getJobVacancies().get(vacancyIdx).viewApplications();
-                            System.out.print("\nEnter application's index to update its status: ");
-                            int applicationIdx = input.nextInt();
-                            input.nextLine();
-                            System.out.print("\nEnter new status: ");
-                            String status = input.nextLine();
-                            finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                            boolean can = false;
+                            for (int i = 0; i < finderSystem.getJobVacancies().size(); i++) {
+                                System.out.println("index is " + i);
+                                System.out.println("Job title is " + finderSystem.getJobVacancies().get(i).getJobTitle());
+                                System.out.println("-------------");
+                                can = true;
+
+                            }
+                            if (can) {
+                                System.out.print("Enter job vacancy index: ");
+                                int vacancyIdx = input.nextInt();
+                                input.nextLine();
+
+                                if (finderSystem.getJobVacancies().get(vacancyIdx).viewApplications()) {
+                                    System.out.print("\nEnter application's index to update its status: ");
+                                    int applicationIdx = input.nextInt();
+                                    input.nextLine();
+                                    System.out.print("\nEnter new status: ");
+                                    String status = input.nextLine();
+                                    finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                                    System.out.println("added :)");
+                                } else {
+                                    System.out.println("there is no applications on this job");
+                                }
+                            }else{
+                                System.out.println("can not be performed");
+                            }
                             break;
                         case "q":
                             break poster;

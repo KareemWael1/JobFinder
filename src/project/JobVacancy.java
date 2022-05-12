@@ -22,13 +22,14 @@ public class JobVacancy implements Comparable<JobVacancy>{
         return applications;
     }
 
-    public void viewApplications() {
+    public boolean viewApplications() {
         int idx = 0;
         for (JobApplication application : applications){
             System.out.println("Application " + idx + ": " + application.getApplicantInfo()
                     + " - Status: " + application.getApplicationState() );
             idx++;
         }
+        return idx>0;
     }
 
     public int getCOMPANY_ID(){
@@ -75,6 +76,7 @@ public class JobVacancy implements Comparable<JobVacancy>{
     @Override
     public String toString(){
         return "Title: " + jobTitle + "\nDescription: " + jobDescription +
-                "\n"+ FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
+                "\n"+ "Comapany ID: " + FinderSystem.getCompanies().get(COMPANY_ID).getId() + "\n Company name: "+
+                FinderSystem.getCompanies().get(COMPANY_ID).getName() + "\n***********************\n";
     }
 }
