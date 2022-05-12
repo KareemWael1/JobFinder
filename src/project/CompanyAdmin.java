@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class CompanyAdmin extends Person {
     final static private ArrayList<Company> companies = new ArrayList<>(); // final so companies do not point to other list
-    final static private ArrayList<JobPoster> jobPosters = new ArrayList<>();
 
     CompanyAdmin(String name, String email, String gender, String password){
         super(name, email, gender, password);
@@ -13,17 +12,18 @@ public class CompanyAdmin extends Person {
         return companies;
     }
 
-    public static ArrayList<JobPoster> getJobPosters() {
-        return jobPosters;
-    }
 
     public static void addCompany(Company name) {
         name.setID(companies.size());
         companies.add(name);
     }
 
-    public static void addJobPoster(JobPoster name) {
-        jobPosters.add(name);
+    public static void addJobPoster(JobPoster jobPoster) {
+        for (Company i : companies ){
+            if (jobPoster.getCOMPANY_ID()==i.getID()){
+                i.addJobPoster(jobPoster);
+            }
+        }
     }
 
     public static void updateCompanyDescription(Company chosenCompany, String newDescription) {

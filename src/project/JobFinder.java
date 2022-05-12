@@ -5,39 +5,12 @@ import java.util.Scanner;
 
 public class JobFinder {
 
-
     public static void main(String[] args) {
         System.out.println(" ******** Welcome to Job Finder! *************");
-        //Admin
+        FinderSystem finderSystem = new FinderSystem();
         CompanyAdmin admin = new CompanyAdmin("admin", "admin@gmail.com", "male", "admin123");
-        // two hard coded JobSeekers
-        ArrayList<JobSeeker> jobSeekers = new ArrayList<>();
-        JobSeeker ahmed = new JobSeeker("Ahmed", "ahmed@gmail.com", "male", "8520", 20
-                , "Masters", "MIT", 15);
-        JobSeeker yara = new JobSeeker("Yara", "yara@gmail.com", "female", "yara123", 19
-                , "PHD", "Cairo", 5);
-        jobSeekers.add(ahmed);
-        jobSeekers.add(yara);
-        //two companies
-        Company dell = new Company("Dell", "Tech company");
-        Company edx = new Company("edx", "Educational company");
-        admin.addCompany(dell);
-        admin.addCompany(edx);
-        // Job posters
-        ArrayList<JobPoster> allJobPosters = new ArrayList<>();
-        JobPoster amr = new JobPoster("Amr", "amr@gmail.com", "male", "amr123", 1);
-        edx.addJobPoster(amr);
-        JobPoster mai = new JobPoster("Mai", "mai@gmail.com", "female", "mai123", 0);
-        dell.addJobPoster(mai);
-        allJobPosters.add(amr);
-        allJobPosters.add(mai);
-        //job vacancies
-        mai.addJobVacancy("Slave", "to work as student in AinShams");
-        amr.addJobVacancy("Doctor", "mange TAs in AinShams");
-        amr.addJobVacancy("TA", "Mange slaves in AinShams");
-
-        ahmed.addApplication(1, "TA");
-        yara.addApplication(1, "Doctor");
+        finderSystem.addJobPoster(finderSystem.getAllJobPosters().get(0)); // mai
+        finderSystem.addJobPoster(finderSystem.getAllJobPosters().get(1)); // amr
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -49,7 +22,7 @@ public class JobFinder {
             String chose = input.nextLine();
             if (chose.equals("i")) {
 
-                //*****************************************************//
+                //*****************************************************
                 lab:
                 while (true) {
                     System.out.println("""
@@ -68,7 +41,7 @@ public class JobFinder {
                                 System.out.print("enter your password: ");
                                 String pass = input.nextLine();
                                 boolean logged = false;
-                                for (JobSeeker i : jobSeekers) {
+                                for (JobSeeker i : finderSystem.getJobSeekers()) {
                                     if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
                                         System.out.println("\nlogged in !\n");
                                         logged = true;
@@ -216,14 +189,6 @@ public class JobFinder {
                                 String choice = input.nextLine();
 
                                 switch (choice) {
-                                    case "c":
-                                        System.out.print("Enter the new company name: ");
-                                        String companyName = input.nextLine();
-                                        System.out.print("Enter the new company description: ");
-                                        String companyDescription = input.nextLine();
-                                        Company company = new Company(companyName, companyDescription);
-                                        admin.addCompany(company);
-                                        break;
                                     case "p":
                                         System.out.print("Enter the new job poster name: ");
                                         String jobPosterName = input.nextLine();
@@ -237,7 +202,15 @@ public class JobFinder {
                                         int jobPosterID = input.nextInt();
                                         input.nextLine();
                                         JobPoster jobPoster = new JobPoster(jobPosterName, jobPosterEmail, jobPosterGender, jobPosterPassword, jobPosterID);
-                                        admin.addJobPoster(jobPoster);
+                                        finderSystem.addJobPoster(jobPoster); //boom
+                                        break;
+                                    case "c":
+                                        System.out.print("Enter the new company name: ");
+                                        String companyName = input.nextLine();
+                                        System.out.print("Enter the new company description: ");
+                                        String companyDescription = input.nextLine();
+                                        Company company = new Company(companyName, companyDescription);
+                                        admin.addCompany(company);
                                         break;
                                     case "u":
                                         System.out.print("Enter the chosen company name: ");
@@ -271,7 +244,7 @@ public class JobFinder {
                                 System.out.print("enter your password: ");
                                 String pass = input.nextLine();
                                 boolean logged = false;
-                                for (JobPoster i : allJobPosters) {
+                                for (JobPoster i : finderSystem.getAllJobPosters()) {
                                     if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
                                         System.out.println("logged in !");
                                         logged = true;
@@ -345,10 +318,28 @@ public class JobFinder {
             } else if (chose.equals("u")) {
                 System.out.println("enter your name: ");
                 String name = input.nextLine();
-                System.out.println("enter your");
+                System.out.println("enter your email: ");
+                String email = input.nextLine();
+                System.out.println("enter your gender: ");
+                String gender = input.nextLine();
+                System.out.println("enter your age: ");
+                int age = input.nextInt();
+                input.nextLine();
+                System.out.println("enter your password: ");
+                String pass = input.nextLine();
+                System.out.println("enter your degree: ");
+                String degeree = input.nextLine();
+                System.out.println("enter your university: ");
+                String uni = input.nextLine();
+                System.out.println("enter your years of experince:");
+                int expyears = input.nextInt();
+                input.nextLine();
+                finderSystem.addJobSeeker(name,email,gender,pass,age,degeree,uni,expyears);
             }else{
                 break;
             }
         }
     }
+
 }
+

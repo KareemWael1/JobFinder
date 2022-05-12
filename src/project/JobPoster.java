@@ -15,12 +15,23 @@ public class JobPoster extends Person{
     }
 
     public void addJobVacancy(String title, String info){
+        JobVacancy vacancy = new JobVacancy(COMPANY_ID,title,info);
         ArrayList<Company> companies = CompanyAdmin.getCompanies();
-        jobVacancies.add(new JobVacancy(COMPANY_ID, title, info));
+        for(Company i : companies){
+            if (i.getID()==COMPANY_ID){
+                i.addVacancy(vacancy);
+                break;
+            }
+        }
+        jobVacancies.add(vacancy);
     }
 
     public void deleteJob(int jobVacancyIdx){
         jobVacancies.remove(jobVacancyIdx);
+    }
+
+    public int getCOMPANY_ID() {
+        return COMPANY_ID;
     }
 
     public void setApplicationStatus(String status, int jobVacancyIdx, int jobApplicationIdx){

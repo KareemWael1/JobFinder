@@ -73,8 +73,8 @@ public class Company implements Comparable<Company> {
         numberOfEmployees++;
     }
 
-    public void addVacancy(JobVacancy name) {
-        jobVacancies.add(name);
+    public void addVacancy(JobVacancy jobVacancy) {
+        jobVacancies.add(jobVacancy);
     }
 
     public ArrayList<JobPoster> getJobPoster() {
