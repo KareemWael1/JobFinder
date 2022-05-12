@@ -51,8 +51,8 @@ public class JobVacancy implements Comparable<JobVacancy>{
         this.jobTitle = title;
     }
 
-    public void removeApplication(int jobApplicationIdx){
-        applications.remove(jobApplicationIdx);
+    public void removeApplication(JobApplication jobApplication){
+        applications.remove(jobApplication);
     }
 
     public ArrayList<JobApplication> getJobApplications()
@@ -75,6 +75,6 @@ public class JobVacancy implements Comparable<JobVacancy>{
     @Override
     public String toString(){
         return "Title: " + jobTitle + "\nDescription: " + jobDescription +
-                "\n"+ CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
+                "\n"+ FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
     }
 }

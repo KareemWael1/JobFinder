@@ -5,285 +5,216 @@ import java.util.Scanner;
 public class JobFinder {
 
     public static void main(String[] args) {
-        System.out.println(" ******** Welcome to Job Finder! *************");
+        System.out.println("*********** Welcome to Job Finder! *************");
         FinderSystem finderSystem = new FinderSystem();
 
-        finderSystem.addJobPoster(finderSystem.getAllJobPosters().get(0)); // mai
-        finderSystem.addJobPoster(finderSystem.getAllJobPosters().get(1)); // amr
         Scanner input = new Scanner(System.in);
 
         while (true) {
             System.out.println("""
                 to sign in press 'i'
-                to sign up press 'u' (only Job Seeker)
+                to sign up as a job seeker press 'u'
                 press any button to end
                 """);
-            String chose = input.nextLine();
-            if (chose.equals("i")) {
+            String choice = input.nextLine();
+            if (choice.equals("i")) {
                 String user = finderSystem.login();
-                lab:
+                seeker:
                 while (user.equals("Seeker")) {
+                    while (true) {
+                        System.out.println("""
+                                Press 'bj' to browse jobs
+                                Press 'sj' to search jobs
+                                press 'v' to view your applications
+                                press 'a' to add application
+                                press 'd' to delete application
+                                press 'ua' to update application
+                                press 'ui' to update info
+                                press 'bc' to browse companies
+                                press 'sc' to search for company
+                                press 'ar' to add review
+                                press 'q' to end
+                                """);
+                        String function = input.nextLine();
+                        switch (function) {
+                            case "sj":
+                                System.out.println("enter the name of vacancy you want to search for");
+                                String toSearch = input.nextLine();
+                                finderSystem.browseJobs(toSearch);
+                                break;
+                            case "q":
+                                break seeker;
+                            case "bj":
+                                System.out.println(finderSystem.browseJobs());
+                                break;
+                            case "v":
+                                System.out.println(finderSystem.viewMyApplications());
+                                break;
+                            case "a": {
+                                System.out.println("enter the company id: ");
+                                int id = input.nextInt();
+                                input.nextLine(); //must be called to avoid errors
 
-                            // JobSeeker actions go here
-                            //noinspection TextLabelInSwitchStatement
-                            label1:
-                            while (true) {
-                                System.out.println("""
-                                        Press 'bj' to browse jobs
-                                        Press 'sj' to search jobs
-                                        press 'v' to view your applications
-                                        press 'a' to add application
-                                        press 'd' to delete application
-                                        press 'ua' to update application
-                                        press 'ui' to update info
-                                        press 'bc' to browse companies
-                                        press 'sc' to search for company
-                                        press 'ar' to add review
-                                        press 'q' to end
-                                        """);
-                                String choice = input.nextLine();
-                                switch (choice) {
-                                    case "sj":
-                                        System.out.println("enter the name of vacancy you want to search for");
-                                        String toSearch = input.nextLine();
-                                        finderSystem.searchJobs(toSearch);
-                                        break;
-                                    case "q":
-                                        break label1;
-                                    case "bj":
-                                        finderSystem.browseJobs();
-                                        break;
-                                    case "v":
-                                        System.out.println(seeker.viewMyApplications());
-                                        break;
-                                    case "a": {
-                                        System.out.println("enter the company id: ");
-                                        int id = input.nextInt();
-                                        input.nextLine(); //must be called to avoid errors
-
-                                        System.out.println("enter the job title: ");
-                                        String title = input.nextLine();
-                                        finderSystem.addApplication(id, title);
-                                        break;
-                                    }
-                                    case "d": {
-                                        System.out.println("enter the index you want to remove: ");
-                                        int idx = input.nextInt();
-                                        input.nextLine(); // must be called to avoid errors
-                                        finderSystem.deleteApplication(idx);
-                                        break;
-                                    }
-                                    case "ua": {
-                                        System.out.println("enter the idx of application to be updated");
-                                        int idx = input.nextInt();
-                                        input.nextLine(); // must be called to avoid errors
-
-                                        System.out.println("enter the updated info");
-                                        String info = input.nextLine();
-                                        finderSystem.updateApplication(idx, info);
-                                        break;
-                                    }
-                                    case "ui":
-                                        while (true) {
-                                            System.out.println("""
-                                                      enter what to update: age, degree or years of experience
-                                                      when you finish press 'f'
-                                                    """);
-                                            String what = input.nextLine();
-                                            if (what.equals("f")) break;
-                                            System.out.println("enter the new value");
-                                            seeker.updateInfo(what);
-                                        }
-                                        break;
-                                    case "bc":
-                                        seeker.browseCompanies();
-                                        break;
-                                    case "sc":
-                                        System.out.println("enter the company name to search for it");
-                                        String name = input.nextLine();
-                                        seeker.browseCompanies(name);
-                                        break;
-                                    case "ar": {
-                                        System.out.println("enter the company id you want to rate out of ");
-                                        int id = input.nextInt();
-                                        input.nextLine(); // must be called to avoid errors
-
-                                        System.out.println("enter the rate you want to give");
-                                        float review = input.nextFloat();
-                                        input.nextLine();
-                                        seeker.addReview(review, id);
-                                        break;
-                                    }
-                                    default:
-                                        System.out.println("error try again");
-                                        break;
-                                }
-
+                                System.out.println("enter the job title: ");
+                                String title = input.nextLine();
+                                finderSystem.addApplication(id, title);
+                                break;
                             }
-
-
-                            break;
-                        case "a":
-                            while (true) {
-                                System.out.println("you are logging in as Admin");
-                                System.out.print("enter your email: ");
-                                String email = input.nextLine();
-                                System.out.print("enter your password: ");
-                                String pass = input.nextLine();
-                                boolean logged = false;
-                                if (finderSystem.admin.getEMAIL().equals(email) && finderSystem.admin.getPassword().equals(pass)) {
-                                    System.out.println("logged in !");
-                                    logged = true;
-                                    break;
-                                }
-
-                                if (logged) {
-                                    break;
-                                } else {
-                                    System.out.println("try again");
-                                }
+                            case "d": {
+                                System.out.println("enter the index you want to remove: ");
+                                int idx = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
+                                finderSystem.deleteApplication(idx);
+                                break;
                             }
+                            case "ua": {
+                                System.out.println("enter the idx of application to be updated");
+                                int idx = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
 
-                            //noinspection TextLabelInSwitchStatement
-                            label2:
-                            while (true) {
-                                System.out.println("""
-                                        press 'c' to add company
-                                        press 'p' to add poster
-                                        press 'u' to update company
-                                        press 'q' to end
-                                        """);
-
-                                String choice = input.nextLine();
-
-                                switch (choice) {
-                                    case "p":
-                                        System.out.print("Enter the new job poster name: ");
-                                        String jobPosterName = input.nextLine();
-                                        System.out.print("Enter the job poster email: ");
-                                        String jobPosterEmail = input.nextLine();
-                                        System.out.print("Enter the job poster password: ");
-                                        String jobPosterPassword = input.nextLine();
-                                        System.out.print("Enter the job poster gender: ");
-                                        String jobPosterGender = input.nextLine();
-                                        System.out.print("Enter the job poster ID: ");
-                                        int jobPosterID = input.nextInt();
-                                        input.nextLine();
-                                        JobPoster jobPoster = new JobPoster(jobPosterName, jobPosterEmail, jobPosterGender, jobPosterPassword, jobPosterID);
-                                        finderSystem.addJobPoster(jobPoster); //boom
-                                        break;
-                                    case "c":
-                                        System.out.print("Enter the new company name: ");
-                                        String companyName = input.nextLine();
-                                        System.out.print("Enter the new company description: ");
-                                        String companyDescription = input.nextLine();
-                                        Company company = new Company(companyName, companyDescription);
-                                        finderSystem.admin.addCompany(company);
-                                        break;
-                                    case "u":
-                                        System.out.print("Enter the chosen company name: ");
-                                        String chosenCompanyName = input.nextLine();
-                                        System.out.print("Enter the chosen company updated description: ");
-                                        String updatedDescription = input.nextLine();
-
-                                        for (int i = 0; i < CompanyAdmin.getCompanies().size(); i++) {
-                                            if (CompanyAdmin.getCompanies().get(i).getName().equals(chosenCompanyName)) {
-                                                CompanyAdmin.updateCompanyDescription(CompanyAdmin.getCompanies().get(i), updatedDescription);
-                                                break;
-                                            }
-                                        }
-                                        break;
-                                    case "q":
-                                        break label2;
-                                    default:
-                                        System.out.println("error try again");
-                                        break;
-                                }
+                                System.out.println("enter the updated info");
+                                String info = input.nextLine();
+                                finderSystem.updateApplication(idx, info);
+                                break;
                             }
-
-                            break;
-
-                        case "p":
-                            JobPoster poster = null;
-                            while (true) {
-                                System.out.println("you are logging in as job Poster");
-                                System.out.print("enter your email: ");
-                                String email = input.nextLine();
-                                System.out.print("enter your password: ");
-                                String pass = input.nextLine();
-                                boolean logged = false;
-                                for (JobPoster i : finderSystem.getAllJobPosters()) {
-                                    if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                                        System.out.println("logged in !");
-                                        logged = true;
-                                        poster = i;
-                                        break;
-                                    }
+                            case "ui":
+                                while (true) {
+                                    System.out.println("""
+                                              enter what to update: age, degree or years of experience
+                                              when you finish press 'f'
+                                            """);
+                                    String what = input.nextLine();
+                                    if (what.equals("f")) break;
+                                    System.out.println("enter the new value");
+                                    finderSystem.updateInfo(what);
                                 }
-                                if (!logged) {
-                                    System.out.println("wrong mail or pass try again");
-                                } else {
-                                    break;
-                                }
+                                break;
+                            case "bc":
+                                finderSystem.browseCompanies();
+                                break;
+                            case "sc":
+                                System.out.println("enter the company name to search for it");
+                                String name = input.nextLine();
+                                finderSystem.browseCompanies(name);
+                                break;
+                            case "ar": {
+                                System.out.println("enter the company id you want to rate out of ");
+                                int id = input.nextInt();
+                                input.nextLine(); // must be called to avoid errors
+
+                                System.out.println("enter the rate you want to give");
+                                float review = input.nextFloat();
+                                input.nextLine();
+                                finderSystem.addReview(review, id);
+                                break;
                             }
+                            default:
+                                System.out.println("error try again");
+                                break;
+                        }
 
-                            //noinspection TextLabelInSwitchStatement
-                            label3:
-                            while (true) {
-                                poster.viewJobVacancies();
-                                System.out.println("""
-                                        press 'a' to add job vacancy
-                                        press 'd' to delete job vacancy
-                                        press 'v' to view job vacancy's applications and update their status
-                                        press 'q' to end
-                                        """);
-
-                                String choice = input.nextLine();
-
-                                switch (choice) {
-                                    case "a":
-                                        System.out.print("Enter job title: ");
-                                        String jobTitle = input.nextLine();
-                                        System.out.print("Enter job description: ");
-                                        String jobDescription = input.nextLine();
-                                        poster.addJobVacancy(jobTitle, jobDescription);
-                                        break;
-                                    case "d":
-                                        System.out.print("Enter job vacancy index: ");
-                                        int idx = input.nextInt();
-                                        input.nextLine();
-                                        poster.deleteJob(idx);
-                                        System.out.println("Deleted! \n");
-                                        break;
-                                    case "v":
-                                        System.out.print("Enter job vacancy index: ");
-                                        int vacancyIdx = input.nextInt();
-                                        input.nextLine();
-                                        poster.getJobVacancies().get(vacancyIdx).viewApplications();
-                                        System.out.print("\nEnter application's index to update its status: ");
-                                        int applicationIdx = input.nextInt();
-                                        input.nextLine();
-                                        System.out.print("\nEnter new status: ");
-                                        String status = input.nextLine();
-                                        poster.setApplicationStatus(status, vacancyIdx, applicationIdx);
-                                        break;
-                                    case "q":
-                                        break label3;
-                                    default:
-                                        System.out.println("error try again");
-                                        break;
-                                }
-                            }
-
-                            break;
-                        case "q":
-                            break lab;
-                        default:
-                            System.out.println("wrong input try again");
-                            break;
                     }
                 }
-            } else if (chose.equals("u")) {
+
+                admin:
+                while (user.equals("Admin")) {
+                    while (true) {
+                        System.out.println("""
+                                press 'c' to add company
+                                press 'p' to add poster
+                                press 'u' to update company
+                                press 'q' to end
+                                """);
+
+                        String function = input.nextLine();
+
+                        switch (function) {
+                            case "p":
+                                System.out.print("Enter the new job poster name: ");
+                                String jobPosterName = input.nextLine();
+                                System.out.print("Enter the job poster email: ");
+                                String jobPosterEmail = input.nextLine();
+                                System.out.print("Enter the job poster password: ");
+                                String jobPosterPassword = input.nextLine();
+                                System.out.print("Enter the job poster gender: ");
+                                String jobPosterGender = input.nextLine();
+                                System.out.print("Enter the company Id: ");
+                                int companyId = input.nextInt();
+                                input.nextLine();
+                                finderSystem.addJobPoster(new JobPoster(jobPosterName, jobPosterEmail, jobPosterGender, jobPosterPassword, companyId));
+                                break;
+                            case "c":
+                                System.out.print("Enter the new company name: ");
+                                String companyName = input.nextLine();
+                                System.out.print("Enter the new company description: ");
+                                String companyDescription = input.nextLine();
+                                finderSystem.addCompany(new Company(companyName, companyDescription));
+                                break;
+                            case "u":
+                                System.out.print("Enter the chosen company name: ");
+                                String chosenCompanyName = input.nextLine();
+                                System.out.print("Enter the chosen company updated description: ");
+                                String updatedDescription = input.nextLine();
+                                finderSystem.updateCompanyDescription(chosenCompanyName, updatedDescription);
+
+                                break;
+                            case "q":
+                                break admin;
+                            default:
+                                System.out.println("error try again");
+                                break;
+                        }
+                    }
+                }
+
+                poster:
+                while (user.equals("Poster")) {
+                    finderSystem.viewJobVacancies();
+                    System.out.println("""
+                            press 'a' to add job vacancy
+                            press 'd' to delete job vacancy
+                            press 'v' to view job vacancy's applications and update their status
+                            press 'q' to end
+                            """);
+
+                    String function = input.nextLine();
+
+                    switch (function) {
+                        case "a":
+                            System.out.print("Enter job title: ");
+                            String jobTitle = input.nextLine();
+                            System.out.print("Enter job description: ");
+                            String jobDescription = input.nextLine();
+                            finderSystem.addJobVacancy(jobTitle, jobDescription);
+                            break;
+                        case "d":
+                            System.out.print("Enter job vacancy index: ");
+                            int idx = input.nextInt();
+                            input.nextLine();
+                            finderSystem.deleteJob(idx);
+                            System.out.println("Deleted! \n");
+                            break;
+                        case "v":
+                            System.out.print("Enter job vacancy index: ");
+                            int vacancyIdx = input.nextInt();
+                            input.nextLine();
+                            finderSystem.getJobVacancies().get(vacancyIdx).viewApplications();
+                            System.out.print("\nEnter application's index to update its status: ");
+                            int applicationIdx = input.nextInt();
+                            input.nextLine();
+                            System.out.print("\nEnter new status: ");
+                            String status = input.nextLine();
+                            finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                            break;
+                        case "q":
+                            break poster;
+                        default:
+                            System.out.println("error try again");
+                            break;
+                        }
+                    }
+            }
+            else if (choice.equals("u")) {
                 System.out.println("enter your name: ");
                 String name = input.nextLine();
                 System.out.println("enter your email: ");
@@ -303,9 +234,8 @@ public class JobFinder {
                 int expYears = input.nextInt();
                 input.nextLine();
                 finderSystem.addJobSeeker(name,email,gender,pass,age,degree,uni,expYears);
-            }else{
-                break;
             }
+            else break;
         }
     }
 

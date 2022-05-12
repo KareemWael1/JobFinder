@@ -5,12 +5,17 @@ public class JobApplication implements Comparable<JobApplication>{
     private String applicationState = "Pending";
     private String applicantInfo;
     private String jobTitle;
-    public JobApplication(String applicantInfo,int COMPANY_ID,String jobTitle){
+    private String applicantMail;
+    public JobApplication(String applicantInfo,int COMPANY_ID,String jobTitle,String mail){
         this.applicantInfo = applicantInfo;
         this.COMPANY_ID = COMPANY_ID;
         this.jobTitle = jobTitle;
+        this.applicantMail = mail;
     }
 
+    public String getApplicantMail() {
+        return applicantMail;
+    }
 
     public void setCOMPANY_ID(int COMPANY_ID) {
         this.COMPANY_ID = COMPANY_ID;
@@ -36,6 +41,10 @@ public class JobApplication implements Comparable<JobApplication>{
         return applicantInfo;
     }
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
     @Override
     public int compareTo(JobApplication a){
         return this.applicantInfo.compareTo(a.applicantInfo);
@@ -51,6 +60,6 @@ public class JobApplication implements Comparable<JobApplication>{
     @Override
     public String toString(){
         return "Job Title "+ jobTitle+ "\nApplicant info: " + applicantInfo + "\nApplication State: " + applicationState +
-                "\n" + CompanyAdmin.getCompanies().get(COMPANY_ID) + "\n";
+                "\n" + FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
     }
 }
