@@ -1,6 +1,6 @@
 package project;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class FinderSystem {
     JobSeeker ahmed = new JobSeeker("Ahmed", "ahmed@gmail.com", "male", "8520", 20
@@ -11,6 +11,7 @@ public class FinderSystem {
     JobPoster amr = new JobPoster("Amr", "amr@gmail.com", "male", "amr123", 1);
     CompanyAdmin admin = new CompanyAdmin("admin", "admin@gmail.com", "male", "admin123");
 
+    private Person user;
 
     private final ArrayList<JobPoster> allJobPosters = new ArrayList<>(){
         {
@@ -34,6 +35,42 @@ public class FinderSystem {
         return allJobPosters;
     }
 
+    public String login() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("""
+                Press 's' to login as job seeker
+                press 'a' to login as admin
+                press 'p' to login as job poster
+                press 'q' to end""");
+        String s = input.nextLine();
+        switch (s) {
+            case "s":
+                while (true) {
+                    System.out.println("you are logging in as job seeker");
+                    System.out.print("enter your email: ");
+                    String email = input.nextLine();
+                    System.out.print("enter your password: ");
+                    String pass = input.nextLine();
+                    boolean logged = false;
+                    for (JobSeeker i : jobSeekers) {
+                        if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
+                            System.out.println("\nlogged in !\n");
+                            logged = true;
+                            user = i;
+                            break;
+                        }
+                    }
+                    if (!logged) {
+                        System.out.println("\nwrong mail or pass try again\n");
+                    } else {
+                        break;
+                    }
+                }
+                return "Seeker";
+
+        }
+    }
+
     public void addJobSeeker(String name,String email,String gender,String password,int age,String degree,String uni,int exp){
         JobSeeker seeker = new JobSeeker(name,email,gender,password,age,degree,uni,exp);
         jobSeekers.add(seeker);
@@ -47,24 +84,24 @@ public class FinderSystem {
         allJobPosters.add(jobPoster);
     }
 
-    public void searchJobs(JobSeeker seeker, String toSearch){
-        System.out.println(seeker.browseJobs(toSearch));
+    public void searchJobs(String toSearch){
+        System.out.println(((JobSeeker)user).browseJobs(toSearch));
     }
 
-    public void browseJobs(JobSeeker seeker){
-        System.out.println(seeker.browseJobs());
+    public void browseJobs(){
+        System.out.println(((JobSeeker)user).browseJobs());
     }
 
-    public void addApplication(JobSeeker seeker, int id, String title){
-        seeker.addApplication(id, title);
+    public void addApplication(int id, String title){
+        ((JobSeeker)user).addApplication(id, title);
     }
 
-    public void deleteApplication(JobSeeker seeker, int idx)
+    public void deleteApplication(int idx)
     {
-        seeker.deleteApplication(idx);
+        ((JobSeeker)user).deleteApplication(idx);
     }
 
-    public void updateApplication(JobSeeker seeker, int idx, String info){
-        seeker.updateApplication(idx, info);
+    public void updateApplication(int idx, String info){
+        ((JobSeeker)user).updateApplication(idx, info);
     }
 }

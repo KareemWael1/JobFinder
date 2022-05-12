@@ -20,39 +20,10 @@ public class JobFinder {
                 """);
             String chose = input.nextLine();
             if (chose.equals("i")) {
-
+                String user = finderSystem.login();
                 lab:
-                while (true) {
-                    System.out.println("""
-                            Press 's' to login as job seeker
-                            press 'a' to login as admin
-                            press 'p' to login as job poster
-                            press 'q' to end""");
-                    String s = input.nextLine();
-                    switch (s) {
-                        case "s":
-                            JobSeeker seeker = null;
-                            while (true) {
-                                System.out.println("you are logging in as job seeker");
-                                System.out.print("enter your email: ");
-                                String email = input.nextLine();
-                                System.out.print("enter your password: ");
-                                String pass = input.nextLine();
-                                boolean logged = false;
-                                for (JobSeeker i : finderSystem.getJobSeekers()) {
-                                    if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                                        System.out.println("\nlogged in !\n");
-                                        logged = true;
-                                        seeker = i;
-                                        break;
-                                    }
-                                }
-                                if (!logged) {
-                                    System.out.println("\nwrong mail or pass try again\n");
-                                } else {
-                                    break;
-                                }
-                            }
+                while (user.equals("Seeker")) {
+
                             // JobSeeker actions go here
                             //noinspection TextLabelInSwitchStatement
                             label1:
@@ -75,12 +46,12 @@ public class JobFinder {
                                     case "sj":
                                         System.out.println("enter the name of vacancy you want to search for");
                                         String toSearch = input.nextLine();
-                                        finderSystem.searchJobs(seeker, toSearch);
+                                        finderSystem.searchJobs(toSearch);
                                         break;
                                     case "q":
                                         break label1;
                                     case "bj":
-                                        finderSystem.browseJobs(seeker);
+                                        finderSystem.browseJobs();
                                         break;
                                     case "v":
                                         System.out.println(seeker.viewMyApplications());
@@ -92,14 +63,14 @@ public class JobFinder {
 
                                         System.out.println("enter the job title: ");
                                         String title = input.nextLine();
-                                        finderSystem.addApplication(seeker, id, title);
+                                        finderSystem.addApplication(id, title);
                                         break;
                                     }
                                     case "d": {
                                         System.out.println("enter the index you want to remove: ");
                                         int idx = input.nextInt();
                                         input.nextLine(); // must be called to avoid errors
-                                        finderSystem.deleteApplication(seeker, idx);
+                                        finderSystem.deleteApplication(idx);
                                         break;
                                     }
                                     case "ua": {
@@ -109,7 +80,7 @@ public class JobFinder {
 
                                         System.out.println("enter the updated info");
                                         String info = input.nextLine();
-                                        finderSystem.updateApplication(seeker, idx, info);
+                                        finderSystem.updateApplication(idx, info);
                                         break;
                                     }
                                     case "ui":
