@@ -44,8 +44,8 @@ public class JobVacancy{
         return JOB_TITLE;
     }
 
-    public void removeApplication(JobApplication jobApplication){
-        applications.remove(jobApplication);
+    public void removeApplication(int idx){
+        applications.remove(idx);
     }
 
     public ArrayList<JobApplication> getJobApplications()

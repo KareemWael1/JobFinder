@@ -160,17 +160,17 @@ public class FinderSystem {
         int companyID = ((JobSeeker) user).getJobApplications().get(idx).getCOMPANY_ID();
         String mail = user.getEMAIL();
         for (JobVacancy i : companies.get(companyID).getJobVacancy()) {
+            int index=0;
             for (JobApplication j : i.getApplications()) {
                 if (j.getJobTitle().equalsIgnoreCase(jobTitle) && j.getApplicantMail().equals(mail)) {
-                    i.removeApplication(j);
+                    i.removeApplication(index);
                     ((JobSeeker) user).deleteApplication(idx);
                     return;
 
                 }
+                index++;
             }
         }
-
-
     }
 
     public void browseCompanies(String name) {

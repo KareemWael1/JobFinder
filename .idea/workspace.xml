@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added search jobs method for JobSeeker &#10;Added sign up part">
-      <change afterPath="$PROJECT_DIR$/ClassDiagram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobPoster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobPoster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobSeeker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobSeeker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobVacancy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobVacancy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/FinderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobPoster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobPoster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobSeeker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobVacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobVacancy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
