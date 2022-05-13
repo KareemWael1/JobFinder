@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="Added search jobs method for JobSeeker &#10;Added sign up part">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/CompanyAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/CompanyAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobSeeker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobSeeker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobVacancy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobFinder/project/JobVacancy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/FinderSystem.java" afterDir="false" />
+    <list default="true" id="d005a5e9-0512-45bc-a17f-fd962a383013" name="Changes" comment="final one 2 ان شاء الله">
+      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/JobFinder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652163528652</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="final one 2 ان شاء الله">
+      <created>1652408323644</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652408323644</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +222,8 @@
     <MESSAGE value="added some actions in job seeker section" />
     <MESSAGE value="finished login section and JobSeeker" />
     <MESSAGE value="Added search jobs method for JobSeeker &#10;Added sign up part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added search jobs method for JobSeeker &#10;Added sign up part" />
+    <MESSAGE value="final one 2 ان شاء الله" />
+    <option name="LAST_COMMIT_MESSAGE" value="final one 2 ان شاء الله" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

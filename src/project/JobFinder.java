@@ -62,6 +62,7 @@ public class JobFinder {
                             case "d": {
                                 System.out.println("enter the index you want to remove: ");
                                 int idx = input.nextInt();
+                                input.nextLine();
                                 finderSystem.deleteApplication(idx);
                                 break;
                             }
