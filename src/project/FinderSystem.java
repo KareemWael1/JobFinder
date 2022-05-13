@@ -157,9 +157,13 @@ public class FinderSystem {
 
     public void deleteApplication(int idx) {
         String jobTitle = ((JobSeeker) user).getJobApplications().get(idx).getJobTitle();
+
         int companyID = ((JobSeeker) user).getJobApplications().get(idx).getCOMPANY_ID();
+
         String mail = user.getEMAIL();
+
         for (JobVacancy i : companies.get(companyID).getJobVacancy()) {
+
             int index=0;
             for (JobApplication j : i.getApplications()) {
                 if (j.getJobTitle().equalsIgnoreCase(jobTitle) && j.getApplicantMail().equals(mail)) {
