@@ -12,7 +12,7 @@ public class JobSeeker extends Person
 
     private ArrayList<JobApplication>  jobApplications = new ArrayList<>();
 
-    JobSeeker(String name, String email, String gender, String password,int age,String degree,
+    public JobSeeker(String name, String email, String gender, String password,int age,String degree,
               String university,int yearsOfExperience) {
         super(name, email, gender, password);
         this.age = age;

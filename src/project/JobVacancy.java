@@ -8,7 +8,7 @@ public class JobVacancy{
     private final String JOB_DESCRIPTION;
     private final ArrayList<JobApplication> applications = new ArrayList<>();
 
-    JobVacancy(int companyID, String title, String description){
+    public JobVacancy(int companyID, String title, String description){
         this.COMPANY_ID = companyID;
         this.JOB_TITLE = title;
         this.JOB_DESCRIPTION = description;
