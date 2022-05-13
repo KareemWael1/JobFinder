@@ -7,7 +7,6 @@ public class JobFinder {
     public static void main(String[] args) {
         System.out.println("*********** Welcome to Job Finder! *************");
         FinderSystem finderSystem = new FinderSystem();
-
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -63,7 +62,6 @@ public class JobFinder {
                             case "d": {
                                 System.out.println("enter the index you want to remove: ");
                                 int idx = input.nextInt();
-                                input.nextLine(); // must be called to avoid errors
                                 finderSystem.deleteApplication(idx);
                                 break;
                             }
@@ -102,14 +100,13 @@ public class JobFinder {
                                 int id = input.nextInt();
                                 input.nextLine(); // must be called to avoid errors
 
-                                System.out.println("enter the rate you want to give");
-                                float review = input.nextFloat();
-                                input.nextLine();
+                                System.out.println("enter the review you want to give");
+                                String review = input.nextLine();
                                 finderSystem.addReview(review, id);
                                 break;
                             }
                             default:
-                                System.out.println("error try again");
+                                System.out.println("\nerror try again\n");
                                 break;
                         }
 
@@ -161,7 +158,7 @@ public class JobFinder {
                             case "q":
                                 break admin;
                             default:
-                                System.out.println("error try again");
+                                System.out.println("\nerror try again\n");
                                 break;
                         }
                     }
@@ -215,18 +212,18 @@ public class JobFinder {
                                     System.out.print("\nEnter new status: ");
                                     String status = input.nextLine();
                                     finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
-                                    System.out.println("added :)");
+                                    System.out.println("\nadded!\n");
                                 } else {
-                                    System.out.println("there is no applications on this job");
+                                    System.out.println("\nthere is no applications on this job\n");
                                 }
                             }else{
-                                System.out.println("can not be performed");
+                                System.out.println("\ncan not be performed\n");
                             }
                             break;
                         case "q":
                             break poster;
                         default:
-                            System.out.println("error try again");
+                            System.out.println("\nerror try again\n");
                             break;
                         }
                     }
@@ -255,6 +252,4 @@ public class JobFinder {
             else break;
         }
     }
-
 }
-

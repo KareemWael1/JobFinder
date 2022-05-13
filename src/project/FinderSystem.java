@@ -15,8 +15,6 @@ public class FinderSystem {
     static Company dell = new Company("Dell", "Tech company");
     static Company edx = new Company("edx", "Educational company");
     {
-        //addJobPoster(mai);
-       // addJobPoster(amr);
         dell.addVacancy(it);
         edx.addVacancy(instructor);
         dell.addJobPoster(mai);
@@ -53,12 +51,6 @@ public class FinderSystem {
         }
     };
 
-
-
-    public ArrayList<JobSeeker> getJobSeekers() {
-        return jobSeekers;
-    }
-
     public ArrayList<JobPoster> getAllJobPosters() {
         return allJobPosters;
     }
@@ -76,9 +68,9 @@ public class FinderSystem {
                 press 'q' to end""");
         String s = input.nextLine();
         switch (s) {
-            case "s":
+            case "s" -> {
                 while (true) {
-                    System.out.println("you are logging in as job seeker");
+                    System.out.println("\nyou are logging in as job seeker");
                     System.out.print("enter your email: ");
                     String email = input.nextLine();
                     System.out.print("enter your password: ");
@@ -99,32 +91,27 @@ public class FinderSystem {
                     }
                 }
                 return "Seeker";
-
-            case "a":
+            }
+            case "a" -> {
                 while (true) {
-                    System.out.println("you are logging in as Admin");
+                    System.out.println("\nyou are logging in as Admin");
                     System.out.print("enter your email: ");
                     String email = input.nextLine();
                     System.out.print("enter your password: ");
                     String pass = input.nextLine();
-                    boolean logged = false;
                     if (admin.getEMAIL().equals(email) && admin.getPassword().equals(pass)) {
-                        System.out.println("logged in !");
-                        logged = true;
+                        System.out.println("\nlogged in !\n");
                         break;
                     }
-
-                    if (logged) {
-                        break;
-                    } else {
-                        System.out.println("try again");
+                    else {
+                        System.out.println("\ntry again\n");
                     }
                 }
                 return "Admin";
-
-            case "p":
+            }
+            case "p" -> {
                 while (true) {
-                    System.out.println("you are logging in as job Poster");
+                    System.out.println("\nyou are logging in as job Poster");
                     System.out.print("enter your email: ");
                     String email = input.nextLine();
                     System.out.print("enter your password: ");
@@ -132,19 +119,20 @@ public class FinderSystem {
                     boolean logged = false;
                     for (JobPoster i : getAllJobPosters()) {
                         if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                            System.out.println("logged in !");
+                            System.out.println("\nlogged in !\n");
                             logged = true;
                             user = i;
                             break;
                         }
                     }
                     if (!logged) {
-                        System.out.println("wrong mail or pass try again");
+                        System.out.println("\nwrong mail or pass try again\n");
                     } else {
                         break;
                     }
                 }
                 return "Poster";
+            }
         }
         return "";
     }
@@ -187,18 +175,14 @@ public class FinderSystem {
 
     public void browseCompanies(String name) {
         boolean found = false;
-        for (Company i : companies) {
-            if (name.equalsIgnoreCase(i.getName())) {
+        for (Company company : companies) {
+            if (name.equalsIgnoreCase(company.getName())) {
                 found = true;
-                System.out.println("Company name: " + i.getName());
-                System.out.println("Company ID: " + i.getId());
-                System.out.println("Company Description: " + i.getCompanyDescription());
-                System.out.println("Company Rating: " + i.getReviewRate());
-                System.out.println("available vacancies: " + i.getJobVacancy());  //company job vacancies
+                System.out.println(company);
             }
         }
         if (!found) {
-            System.out.println("Not found");
+            System.out.println("\nNot found\n");
         }
     }
 
@@ -206,7 +190,7 @@ public class FinderSystem {
         for (Company company : companies) {
             System.out.println(company);
             System.out.println(company.getJobVacancy());
-            System.out.println("--------------------------");
+            System.out.println("\n--------------------------");
         }
     }
 
@@ -225,7 +209,7 @@ public class FinderSystem {
         }
     }
 
-    public void addReview(float rate, int COMPANY_ID) {
+    public void addReview(String review, int COMPANY_ID) {
         boolean canAddReview = false;
         for (JobApplication i : ((JobSeeker) user).getJobApplications()) {
             if (i.getCOMPANY_ID() == COMPANY_ID) {
@@ -236,12 +220,12 @@ public class FinderSystem {
         if (canAddReview) {
             for (Company j : companies) {
                 if (j.getId() == COMPANY_ID) {
-                    j.setSeekerReviews(rate);
+                    j.addReview(review);
                     break;
                 }
             }
         } else {
-            System.out.println("you can not add a review to this company as you did not submit an application to it");
+            System.out.println("\nyou can not add a review to this company as you did not submit an application to it\n");
         }
     }
 
@@ -255,7 +239,24 @@ public class FinderSystem {
     }
 
     public ArrayList<JobApplication> viewMyApplications() {
-        return ((JobSeeker) user).viewMyApplications();
+        ArrayList<JobApplication> applications = ((JobSeeker) user).viewMyApplications();
+        int idx = 0;
+        for(JobApplication application: applications){
+            boolean deleted = true;
+            for(JobVacancy vacancy: allJobVacancies){
+                if(application.getJobTitle().equals(vacancy.getJobTitle())
+                        && (application.getCOMPANY_ID() == vacancy.getCOMPANY_ID())){
+                    deleted = false;
+                    break;
+                }
+            }
+            if(deleted){
+                applications.remove(idx);
+            }
+            idx++;
+        }
+        ((JobSeeker)user).setJobApplications(applications);
+        return applications;
     }
 
     public void addApplication(int COMPANY_ID, String jobTitle) {
@@ -270,11 +271,11 @@ public class FinderSystem {
                 JobApplication application = new JobApplication(info, COMPANY_ID, jobTitle, email);
                 ((JobSeeker) user).getJobApplications().add(application);
                 J.addApplication(application);
-                System.out.println("Done :) hehehe !");
+                System.out.println("\nDone!\n");
                 return;
             }
         }
-        System.out.println("Oops!! Not found! :(");
+        System.out.println("\nOops!! Not found!\n");
     }
 
     public void viewJobVacancies() {
@@ -285,7 +286,7 @@ public class FinderSystem {
         for (JobVacancy j: allJobVacancies) {
             if(j.getJobTitle().equalsIgnoreCase(name)) {
                 System.out.println(j);
-                System.out.println("-------------------------");
+                System.out.println("\n-------------------------");
             }
         }
     }
@@ -308,7 +309,7 @@ public class FinderSystem {
     }
 
     public ArrayList<JobVacancy> getJobVacancies() {
-        return ((JobPoster) user).getJobVacancies();
+        return companies.get(((JobPoster) user).getCOMPANY_ID()).getJobVacancies();
     }
 
     public void setApplicationStatus(String status, int jobVacancyIdx, int jobApplicationIdx){

@@ -2,16 +2,16 @@ package project;
 
 import java.util.ArrayList;
 
-public class JobVacancy implements Comparable<JobVacancy>{
+public class JobVacancy{
     private final int COMPANY_ID;
-    private String jobTitle;
-    private String jobDescription;
+    private final String JOB_TITLE;
+    private final String JOB_DESCRIPTION;
     private final ArrayList<JobApplication> applications = new ArrayList<>();
 
     JobVacancy(int companyID, String title, String description){
         this.COMPANY_ID = companyID;
-        this.jobTitle = title;
-        this.jobDescription = description;
+        this.JOB_TITLE = title;
+        this.JOB_DESCRIPTION = description;
     }
 
     public void addApplication (JobApplication application){
@@ -37,19 +37,11 @@ public class JobVacancy implements Comparable<JobVacancy>{
     }
 
     public String getJobDescription(){
-        return jobDescription;
-    }
-
-    public void setJobDescription(String description){
-        this.jobDescription = description;
+        return JOB_DESCRIPTION;
     }
 
     public String getJobTitle(){
-        return jobTitle;
-    }
-
-    public void setJobTitle(String title){
-        this.jobTitle = title;
+        return JOB_TITLE;
     }
 
     public void removeApplication(JobApplication jobApplication){
@@ -62,21 +54,9 @@ public class JobVacancy implements Comparable<JobVacancy>{
     }
 
     @Override
-    public int compareTo(JobVacancy v){
-        return this.jobTitle.compareTo(v.jobTitle);
-    }
-
-    @Override
-    public boolean equals(Object v){
-        if (v instanceof JobVacancy){
-            return this.jobTitle.equals(((JobVacancy)v).jobTitle);
-        }
-        return false;
-    }
-    @Override
     public String toString(){
-        return "Title: " + jobTitle + "\nDescription: " + jobDescription +
-                "\n"+ "Comapany ID: " + FinderSystem.getCompanies().get(COMPANY_ID).getId() + "\n Company name: "+
+        return "Title: " + JOB_TITLE + "\nDescription: " + JOB_DESCRIPTION +
+                "\n"+ "Company ID: " + FinderSystem.getCompanies().get(COMPANY_ID).getId() + "\n Company name: "+
                 FinderSystem.getCompanies().get(COMPANY_ID).getName() + "\n***********************\n";
     }
 }

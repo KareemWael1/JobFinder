@@ -1,73 +1,35 @@
 package project;
 import java.util.ArrayList;
 
-public class Company implements Comparable<Company> {
-    private String name;
-    private int Id=0;
+public class Company{
+    private final String NAME;
+    private final int ID;
     static int companiesCount=0;
-    private float seekerReviews = 0;
-    private int numberOfReviews = 0;
-    private float reviewRate;
     private String companyDescription;
     private final ArrayList<JobPoster> jobPosters = new ArrayList<>();
     private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
+    private final ArrayList<String> reviews = new ArrayList<>();
     private int numberOfEmployees;
 
 
 
     public Company(String name, String description) {
-        this.name = name;
+        this.NAME = name;
         this.companyDescription = description;
-        this.Id = companiesCount;
+        this.ID = companiesCount;
         companiesCount++;
     }
 
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getName() {
-        return this.name;
+        return this.NAME;
     }
 
     public int getId() {
-        return this.Id;
-    }
-
-    public int getNumberOfEmployees() {
-        return this.numberOfEmployees;
-    }
-
-    public void setSeekerReviews(float seekerReviews) {
-        this.seekerReviews += seekerReviews;
-        this.numberOfReviews++;
-        calculateReviewRate();
-    }
-
-    public float getSeekerReviews() {
-        return seekerReviews;
-    }
-
-    public int getNumberOfReviews() {
-        return this.numberOfReviews;
-    }
-
-    public void calculateReviewRate() {
-        this.reviewRate = seekerReviews/numberOfReviews;
-    }
-
-    public float getReviewRate() {
-        return this.reviewRate;
+        return this.ID;
     }
 
     public void setCompanyDescription(String description) {
         this.companyDescription = description;
-    }
-
-    public String getCompanyDescription() {
-        return this.companyDescription;
     }
     
     public void addJobPoster(JobPoster poster) {
@@ -75,41 +37,28 @@ public class Company implements Comparable<Company> {
         numberOfEmployees = jobPosters.size();
     }
 
-    public void addVacancy(JobVacancy jobVacancy) {
-        jobVacancies.add(jobVacancy);
+    public void addReview(String review){
+        reviews.add(review);
     }
 
-    public ArrayList<JobPoster> getJobPoster() {
-        return this.jobPosters;
+    public void addVacancy(JobVacancy jobVacancy) {
+        jobVacancies.add(jobVacancy);
     }
 
     public ArrayList<JobVacancy> getJobVacancy() {
         return this.jobVacancies;
     }
 
-    public int getNumberOfVacancies() {
-        return this.jobVacancies.size();
-    }
-
-    @Override
-    public int compareTo(Company C) {
-        return this.name.compareTo(C.name);
-    }
-
-    @Override
-    public boolean equals(Object c) {
-        if (c instanceof Company) {
-            return this.name.equals(((Company)c).name);
-        }
-        else return  false;
+    public ArrayList<JobVacancy> getJobVacancies(){
+        return jobVacancies;
     }
 
     @Override
     public String toString() {
-        return "Company Name: " + this.name + "\n"
-             + "Company ID: " + this.Id + "\n"
-             + "Company Review Rate: " + this.reviewRate + "\n"
+        return "Company Name: " + this.NAME + "\n"
+             + "Company ID: " + this.ID + "\n"
              + "Company Description: " + this.companyDescription + "\n"
-             + "Number of Employees: " + this.numberOfEmployees;
+             + "Number of Employees: " + this.numberOfEmployees + "\n"
+             + "Reviews:\n" + reviews + "\n";
     }
 }

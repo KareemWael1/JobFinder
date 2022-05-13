@@ -10,7 +10,7 @@ public class JobSeeker extends Person
     private int yearsOfExperience;
     // its assumed that the info in any application is this if the seeker want to change it he can use update info
 
-    private final ArrayList<JobApplication>  jobApplications = new ArrayList<>();
+    private ArrayList<JobApplication>  jobApplications = new ArrayList<>();
 
     JobSeeker(String name, String email, String gender, String password,int age,String degree,
               String university,int yearsOfExperience) {
@@ -28,6 +28,10 @@ public class JobSeeker extends Person
 
     public ArrayList<JobApplication> getJobApplications() {
         return jobApplications;
+    }
+
+    public void setJobApplications(ArrayList<JobApplication> applications){
+        jobApplications = applications;
     }
 
 

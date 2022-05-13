@@ -11,7 +11,6 @@ public class JobPoster extends Person{
         super(name, email, gender, password);
         this.COMPANY_ID = id;
         jobVacancies = FinderSystem.getCompanies().get(COMPANY_ID).getJobVacancy();
-       // FinderSystem.getCompanies().get(COMPANY_ID).addJobPoster(this);
     }
 
 

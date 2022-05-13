@@ -1,24 +1,20 @@
 package project;
 
-public class JobApplication implements Comparable<JobApplication>{
-    private int COMPANY_ID;
+public class JobApplication{
+    private final int COMPANY_ID;
     private String applicationState = "Pending";
     private String applicantInfo;
-    private String jobTitle;
-    private String applicantMail;
+    private final String JOB_TITLE;
+    private final String APPLICANT_EMAIL;
     public JobApplication(String applicantInfo,int COMPANY_ID,String jobTitle,String mail){
         this.applicantInfo = applicantInfo;
         this.COMPANY_ID = COMPANY_ID;
-        this.jobTitle = jobTitle;
-        this.applicantMail = mail;
+        this.JOB_TITLE = jobTitle;
+        this.APPLICANT_EMAIL = mail;
     }
 
     public String getApplicantMail() {
-        return applicantMail;
-    }
-
-    public void setCOMPANY_ID(int COMPANY_ID) {
-        this.COMPANY_ID = COMPANY_ID;
+        return APPLICANT_EMAIL;
     }
 
     public int getCOMPANY_ID() {
@@ -42,24 +38,12 @@ public class JobApplication implements Comparable<JobApplication>{
     }
 
     public String getJobTitle() {
-        return jobTitle;
+        return JOB_TITLE;
     }
 
-    @Override
-    public int compareTo(JobApplication a){
-        return this.applicantInfo.compareTo(a.applicantInfo);
-    }
-
-    @Override
-    public boolean equals(Object a){
-        if (a instanceof JobVacancy){
-            return this.applicantInfo.equals(((JobApplication)a).applicantInfo);
-        }
-        return false;
-    }
     @Override
     public String toString(){
-        return "Job Title "+ jobTitle+ "\nApplicant info: " + applicantInfo + "\nApplication State: " + applicationState +
+        return "Job Title "+ JOB_TITLE+ "\nApplicant info: " + applicantInfo + "\nApplication State: " + applicationState +
                 "\n" + FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
     }
 }
