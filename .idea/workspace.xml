@@ -5,45 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e105e5-adb7-4a70-8682-ee7573988a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JobFinderGUI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2022_8_29_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_7_2022_8_29_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/LoginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClassDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JobFinder.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/CompanyAdmin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/FinderSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobFinder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobPoster.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobSeeker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/JobVacancy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobFinder/project/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/application error msg.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/application submitted.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/companies search.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/company application.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/company page.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/jobposter.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/login page.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenebuilder/please enter valid data.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Company.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/CompanyAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/FinderSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobPoster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobSeeker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/JobVacancy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/JobPoster.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/login page.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/JobFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/login page.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +28,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -125,6 +109,7 @@
       <workItem from="1653167482168" duration="25000" />
       <workItem from="1653167626290" duration="717000" />
       <workItem from="1653168800237" duration="1885000" />
+      <workItem from="1653228266436" duration="12292000" />
     </task>
     <servers />
   </component>

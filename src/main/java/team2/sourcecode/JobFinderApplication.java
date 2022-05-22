@@ -8,9 +8,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class JobFinderApplication extends Application {
+    private static Stage stage;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("login page.fxml"));
+        JobFinderApplication.stage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Job Finder");
         stage.setScene(scene);
@@ -19,5 +22,9 @@ public class JobFinderApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public static Stage getStage(){
+        return stage;
     }
 }

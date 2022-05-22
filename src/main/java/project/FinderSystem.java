@@ -9,7 +9,7 @@ public class FinderSystem {
             , "PHD", "Cairo", 5);
     JobPoster mai = new JobPoster("Mai", "mai@gmail.com", "female", "mai123", 0);
     JobPoster amr = new JobPoster("Amr", "amr@gmail.com", "male", "amr123", 1);
-    CompanyAdmin admin = new CompanyAdmin("admin", "admin@gmail.com", "male", "admin123");
+    Admin admin = new Admin("admin", "admin@gmail.com", "male", "admin123");
     JobVacancy instructor = new JobVacancy(1, "Instructor", "Gives lectures");
     JobVacancy it = new JobVacancy(0, "IT", "Technical support");
     static Company dell = new Company("Dell", "Tech company");
@@ -59,82 +59,37 @@ public class FinderSystem {
         return companies;
     }
 
-    public String login() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("""
-                Press 's' to login as job seeker
-                press 'a' to login as admin
-                press 'p' to login as job poster
-                press 'q' to end""");
-        String s = input.nextLine();
-        switch (s) {
+    public boolean login(String email, String pass, String userType) {
+        boolean logged = false;
+        switch (userType) {
             case "s" -> {
-                while (true) {
-                    System.out.println("\nyou are logging in as job seeker");
-                    System.out.print("enter your email: ");
-                    String email = input.nextLine();
-                    System.out.print("enter your password: ");
-                    String pass = input.nextLine();
-                    boolean logged = false;
-                    for (JobSeeker i : jobSeekers) {
-                        if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                            System.out.println("\nlogged in !\n");
-                            logged = true;
-                            user = i;
-                            break;
-                        }
-                    }
-                    if (!logged) {
-                        System.out.println("\nwrong mail or pass try again\n");
-                    } else {
+                for (JobSeeker i : jobSeekers) {
+                    if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
+                        logged = true;
+                        user = i;
                         break;
                     }
                 }
-                return "Seeker";
+                return logged;
             }
+
             case "a" -> {
-                while (true) {
-                    System.out.println("\nyou are logging in as Admin");
-                    System.out.print("enter your email: ");
-                    String email = input.nextLine();
-                    System.out.print("enter your password: ");
-                    String pass = input.nextLine();
-                    if (admin.getEMAIL().equals(email) && admin.getPassword().equals(pass)) {
-                        System.out.println("\nlogged in !\n");
-                        break;
-                    }
-                    else {
-                        System.out.println("\ntry again\n");
-                    }
-                }
-                return "Admin";
+                return admin.getEMAIL().equals(email) && admin.getPassword().equals(pass);
             }
+
             case "p" -> {
-                while (true) {
-                    System.out.println("\nyou are logging in as job Poster");
-                    System.out.print("enter your email: ");
-                    String email = input.nextLine();
-                    System.out.print("enter your password: ");
-                    String pass = input.nextLine();
-                    boolean logged = false;
-                    for (JobPoster i : getAllJobPosters()) {
-                        if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
-                            System.out.println("\nlogged in !\n");
-                            logged = true;
-                            user = i;
-                            break;
-                        }
-                    }
-                    if (!logged) {
-                        System.out.println("\nwrong mail or pass try again\n");
-                    } else {
+                for (JobPoster i : getAllJobPosters()) {
+                    if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
+                        logged = true;
+                        user = i;
                         break;
                     }
                 }
-                return "Poster";
+                System.out.println(logged);
+                return logged;
             }
         }
-        return "";
+        return false;
     }
 
 

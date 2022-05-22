@@ -17,7 +17,8 @@ public class JobFinder {
                 """);
             String choice = input.nextLine();
             if (choice.equals("i")) {
-                String user = finderSystem.login();
+                String user = "";
+                        //= finderSystem.login("admin@gmail.com", "admin123", "a");
                 seeker:
                 while (user.equals("Seeker")) {
                     while (true) {
