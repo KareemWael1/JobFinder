@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
@@ -24,8 +25,11 @@
       <Label layoutX="11.0" layoutY="218.0" text="Mobile Number:" />
       <TextField layoutX="103.0" layoutY="214.0" />
       <Label layoutX="19.0" layoutY="117.0" text="Gender:" />
-      <RadioButton layoutX="86.0" layoutY="117.0" mnemonicParsing="false" text="male" />
-      <RadioButton layoutX="169.0" layoutY="117.0" mnemonicParsing="false" text="female" />
+      <RadioButton fx:id="male" layoutX="86.0" layoutY="117.0" mnemonicParsing="false" text="male">
+         <toggleGroup>
+            <ToggleGroup fx:id="maleandfemale" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="female" layoutX="169.0" layoutY="117.0" mnemonicParsing="false" text="female" toggleGroup="$maleandfemale" />
       <TextField layoutX="-225.0" layoutY="3.0" />
       <Label layoutX="25.0" layoutY="252.0" prefHeight="18.0" prefWidth="56.0" text="Degree:" />
       <TextField layoutX="103.0" layoutY="248.0" />
