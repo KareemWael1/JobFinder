@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9e105e5-adb7-4a70-8682-ee7573988a3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/LoginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/JobPoster.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/login page.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/JobFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/login page.fxml" beforeDir="false" />
-    </list>
+    <list default="true" id="d9e105e5-adb7-4a70-8682-ee7573988a3c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
