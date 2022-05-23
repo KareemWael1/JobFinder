@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e105e5-adb7-4a70-8682-ee7573988a3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/LoginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/CompanyAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/companies search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/companies search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/company application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/company application.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/company page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/company page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/JobPoster.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/login page.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/JobFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobposter.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/login page.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +51,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/scenebuilder/app/SceneBuilder.cfg",
-    "settings.editor.selected.configurable": "preferences.general"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+  </component>
   <component name="RunManager" selected="Application.JobFinderApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team2.sourcecode.HelloApplication" />

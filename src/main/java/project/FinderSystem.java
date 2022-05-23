@@ -1,27 +1,8 @@
 package project;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.event.ActionEvent;
 import java.util.*;
 
 public class FinderSystem {
-    @FXML
-    private TextField firstname;
-    private TextField lastname;
-    private TextField degree;
-    private TextField uni;
-    private TextField yearsofexperience;
-    private TextField email;
-    private ToggleButton male;
-    private ToggleButton female;
-
-
-
-
-
-
     JobSeeker ahmed = new JobSeeker("Ahmed", "ahmed@gmail.com", "male", "8520", 20
             , "Masters", "MIT", 15);
     JobSeeker yara = new JobSeeker("Yara", "yara@gmail.com", "female", "yara123", 19
@@ -238,27 +219,6 @@ public class FinderSystem {
     }
 
     public void addApplication(int COMPANY_ID, String jobTitle) {
-        for (JobVacancy J : allJobVacancies) {
-            if (J.getJobTitle().equalsIgnoreCase(jobTitle) && J.getCOMPANY_ID()==COMPANY_ID) {
-                String info = "My name is " + user.getNAME() + ", And I have " + ((JobSeeker) user).getAge() + " years old " + "\n I got a " +
-                        ((JobSeeker) user).getDegree() +
-                        " degree " + "from " + ((JobSeeker) user).getUniversity() + " university " + "also I have " +
-                        ((JobSeeker) user).getYearsOfExperience()
-                        + " years of experience.";
-                String email = user.getEMAIL();
-                JobApplication application = new JobApplication(info, COMPANY_ID, jobTitle, email);
-                ((JobSeeker) user).getJobApplications().add(application);
-                J.addApplication(application);
-                System.out.println("\nDone!\n");
-                return;
-            }
-        }
-        System.out.println("\nOops!! Not found!\n");
-    }
-
-
-
-    public void addApplications(ActionEvent event) {
         for (JobVacancy J : allJobVacancies) {
             if (J.getJobTitle().equalsIgnoreCase(jobTitle) && J.getCOMPANY_ID()==COMPANY_ID) {
                 String info = "My name is " + user.getNAME() + ", And I have " + ((JobSeeker) user).getAge() + " years old " + "\n I got a " +
