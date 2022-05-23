@@ -1,5 +1,7 @@
 package project;
 
+import java.time.LocalDate;
+
 public class JobApplication{
     private final int COMPANY_ID;
     private String applicationState = "Pending";
@@ -40,6 +42,8 @@ public class JobApplication{
     public String getJobTitle() {
         return JOB_TITLE;
     }
+
+
 
     @Override
     public String toString(){
