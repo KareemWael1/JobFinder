@@ -11,12 +11,18 @@ public class JobFinderApplication extends Application {
     private static Stage stage;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage){
         JobFinderApplication.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        try{
+            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            stage.setResizable(false);
+            stage.setScene(scene);
+        }
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
         stage.setTitle("Job Finder");
-        stage.setScene(scene);
         stage.show();
     }
 

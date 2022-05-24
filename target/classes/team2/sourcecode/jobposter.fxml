@@ -3,41 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team2.sourcecode.JobPosterController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="600.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Label layoutX="21.0" layoutY="49.0" prefHeight="31.0" prefWidth="110.0" text="Job poster">
+      <Label fx:id="welcomeJobPoster" layoutX="31.0" layoutY="34.0" prefHeight="31.0" prefWidth="208.0" text="Welcome, Job Poster!">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Button layoutX="86.0" layoutY="291.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="add new jobvacancy" />
-      <Label layoutX="27.0" layoutY="94.0" text="jobvacancies added " />
-      <ComboBox layoutX="153.0" layoutY="90.0" prefHeight="26.0" prefWidth="208.0" />
-      <Button layoutX="406.0" layoutY="90.0" mnemonicParsing="false" text="update job vacancy" />
+      <Button layoutX="445.0" layoutY="297.0" mnemonicParsing="false" onAction="#onAddNewJobVacancyClicked" prefHeight="26.0" prefWidth="141.0" text="Add new Job Vacancy" />
+      <Label layoutX="31.0" layoutY="96.0" text="Job Vacancies" />
+      <ComboBox fx:id="jobVacancyComboBox" layoutX="135.0" layoutY="91.0" prefHeight="26.0" prefWidth="300.0" promptText="Select a job vacancy from the list" />
+      <Button layoutX="445.0" layoutY="91.0" mnemonicParsing="false" onAction="#onViewApplicationsButtonClicked" prefHeight="25.0" prefWidth="141.0" text="View Applications" />
+      <Button layoutX="445.0" layoutY="129.0" mnemonicParsing="false" onAction="#onDeleteJobVacancyClicked" prefHeight="25.0" prefWidth="141.0" text="Delete Job Vacancy" />
+      <Button layoutX="445.0" layoutY="338.0" mnemonicParsing="false" onAction="#onLogoutClicked" prefHeight="26.0" prefWidth="141.0" text="Log out" />
    </children>
 </AnchorPane>

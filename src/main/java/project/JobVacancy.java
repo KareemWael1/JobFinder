@@ -55,8 +55,7 @@ public class JobVacancy{
 
     @Override
     public String toString(){
-        return "Title: " + JOB_TITLE + "\nDescription: " + JOB_DESCRIPTION +
-                "\n"+ "Company ID: " + FinderSystem.getCompanies().get(COMPANY_ID).getId() + "\n Company name: "+
-                FinderSystem.getCompanies().get(COMPANY_ID).getName() + "\n***********************\n";
+        return "Title: " + JOB_TITLE + "\nDescription: " + JOB_DESCRIPTION + "\nCompany name: " +
+                FinderSystem.getCompanies().get(COMPANY_ID).getName();
     }
 }
