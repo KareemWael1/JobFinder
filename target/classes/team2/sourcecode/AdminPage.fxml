@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team2.sourcecode.AdminPageController">
+   <children>
+      <Label layoutX="31.0" layoutY="32.0" prefHeight="38.0" prefWidth="201.0" text="System Admin">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="455.0" layoutY="208.0" mnemonicParsing="false" onAction="#onAddNewCompanyButtonClicked" prefHeight="26.0" prefWidth="131.0" text="Add New Company " />
+      <Label layoutX="34.0" layoutY="88.0" prefHeight="18.0" prefWidth="94.0" text="View Companies:" />
+      <Label layoutX="34.0" layoutY="212.0" prefHeight="18.0" prefWidth="94.0" text="Company Name:" />
+      <Label layoutX="34.0" layoutY="244.0" prefHeight="18.0" prefWidth="123.0" text="Company Description:" />
+      <Button layoutX="455.0" layoutY="124.0" mnemonicParsing="false" onAction="#onUpdateCompanyButtonClicked" prefHeight="26.0" prefWidth="131.0" text="Update company" />
+      <Button layoutX="455.0" layoutY="354.0" mnemonicParsing="false" onAction="#onLogoutClicked" prefHeight="26.0" prefWidth="131.0" text="Log Out" />
+      <TextField fx:id="newCompanyName" layoutX="164.0" layoutY="208.0" prefHeight="26.0" prefWidth="281.0" text="New Company Name" />
+      <TextField fx:id="newCompanyDescription" alignment="TOP_LEFT" layoutX="164.0" layoutY="240.0" prefHeight="56.0" prefWidth="281.0" text="New Company Description" />
+      <Button layoutX="455.0" layoutY="316.0" mnemonicParsing="false" onAction="#onAddJobPosterButtonClicked" prefHeight="26.0" prefWidth="131.0" text="Add Job Poster" />
+      <Label layoutX="34.0" layoutY="128.0" prefHeight="18.0" prefWidth="123.0" text="Company Description:" />
+      <TextField fx:id="updatedCompanyDescription" alignment="TOP_LEFT" layoutX="164.0" layoutY="124.0" prefHeight="56.0" prefWidth="281.0" text="Updated Company Description" />
+      <ComboBox fx:id="companyComboBox" layoutX="164.0" layoutY="85.0" prefHeight="25.0" prefWidth="281.0" />
+   </children>
+</AnchorPane>

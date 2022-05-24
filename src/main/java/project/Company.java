@@ -53,12 +53,21 @@ public class Company{
         return jobVacancies;
     }
 
+    public ArrayList<String> getReviews(){
+        return reviews;
+    }
+
+    public String getCompanyDescription(){
+        return companyDescription;
+    }
+
+    public int getNumberOfEmployees(){
+        return numberOfEmployees;
+    }
+
     @Override
     public String toString() {
         return "Company Name: " + this.NAME + "\n"
-             + "Company ID: " + this.ID + "\n"
-             + "Company Description: " + this.companyDescription + "\n"
-             + "Number of Employees: " + this.numberOfEmployees + "\n"
-             + "Reviews:\n" + reviews + "\n";
+             + "Company Description: " + this.companyDescription + "\n";
     }
 }
