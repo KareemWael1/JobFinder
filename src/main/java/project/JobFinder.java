@@ -1,7 +1,5 @@
 package project;
 
-import team2.sourcecode.AgeHandling;
-
 import java.util.Scanner;
 
 public class JobFinder {
@@ -59,14 +57,14 @@ public class JobFinder {
 
                                 System.out.println("enter the job title: ");
                                 String title = input.nextLine();
-                                //finderSystem.addApplication(id, title);
+                                finderSystem.addApplication(id, title);
                                 break;
                             }
                             case "d": {
                                 System.out.println("enter the index you want to remove: ");
                                 int idx = input.nextInt();
                                 input.nextLine();
-                                //finderSystem.deleteApplication(idx);
+                                finderSystem.deleteApplication(idx);
                                 break;
                             }
                             case "ua": {
@@ -76,7 +74,7 @@ public class JobFinder {
 
                                 System.out.println("enter the updated info");
                                 String info = input.nextLine();
-                                //finderSystem.updateApplication(idx, info);
+                                finderSystem.updateApplication(idx, info);
                                 break;
                             }
                             case "ui":
@@ -156,7 +154,7 @@ public class JobFinder {
                                 String chosenCompanyName = input.nextLine();
                                 System.out.print("Enter the chosen company updated description: ");
                                 String updatedDescription = input.nextLine();
-                                //finderSystem.updateCompanyDescription(chosenCompanyName, updatedDescription);
+                                finderSystem.updateCompanyDescription(chosenCompanyName, updatedDescription);
 
                                 break;
                             case "q":
@@ -192,7 +190,7 @@ public class JobFinder {
                             System.out.print("Enter job vacancy index: ");
                             int idx = input.nextInt();
                             input.nextLine();
-                            //finderSystem.deleteJob(idx);
+                            finderSystem.deleteJob(idx);
                             System.out.println("Deleted! \n");
                             break;
                         case "v":
@@ -215,7 +213,7 @@ public class JobFinder {
                                     input.nextLine();
                                     System.out.print("\nEnter new status: ");
                                     String status = input.nextLine();
-                                    //finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
+                                    finderSystem.setApplicationStatus(status, vacancyIdx, applicationIdx);
                                     System.out.println("\nadded!\n");
                                 } else {
                                     System.out.println("\nthere is no applications on this job\n");
@@ -251,11 +249,7 @@ public class JobFinder {
                 System.out.println("enter your years of experience:");
                 int expYears = input.nextInt();
                 input.nextLine();
-                try {
-                    finderSystem.addJobSeeker(name,email,gender,pass,age,degree,uni,expYears);
-                } catch (AgeHandling e) {
-                    System.out.println(e.getMessage());
-                }
+                finderSystem.addJobSeeker(name,email,gender,pass,age,degree,uni,expYears);
             }
             else break;
         }

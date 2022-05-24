@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="team2.sourcecode.JobSeekerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField fx:id="search" layoutX="215.0" layoutY="125.0" prefHeight="26.0" prefWidth="242.0" />
-      <Label layoutX="32.0" layoutY="129.0" prefHeight="18.0" prefWidth="166.0" text="Search for Jobs or Companies:" />
-      <Button layoutX="319.0" layoutY="166.0" mnemonicParsing="false" onAction="#onGoButtonClicked" text="Go!" />
-      <Label layoutX="30.0" layoutY="79.0" prefHeight="38.0" prefWidth="542.0" text="You can search for the companies and apply for any available job, leave blank to browse all available&#10; jobs/companies" />
-      <RadioButton fx:id="searchJobs" layoutX="466.0" layoutY="117.0" mnemonicParsing="false" onAction="#onSearchJobsSelected" text="Search Jobs" />
-      <RadioButton fx:id="searchCompanies" layoutX="466.0" layoutY="139.0" mnemonicParsing="false" onAction="#onSearchCompaniesSelected" text="Search Companies" />
-      <Button fx:id="action" layoutX="454.0" layoutY="213.0" mnemonicParsing="false" onAction="#onActionButtonClicked" prefHeight="26.0" prefWidth="131.0" text="Apply for Job" />
-      <Label fx:id="welcomeJobSeeker" layoutX="31.0" layoutY="28.0" prefHeight="38.0" prefWidth="542.0" text="Welcome, Job Seeker!">
+      <TextField layoutX="197.0" layoutY="123.0" prefHeight="26.0" prefWidth="242.0" />
+      <Label layoutX="38.0" layoutY="127.0" prefHeight="18.0" prefWidth="159.0" text="search for jobs or companies:" />
+      <Button layoutX="300.0" layoutY="164.0" mnemonicParsing="false" text="Go!" />
+      <Label layoutX="30.0" layoutY="79.0" prefHeight="18.0" prefWidth="387.0" text="Here you can search for the companies and apply for any available job." />
+      <RadioButton layoutX="450.0" layoutY="110.0" mnemonicParsing="false" text="search by job" />
+      <RadioButton layoutX="450.0" layoutY="137.0" mnemonicParsing="false" text="search by company" />
+      <Label layoutX="36.0" layoutY="222.0" prefHeight="18.0" prefWidth="94.0" text="company name:" />
+      <Label layoutX="38.0" layoutY="308.0" prefHeight="18.0" prefWidth="186.0" text="number of available job vacancies:" />
+      <Button layoutX="480.0" layoutY="340.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="apply for job" />
+      <Label layoutX="37.0" layoutY="191.0" prefHeight="18.0" prefWidth="118.0" text="company description:" />
+      <Label layoutX="36.0" layoutY="250.0" text="review rate:" />
+      <Label layoutX="36.0" layoutY="279.0" prefHeight="18.0" prefWidth="106.0" text="number of reviews:" />
+      <Label layoutX="38.0" layoutY="344.0" prefHeight="18.0" prefWidth="297.0" text="number of available job vacancies in your specification:" />
+      <Label layoutX="31.0" layoutY="28.0" prefHeight="38.0" prefWidth="131.0" text="Job seeker">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Button layoutX="454.0" layoutY="295.0" mnemonicParsing="false" onAction="#onViewMyApplicationsClicked" prefHeight="26.0" prefWidth="131.0" text="View My Applications" />
-      <ComboBox fx:id="companySearchResults" layoutX="132.0" layoutY="213.0" prefHeight="25.0" prefWidth="297.0" promptText="Companies" />
-      <Label fx:id="searchType" layoutX="31.0" layoutY="217.0" prefHeight="17.0" prefWidth="101.0" text="Available Jobs:" />
-      <ComboBox fx:id="jobSearchResults" layoutX="132.0" layoutY="214.0" prefHeight="25.0" prefWidth="297.0" promptText="Job Vacancies" />
-      <Button layoutX="454.0" layoutY="253.0" mnemonicParsing="false" onAction="#onMyInfoButtonClicked" prefHeight="26.0" prefWidth="131.0" text="My Info" />
-      <Button layoutX="454.0" layoutY="340.0" mnemonicParsing="false" onAction="#onLogoutClicked" prefHeight="26.0" prefWidth="131.0" text="Log Out" />
+      <Button layoutX="437.0" layoutY="209.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="view my applications" />
    </children>
 </AnchorPane>

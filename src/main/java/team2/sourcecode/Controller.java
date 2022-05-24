@@ -11,8 +11,9 @@ import project.FinderSystem;
 
 import java.io.IOException;
 
-public class LoginController {
-    private static FinderSystem finderSystem = new FinderSystem();
+public class Controller {
+    FinderSystem finderSystem = new FinderSystem();
+    Stage stage = JobFinderApplication.getStage();
 
     @FXML private Label enterEmailAndPassword;
     @FXML private TextField email;
@@ -21,14 +22,13 @@ public class LoginController {
     public void changeScene(String fxmlFile) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource(fxmlFile));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        Stage stage = JobFinderApplication.getStage();
         stage.setScene(scene);
         stage.show();
     }
 
     public void setLoginJobSeekerButton() throws IOException{
         if(finderSystem.login(email.getText(), password.getText(), "s")){
-            changeScene("JobSeeker.fxml");
+            changeScene(null);
         }
         else
         {
@@ -46,7 +46,7 @@ public class LoginController {
     }
     public void setLoginAdminButton() throws IOException{
         if(finderSystem.login(email.getText(), password.getText(), "a")){
-            changeScene("AdminPage.fxml");
+            changeScene(null);
         }
         else
         {
@@ -54,11 +54,5 @@ public class LoginController {
         }
     }
 
-    public void onSignUpButtonClicked() throws IOException{
-        changeScene("SignUp.fxml");
-    }
 
-    public static FinderSystem getFinderSystem(){
-        return finderSystem;
-    }
 }

@@ -1,7 +1,5 @@
 package project;
 
-import team2.sourcecode.AgeHandling;
-
 import java.util.*;
 
 public class FinderSystem {
@@ -14,21 +12,16 @@ public class FinderSystem {
     Admin admin = new Admin("admin", "admin@gmail.com", "male", "admin123");
     JobVacancy instructor = new JobVacancy(1, "Instructor", "Gives lectures");
     JobVacancy it = new JobVacancy(0, "IT", "Technical support");
-    JobVacancy hardwareEngineer = new JobVacancy(0, "Hardware Engineer", "Design devices");
     static Company dell = new Company("Dell", "Tech company");
     static Company edx = new Company("edx", "Educational company");
     {
         dell.addVacancy(it);
-        dell.addVacancy(hardwareEngineer);
         edx.addVacancy(instructor);
         dell.addJobPoster(mai);
         edx.addJobPoster(amr);
     }
 
     private Person user;
-    public String getName(){
-        return user.getNAME();
-    }
 
     private final ArrayList<JobPoster> allJobPosters = new ArrayList<>() {
         {
@@ -47,7 +40,6 @@ public class FinderSystem {
         {
             add(instructor);
             add(it);
-            add(hardwareEngineer);
         }
     };
 
@@ -93,6 +85,7 @@ public class FinderSystem {
                         break;
                     }
                 }
+                System.out.println(logged);
                 return logged;
             }
         }
@@ -100,13 +93,9 @@ public class FinderSystem {
     }
 
 
-    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling {
-        if (age > 0 && age < 120) {
-            JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
-            jobSeekers.add(seeker);
-        }else{
-            throw new AgeHandling("invalid age",age);
-        }
+    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) {
+        JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
+        jobSeekers.add(seeker);
     }
 
     public void addCompany(Company company) {
@@ -118,45 +107,50 @@ public class FinderSystem {
         allJobPosters.add(jobPoster);
     }
 
-    public void deleteApplication(JobApplication application) {
-        String jobTitle = application.getJobTitle();
-        int companyID = application.getCOMPANY_ID();
-        String mail = user.getEMAIL();
 
-        int index=0;
-        for (JobApplication j : (((JobSeeker) user).getJobApplications())){
-            if (j == application) {
-                ((JobSeeker)user).deleteApplication(index);
-                return;
-            }
-            index++;
-        }
+
+
+    public void deleteApplication(int idx) {
+        String jobTitle = ((JobSeeker) user).getJobApplications().get(idx).getJobTitle();
+
+        int companyID = ((JobSeeker) user).getJobApplications().get(idx).getCOMPANY_ID();
+
+        String mail = user.getEMAIL();
 
         for (JobVacancy i : companies.get(companyID).getJobVacancy()) {
 
-            index=0;
+            int index=0;
             for (JobApplication j : i.getApplications()) {
                 if (j.getJobTitle().equalsIgnoreCase(jobTitle) && j.getApplicantMail().equals(mail)) {
                     i.removeApplication(index);
+                    ((JobSeeker) user).deleteApplication(idx);
                     return;
+
                 }
                 index++;
             }
         }
     }
 
-    public ArrayList<Company> browseCompanies(String name) {
-        ArrayList<Company> companiesList = new ArrayList<>();
+    public void browseCompanies(String name) {
+        boolean found = false;
         for (Company company : companies) {
             if (name.equalsIgnoreCase(company.getName())) {
-                companiesList.add(company);
+                found = true;
+                System.out.println(company);
             }
         }
-        return companiesList;
+        if (!found) {
+            System.out.println("\nNot found\n");
+        }
     }
 
-    public ArrayList<Company> browseCompanies() {
-        return companies;
+    public void browseCompanies() {
+        for (Company company : companies) {
+            System.out.println(company);
+            System.out.println(company.getJobVacancy());
+            System.out.println("\n--------------------------");
+        }
     }
 
     public void updateInfo(String field) {
@@ -174,7 +168,7 @@ public class FinderSystem {
         }
     }
 
-    public boolean addReview(String review, int COMPANY_ID) {
+    public void addReview(String review, int COMPANY_ID) {
         boolean canAddReview = false;
         for (JobApplication i : ((JobSeeker) user).getJobApplications()) {
             if (i.getCOMPANY_ID() == COMPANY_ID) {
@@ -189,16 +183,14 @@ public class FinderSystem {
                     break;
                 }
             }
+        } else {
+            System.out.println("\nyou can not add a review to this company as you did not submit an application to it\n");
         }
-        return canAddReview;
     }
 
-    public ArrayList<String> getReviews(Company company){
-        return company.getReviews();
-    }
+    public void updateApplication(int idx, String info) {
 
-    public void updateApplication(JobApplication application, String info) {
-        application.setApplicantInfo(info);
+        ((JobSeeker) user).getJobApplications().get(idx).setApplicantInfo(info);
     }
 
     public ArrayList<JobVacancy> browseJobs() {
@@ -226,30 +218,36 @@ public class FinderSystem {
         return applications;
     }
 
-    public void addApplication(JobVacancy jobVacancy) {
-        String info = "My name is " + user.getNAME() + ", And I have " + ((JobSeeker) user).getAge() + " years old " + "\n I got a " +
-                ((JobSeeker) user).getDegree() +
-                " degree " + "from " + ((JobSeeker) user).getUniversity() + " university " + "also I have " +
-                ((JobSeeker) user).getYearsOfExperience()
-                + " years of experience.";
-        String email = user.getEMAIL();
-        JobApplication application = new JobApplication(info, jobVacancy.getCOMPANY_ID(), jobVacancy.getJobTitle(), email);
-        ((JobSeeker) user).getJobApplications().add(application);
-        jobVacancy.addApplication(application);
+    public void addApplication(int COMPANY_ID, String jobTitle) {
+        for (JobVacancy J : allJobVacancies) {
+            if (J.getJobTitle().equalsIgnoreCase(jobTitle) && J.getCOMPANY_ID()==COMPANY_ID) {
+                String info = "My name is " + user.getNAME() + ", And I have " + ((JobSeeker) user).getAge() + " years old " + "\n I got a " +
+                        ((JobSeeker) user).getDegree() +
+                        " degree " + "from " + ((JobSeeker) user).getUniversity() + " university " + "also I have " +
+                        ((JobSeeker) user).getYearsOfExperience()
+                        + " years of experience.";
+                String email = user.getEMAIL();
+                JobApplication application = new JobApplication(info, COMPANY_ID, jobTitle, email);
+                ((JobSeeker) user).getJobApplications().add(application);
+                J.addApplication(application);
+                System.out.println("\nDone!\n");
+                return;
+            }
+        }
+        System.out.println("\nOops!! Not found!\n");
     }
 
     public void viewJobVacancies() {
         ((JobPoster) user).viewJobVacancies();
     }
 
-    public ArrayList<JobVacancy> browseJobs(String name){
-        ArrayList<JobVacancy> vacancies = new ArrayList<>();
+    public void browseJobs(String name){
         for (JobVacancy j: allJobVacancies) {
             if(j.getJobTitle().equalsIgnoreCase(name)) {
-                vacancies.add(j);
+                System.out.println(j);
+                System.out.println("\n-------------------------");
             }
         }
-        return vacancies;
     }
 
     public void addJobVacancy(String title, String info) {
@@ -263,24 +261,26 @@ public class FinderSystem {
         allJobVacancies.add(vacancy);
     }
 
-    public void deleteJob(JobVacancy vacancy) {
+    public void deleteJob(int jobVacancyIdx) {
+        JobVacancy vacancy = ((JobPoster) user).getJobVacancies().get(jobVacancyIdx);
         allJobVacancies.remove(vacancy);
-        for (int jobVacancyIdx=0; jobVacancyIdx<((JobPoster) user).getJobVacancies().size(); jobVacancyIdx++){
-            if(((JobPoster) user).getJobVacancies().get(jobVacancyIdx)==vacancy){
-                ((JobPoster) user).deleteJob(jobVacancyIdx);
-            }
-        }
+        ((JobPoster) user).deleteJob(jobVacancyIdx);
     }
 
     public ArrayList<JobVacancy> getJobVacancies() {
         return companies.get(((JobPoster) user).getCOMPANY_ID()).getJobVacancies();
     }
 
-    public void setApplicationStatus(String status, JobApplication application){
-        application.setApplicationState(status);
+    public void setApplicationStatus(String status, int jobVacancyIdx, int jobApplicationIdx){
+        getJobVacancies().get(jobVacancyIdx).getJobApplications().get(jobApplicationIdx).setApplicationState(status);
     }
 
-    public void updateCompanyDescription(Company company, String updatedDescription) {
-        company.setCompanyDescription(updatedDescription);
+    public void updateCompanyDescription(String chosenCompanyName, String updatedDescription) {
+        for (Company company: companies) {
+            if (company.getName().equals(chosenCompanyName)) {
+                company.setCompanyDescription(updatedDescription);
+                break;
+            }
+        }
     }
 }
