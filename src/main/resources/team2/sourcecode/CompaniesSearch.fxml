@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
@@ -29,13 +31,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="32.0" layoutY="47.0" prefHeight="18.0" prefWidth="94.0" text="company name:" />
-      <Label layoutX="33.0" layoutY="200.0" prefHeight="18.0" prefWidth="186.0" text="number of available job vacancies:" />
-      <Button layoutX="469.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="apply for job" />
-      <Label layoutX="33.0" layoutY="75.0" prefHeight="18.0" prefWidth="118.0" text="company description:" />
-      <Label layoutX="33.0" layoutY="151.0" text="review rate:" />
-      <Label layoutX="33.0" layoutY="176.0" prefHeight="18.0" prefWidth="106.0" text="number of reviews:" />
-      <Label layoutX="32.0" layoutY="229.0" prefHeight="18.0" prefWidth="297.0" text="number of available job vacancies in your specification:" />
-      <Button layoutX="240.0" layoutY="309.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="118.0" text="back to homepage" />
+      <TextField layoutX="197.0" layoutY="123.0" prefHeight="26.0" prefWidth="242.0" />
+      <Label layoutX="38.0" layoutY="127.0" prefHeight="18.0" prefWidth="159.0" text="search for jobs or companies:" />
+      <Button layoutX="282.0" layoutY="165.0" mnemonicParsing="false" text="Go!" />
+      <Label layoutX="38.0" layoutY="54.0" prefHeight="18.0" prefWidth="455.0" text="Here you can search for the companies and apply for any available job." />
+      <RadioButton layoutX="450.0" layoutY="110.0" mnemonicParsing="false" text="search by job" />
+      <RadioButton layoutX="450.0" layoutY="137.0" mnemonicParsing="false" text="search by company" />
    </children>
 </AnchorPane>
