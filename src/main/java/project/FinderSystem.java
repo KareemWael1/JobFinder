@@ -168,7 +168,7 @@ public class FinderSystem {
         }
     }
 
-    public void addReview(String review, int COMPANY_ID) {
+    public boolean addReview(String review, int COMPANY_ID) {
         boolean canAddReview = false;
         for (JobApplication i : ((JobSeeker) user).getJobApplications()) {
             if (i.getCOMPANY_ID() == COMPANY_ID) {
@@ -183,9 +183,8 @@ public class FinderSystem {
                     break;
                 }
             }
-        } else {
-            System.out.println("\nyou can not add a review to this company as you did not submit an application to it\n");
         }
+        return canAddReview;
     }
 
     public ArrayList<String> getReviews(Company company){

@@ -44,7 +44,7 @@ public class SignUpController implements Initializable {
             finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
                     Integer.parseInt(age.getText()), degree.getText(), university.getText(),
                     Integer.parseInt(yearsOfExperience.getText()));
-            FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage"));
+            FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Stage stage = JobFinderApplication.getStage();
             stage.setScene(scene);

@@ -9,9 +9,7 @@ public class Company{
     private final ArrayList<JobPoster> jobPosters = new ArrayList<>();
     private final ArrayList<JobVacancy> jobVacancies = new ArrayList<>();
     private final ArrayList<String> reviews = new ArrayList<>();
-    private int numberOfEmployees;
-
-
+    private int numberOfEmployees = (int)(Math.random()*1000);
 
     public Company(String name, String description) {
         this.NAME = name;
@@ -34,9 +32,12 @@ public class Company{
     
     public void addJobPoster(JobPoster poster) {
         jobPosters.add(poster);
-        numberOfEmployees = jobPosters.size();
+        addEmployee();
     }
 
+    public void addEmployee(){
+        numberOfEmployees++;
+    }
     public void addReview(String review){
         reviews.add(review);
     }

@@ -28,10 +28,13 @@ public class ViewApplicationsController implements Initializable {
 
     public void onAcceptButtonClicked(){
         finderSystem.setApplicationStatus("Accepted", jobApplicationComboBox.getValue());
+        FinderSystem.getCompanies().get(jobApplicationComboBox.getValue().getCOMPANY_ID()).addEmployee();
+        jobApplicationComboBox.setItems(FXCollections.observableArrayList(vacancy.getApplications()));
     }
 
     public void onRejectedButtonClicked(){
         finderSystem.setApplicationStatus("Rejected", jobApplicationComboBox.getValue());
+        jobApplicationComboBox.setItems(FXCollections.observableArrayList(vacancy.getApplications()));
     }
 
     public void onBackToMainMenuButtonClicked() throws IOException {

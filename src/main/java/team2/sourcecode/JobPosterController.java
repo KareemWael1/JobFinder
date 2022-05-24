@@ -48,6 +48,7 @@ public class JobPosterController implements Initializable {
 
     public void onDeleteJobVacancyClicked(){
         finderSystem.deleteJob(jobVacancyComboBox.getValue());
+        jobVacancyComboBox.setItems(FXCollections.observableArrayList(finderSystem.getJobVacancies()));
     }
 
     public void onLogoutClicked() throws IOException{

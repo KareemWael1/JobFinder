@@ -38,10 +38,12 @@ public class AdminPageController implements Initializable {
 
     public void onUpdateCompanyButtonClicked(){
         finderSystem.updateCompanyDescription(companyComboBox.getValue(), updatedCompanyDescription.getText());
+        companyComboBox.setItems(FXCollections.observableArrayList(FinderSystem.getCompanies()));
     }
 
     public void onAddNewCompanyButtonClicked(){
         finderSystem.addCompany(new Company(newCompanyName.getText(), newCompanyDescription.getText()));
+        companyComboBox.setItems(FXCollections.observableArrayList(FinderSystem.getCompanies()));
     }
 
     public void onAddJobPosterButtonClicked(){

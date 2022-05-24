@@ -21,7 +21,7 @@
       <Button fx:id="loginJobPosterButton" layoutX="233.0" layoutY="263.0" mnemonicParsing="false" onAction="#setLoginJobPosterButton" text="Login as Job Poster" />
       <Button fx:id="loginAdminButton" layoutX="389.0" layoutY="263.0" mnemonicParsing="false" onAction="#setLoginAdminButton" prefHeight="26.0" prefWidth="140.0" text="Login as Admin" />
       <PasswordField fx:id="password" layoutX="158.0" layoutY="196.0" prefHeight="26.0" prefWidth="270.0" />
-      <Button layoutX="233.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Sign Up" />
+      <Button layoutX="233.0" layoutY="346.0" mnemonicParsing="false" onAction="#onSignUpButtonClicked" prefHeight="25.0" prefWidth="121.0" text="Sign Up" />
       <Label layoutX="230.0" layoutY="321.0" text="Don't have an account?" />
    </children>
 </AnchorPane>

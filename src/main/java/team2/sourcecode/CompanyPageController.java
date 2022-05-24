@@ -26,6 +26,7 @@ public class CompanyPageController implements Initializable {
     @FXML private Label numberOfEmployees;
     @FXML private ListView<String> reviews;
     @FXML private TextField myReview;
+    @FXML private Label error;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -33,11 +34,14 @@ public class CompanyPageController implements Initializable {
         companyDescription.setText(selectedCompany.getCompanyDescription());
         numberOfEmployees.setText(String.valueOf(selectedCompany.getNumberOfEmployees()));
         reviews.setItems(FXCollections.observableArrayList(selectedCompany.getReviews()));
+        error.setVisible(false);
     }
 
     public void onAddReviewButtonClicked(){
-        // Didn't handle (Can't add review unless has an application to that company)
-        finderSystem.addReview(myReview.getText(), selectedCompany.getId());
+        if(!finderSystem.addReview(myReview.getText(), selectedCompany.getId())){
+            error.setVisible(true);
+        };
+        reviews.setItems(FXCollections.observableArrayList(selectedCompany.getReviews()));
     }
 
     public void onBackToMainMenuButtonClicked() throws IOException {

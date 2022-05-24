@@ -40,10 +40,12 @@ public class MyApplicationsController implements Initializable {
 
     public void onUpdateApplicationClicked(){
         finderSystem.updateApplication(applicationComboBox.getValue(), info.getText());
+        applicationComboBox.setItems(FXCollections.observableArrayList(finderSystem.viewMyApplications()));
     }
 
     public void onDeleteApplicationClicked(){
         finderSystem.deleteApplication(applicationComboBox.getValue());
+        applicationComboBox.setItems(FXCollections.observableArrayList(finderSystem.viewMyApplications()));
     }
 
     public void onBackToMainMenuButtonClicked() throws IOException {
