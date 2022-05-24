@@ -16,6 +16,7 @@ public class JobFinderApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
         try{
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            stage.setResizable(false);
             stage.setScene(scene);
         }
         catch(IOException e){

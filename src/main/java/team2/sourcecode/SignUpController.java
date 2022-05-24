@@ -41,9 +41,14 @@ public class SignUpController implements Initializable {
 
     public void onSignUpButtonClicked() throws IOException {
         if(password.getText().equals(confirmPassword.getText())){
-            finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
-                    Integer.parseInt(age.getText()), degree.getText(), university.getText(),
-                    Integer.parseInt(yearsOfExperience.getText()));
+            try {
+                finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
+                        Integer.parseInt(age.getText()) , degree.getText(), university.getText(),
+                        Integer.parseInt(yearsOfExperience.getText()));
+            } catch (AgeHandling e) {
+                System.out.println(e);;
+            }
+
             FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             Stage stage = JobFinderApplication.getStage();

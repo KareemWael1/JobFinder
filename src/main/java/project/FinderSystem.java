@@ -1,5 +1,7 @@
 package project;
 
+import team2.sourcecode.AgeHandling;
+
 import java.util.*;
 
 public class FinderSystem {
@@ -98,9 +100,13 @@ public class FinderSystem {
     }
 
 
-    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) {
-        JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
-        jobSeekers.add(seeker);
+    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling {
+        if (age > 0 && age < 120) {
+            JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
+            jobSeekers.add(seeker);
+        }else{
+            throw new AgeHandling("invalid age",age);
+        }
     }
 
     public void addCompany(Company company) {

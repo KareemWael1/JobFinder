@@ -1,5 +1,7 @@
 package project;
 
+import team2.sourcecode.AgeHandling;
+
 import java.util.Scanner;
 
 public class JobFinder {
@@ -249,7 +251,11 @@ public class JobFinder {
                 System.out.println("enter your years of experience:");
                 int expYears = input.nextInt();
                 input.nextLine();
-                finderSystem.addJobSeeker(name,email,gender,pass,age,degree,uni,expYears);
+                try {
+                    finderSystem.addJobSeeker(name,email,gender,pass,age,degree,uni,expYears);
+                } catch (AgeHandling e) {
+                    System.out.println(e.getMessage());
+                }
             }
             else break;
         }

@@ -5,37 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21eb03c-2b96-44b5-9c17-57985d4ba620" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/AgeHandling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/AdminPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/AdminPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/CompanyPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/CompanyPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobPosterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobPosterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/MyApplicationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/MyApplicationsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/ViewApplicationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/ViewApplicationsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/CompanyPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/CompanyPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/LoginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/JobApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/JobFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobFinder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/AdminPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/AdminPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/LoginPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/MyApplicationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/MyApplicationsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/ViewApplicationsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/ViewApplicationsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobFinderApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,6 +42,16 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/AddJobVacancyController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/project/JobFinder.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/JobFinder.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobSeeker.fxml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,15 +76,28 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.JobFinderApplication">
+  <component name="RunManager" selected="Application.JobFinder">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="team2.sourcecode.HelloApplication" />
       <module name="JobFinderGUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="team2.sourcecode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobFinder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.JobFinder" />
+      <module name="JobFinderGUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,6 +120,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JobFinder" />
         <item itemvalue="Application.JobFinderApplication" />
         <item itemvalue="Application.HelloApplication" />
       </list>
