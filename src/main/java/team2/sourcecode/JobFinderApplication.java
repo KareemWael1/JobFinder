@@ -18,11 +18,11 @@ public class JobFinderApplication extends Application {
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
             stage.setResizable(false);
             stage.setScene(scene);
+            stage.setTitle("Job Finder");
         }
         catch(IOException e){
-            System.out.println(e.getMessage());
+            Stage.setTitle(e.getMessage());
         }
-        stage.setTitle("Job Finder");
         stage.show();
     }
 
