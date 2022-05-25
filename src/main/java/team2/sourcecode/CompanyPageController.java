@@ -1,7 +1,6 @@
 package team2.sourcecode;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -40,7 +39,7 @@ public class CompanyPageController implements Initializable {
     public void onAddReviewButtonClicked(){
         if(!finderSystem.addReview(myReview.getText(), selectedCompany.getId())){
             error.setVisible(true);
-        };
+        }
         reviews.setItems(FXCollections.observableArrayList(selectedCompany.getReviews()));
     }
 

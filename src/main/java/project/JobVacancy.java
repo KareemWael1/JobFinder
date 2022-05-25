@@ -22,22 +22,8 @@ public class JobVacancy{
         return applications;
     }
 
-    public boolean viewApplications() {
-        int idx = 0;
-        for (JobApplication application : applications){
-            System.out.println("Application " + idx + ": " + application.getApplicantInfo()
-                    + " - Status: " + application.getApplicationState() );
-            idx++;
-        }
-        return idx>0;
-    }
-
     public int getCOMPANY_ID(){
         return COMPANY_ID;
-    }
-
-    public String getJobDescription(){
-        return JOB_DESCRIPTION;
     }
 
     public String getJobTitle(){
@@ -46,11 +32,6 @@ public class JobVacancy{
 
     public void removeApplication(int idx){
         applications.remove(idx);
-    }
-
-    public ArrayList<JobApplication> getJobApplications()
-    {
-    return applications;
     }
 
     @Override

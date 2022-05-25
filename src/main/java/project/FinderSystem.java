@@ -226,10 +226,6 @@ public class FinderSystem {
         jobVacancy.addApplication(application);
     }
 
-    public void viewJobVacancies() {
-        ((JobPoster) user).viewJobVacancies();
-    }
-
     public ArrayList<JobVacancy> browseJobs(String name){
         ArrayList<JobVacancy> vacancies = new ArrayList<>();
         for (JobVacancy j: allJobVacancies) {

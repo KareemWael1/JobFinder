@@ -23,12 +23,4 @@ public class JobPoster extends Person{
     }
 
     public ArrayList<JobVacancy> getJobVacancies() {return jobVacancies;}
-
-    public void viewJobVacancies() {
-        int idx = 0;
-        for (JobVacancy vacancy : jobVacancies){
-            System.out.println("Job " + idx + ": " + vacancy.getJobTitle() + ": " + vacancy.getJobDescription());
-            idx++;
-        }
-    }
 }
