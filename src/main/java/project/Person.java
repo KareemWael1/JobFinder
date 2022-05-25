@@ -26,7 +26,4 @@ public abstract class Person{
     public String getPassword(){
         return PASSWORD;
     }
-
-    @Override
-    public abstract String toString();
 }

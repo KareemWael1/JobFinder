@@ -10,7 +10,7 @@ public class JobPoster extends Person{
     public JobPoster(String name, String email, String gender, String password, int id) {
         super(name, email, gender, password);
         this.COMPANY_ID = id;
-        jobVacancies = FinderSystem.getCompanies().get(COMPANY_ID).getJobVacancy();
+        jobVacancies = FinderSystem.getCompanies().get(COMPANY_ID).getJobVacancies();
     }
 
 
@@ -30,11 +30,5 @@ public class JobPoster extends Person{
             System.out.println("Job " + idx + ": " + vacancy.getJobTitle() + ": " + vacancy.getJobDescription());
             idx++;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER +
-                "\n Company: " + FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
     }
 }

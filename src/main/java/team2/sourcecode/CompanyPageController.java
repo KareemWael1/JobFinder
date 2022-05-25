@@ -33,7 +33,7 @@ public class CompanyPageController implements Initializable {
         companyName.setText(selectedCompany.getName());
         companyDescription.setText(selectedCompany.getCompanyDescription());
         numberOfEmployees.setText(String.valueOf(selectedCompany.getNumberOfEmployees()));
-        reviews.setItems(FXCollections.observableArrayList(selectedCompany.getReviews()));
+        reviews.setItems(FXCollections.observableArrayList(finderSystem.getReviews(selectedCompany)));
         error.setVisible(false);
     }
 

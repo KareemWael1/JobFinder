@@ -46,8 +46,8 @@ public class AdminPageController implements Initializable {
         companyComboBox.setItems(FXCollections.observableArrayList(FinderSystem.getCompanies()));
     }
 
-    public void onAddJobPosterButtonClicked(){
-        // To be added
+    public void onAddJobPosterButtonClicked() throws IOException{
+        changeScene("AddJobPoster.fxml");
     }
 
     public void onLogoutClicked() throws IOException {

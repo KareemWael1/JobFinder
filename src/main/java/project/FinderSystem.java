@@ -59,10 +59,6 @@ public class FinderSystem {
         }
     };
 
-    public ArrayList<JobPoster> getAllJobPosters() {
-        return allJobPosters;
-    }
-
     public static ArrayList<Company> getCompanies() {
         return companies;
     }
@@ -86,7 +82,7 @@ public class FinderSystem {
             }
 
             case "p" -> {
-                for (JobPoster i : getAllJobPosters()) {
+                for (JobPoster i : allJobPosters) {
                     if (i.getEMAIL().equals(email) && i.getPassword().equals(pass)) {
                         logged = true;
                         user = i;
@@ -101,11 +97,11 @@ public class FinderSystem {
 
 
     public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling {
-        if (age > 0 && age < 120) {
+        if (age >= 14 && age <= 70) {
             JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
             jobSeekers.add(seeker);
         }else{
-            throw new AgeHandling("invalid age",age);
+            throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
         }
     }
 
@@ -132,7 +128,7 @@ public class FinderSystem {
             index++;
         }
 
-        for (JobVacancy i : companies.get(companyID).getJobVacancy()) {
+        for (JobVacancy i : companies.get(companyID).getJobVacancies()) {
 
             index=0;
             for (JobApplication j : i.getApplications()) {
@@ -159,19 +155,11 @@ public class FinderSystem {
         return companies;
     }
 
-    public void updateInfo(String field) {
-        Scanner input = new Scanner(System.in);
-        switch (field.toLowerCase()) {
-            case "age" -> {
-                ((JobSeeker) user).setAge(input.nextInt());
-                input.nextLine();
-            }
-            case "degree" -> ((JobSeeker) user).setDegree(input.nextLine()); //there is error when using nextLine after or before other next inputs
-            case "university" -> ((JobSeeker) user).setUniversity(input.nextLine());
-            case "years of experience" -> ((JobSeeker) user).setYearsOfExperience(input.nextInt());
-            default -> {
-            }
-        }
+    public void updateInfo(int age, String degree, String university, int yearsOfExperience) {
+        ((JobSeeker) user).setAge(age);
+        ((JobSeeker) user).setDegree(degree);
+        ((JobSeeker) user).setUniversity(university);
+        ((JobSeeker) user).setYearsOfExperience(yearsOfExperience);
     }
 
     public boolean addReview(String review, int COMPANY_ID) {
@@ -282,5 +270,21 @@ public class FinderSystem {
 
     public void updateCompanyDescription(Company company, String updatedDescription) {
         company.setCompanyDescription(updatedDescription);
+    }
+
+    public int getAge(){
+        return ((JobSeeker)user).getAge();
+    }
+
+    public String getDegree(){
+        return ((JobSeeker)user).getDegree();
+    }
+
+    public String getUniversity(){
+        return ((JobSeeker)user).getUniversity();
+    }
+
+    public int getYearsOfExperience(){
+        return ((JobSeeker)user).getYearsOfExperience();
     }
 }

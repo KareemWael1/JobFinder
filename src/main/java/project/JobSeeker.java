@@ -71,23 +71,4 @@ public class JobSeeker extends Person
     public int getYearsOfExperience() {
         return yearsOfExperience;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Override
-    public String toString(){
-        return "Name: " + NAME + "\nEmail: " + EMAIL + "\nGender: " + GENDER + "\n Age: " + age + "\nDegree: " + degree +
-                "\nUniversity: " + university + "\nYears of Experience: " + yearsOfExperience + "\n";
-    }
-
 }

@@ -28,7 +28,8 @@ public class SignUpController implements Initializable {
     @FXML TextField email;
     @FXML TextField password;
     @FXML TextField confirmPassword;
-    @FXML Label error;
+    @FXML Label passwordError;
+    @FXML Label ageError;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,7 +37,7 @@ public class SignUpController implements Initializable {
         genders.add("Male");
         genders.add("Female");
         gender.setItems(FXCollections.observableArrayList(genders));
-        error.setVisible(false);
+        passwordError.setVisible(false);
     }
 
     public void onSignUpButtonClicked() throws IOException {
@@ -45,18 +46,24 @@ public class SignUpController implements Initializable {
                 finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
                         Integer.parseInt(age.getText()) , degree.getText(), university.getText(),
                         Integer.parseInt(yearsOfExperience.getText()));
+                FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+                Stage stage = JobFinderApplication.getStage();
+                stage.setScene(scene);
+                stage.show();
             } catch (AgeHandling e) {
-                System.out.println(e);;
+                ageError.setVisible(true);
+                ageError.setText(e.getMessage());
+                passwordError.setVisible(false);
+            } catch (NumberFormatException e){
+                ageError.setVisible(true);
+                ageError.setText("Invalid age, Please enter a number.");
+                passwordError.setVisible(false);
             }
-
-            FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("LoginPage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-            Stage stage = JobFinderApplication.getStage();
-            stage.setScene(scene);
-            stage.show();
         }
         else{
-            error.setVisible(true);
+            ageError.setVisible(false);
+            passwordError.setVisible(true);
         }
     }
 }

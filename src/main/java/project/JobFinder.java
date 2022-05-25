@@ -88,7 +88,7 @@ public class JobFinder {
                                     String what = input.nextLine();
                                     if (what.equals("f")) break;
                                     System.out.println("enter the new value");
-                                    finderSystem.updateInfo(what);
+                                    //finderSystem.updateInfo(what);
                                 }
                                 break;
                             case "bc":

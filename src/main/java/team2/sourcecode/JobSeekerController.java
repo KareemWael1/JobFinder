@@ -109,8 +109,8 @@ public class JobSeekerController implements Initializable {
         changeScene("MyApplication_JobSeeker.fxml");
     }
 
-    public void onMyInfoButtonClicked(){
-        // To be added
+    public void onMyInfoButtonClicked() throws IOException{
+        changeScene("UpdateMyInfo-JobSeeker.fxml");
     }
 
     public void onLogoutClicked() throws IOException{

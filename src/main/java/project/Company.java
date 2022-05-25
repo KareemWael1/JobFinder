@@ -38,16 +38,13 @@ public class Company{
     public void addEmployee(){
         numberOfEmployees++;
     }
+
     public void addReview(String review){
         reviews.add(review);
     }
 
     public void addVacancy(JobVacancy jobVacancy) {
         jobVacancies.add(jobVacancy);
-    }
-
-    public ArrayList<JobVacancy> getJobVacancy() {
-        return this.jobVacancies;
     }
 
     public ArrayList<JobVacancy> getJobVacancies(){
@@ -68,7 +65,6 @@ public class Company{
 
     @Override
     public String toString() {
-        return "Company Name: " + this.NAME + "\n"
-             + "Company Description: " + this.companyDescription + "\n";
+        return this.NAME + "\n" + this.companyDescription + "\n";
     }
 }

@@ -43,7 +43,7 @@ public class JobApplication{
 
     @Override
     public String toString(){
-        return "Job Title: "+ JOB_TITLE+ "\nApplicant info: " + applicantInfo + "\nApplication State: " + applicationState +
+        return "Applicant info: " + applicantInfo + "\nJob Title: "+ JOB_TITLE+ "\nApplication State: " + applicationState +
                 "\n" + FinderSystem.getCompanies().get(COMPANY_ID) + "\n";
     }
 }
