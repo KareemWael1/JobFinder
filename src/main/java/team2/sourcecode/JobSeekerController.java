@@ -28,6 +28,7 @@ public class JobSeekerController implements Initializable {
     @FXML private ComboBox<JobVacancy> jobSearchResults;
     @FXML private ComboBox<Company> companySearchResults;
     @FXML private Button action;
+    @FXML private Label error;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,6 +39,7 @@ public class JobSeekerController implements Initializable {
         jobSearchResults.setVisible(false);
         companySearchResults.setVisible(false);
         action.setVisible(false);
+        error.setVisible(false);
     }
 
     public void changeScene(String fxmlFile) throws IOException {
@@ -50,12 +52,15 @@ public class JobSeekerController implements Initializable {
 
     public void onSearchJobsSelected(){
         searchCompanies.setSelected(!searchCompanies.isSelected());
+        error.setVisible(false);
     }
     public void onSearchCompaniesSelected(){
         searchJobs.setSelected(!searchCompanies.isSelected());
+        error.setVisible(false);
     }
 
     public void onGoButtonClicked(){
+        error.setVisible(false);
         if(searchJobs.isSelected()){
             ObservableList<JobVacancy> jobVacancies;
             if(search.getText().equals("")){
@@ -95,8 +100,18 @@ public class JobSeekerController implements Initializable {
 
     public void onActionButtonClicked() throws IOException{
         if(action.getText().equals("Apply for Job")){
-            finderSystem.addApplication(jobSearchResults.getValue());
-            changeScene("MyApplication_JobSeeker.fxml");
+            try{
+                if(finderSystem.addApplication(jobSearchResults.getValue())){
+                    changeScene("MyApplication_JobSeeker.fxml");
+                }
+                else{
+                    error.setVisible(true);
+                }
+            }
+            catch (NullPointerException e)
+            {
+                jobSearchResults.setPromptText("Select a job to apply");
+            }
         }
         else
         {

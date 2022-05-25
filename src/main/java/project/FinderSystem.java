@@ -104,7 +104,7 @@ public class FinderSystem {
         } else if (age < 14 || age > 70) {
             throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
         } else {
-            throw new YearsOfExperienceException("Years of experience should be a positive number smaller than the age!");
+            throw new YearsOfExperienceException("Years of experience should be a positive number\nsmaller than the age!");
         }
     }
 
@@ -126,7 +126,7 @@ public class FinderSystem {
         for (JobApplication j : (((JobSeeker) user).getJobApplications())){
             if (j == application) {
                 ((JobSeeker)user).deleteApplication(index);
-                return;
+                break;
             }
             index++;
         }
@@ -158,21 +158,11 @@ public class FinderSystem {
         return companies;
     }
 
-    public void updateInfo(int age, String degree, String university, int yearsOfExperience) throws YearsOfExperienceException, AgeHandling {
-        if (age >= 14 && age <= 70) {
-            ((JobSeeker) user).setAge(age);
-        }else{
-            throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
-        }
-
+    public void updateInfo(int age, String degree, String university, int yearsOfExperience) {
+        ((JobSeeker) user).setAge(age);
         ((JobSeeker) user).setDegree(degree);
         ((JobSeeker) user).setUniversity(university);
-
-        if (yearsOfExperience >= 0 && yearsOfExperience < age) {
-            ((JobSeeker) user).setYearsOfExperience(yearsOfExperience);
-        } else {
-            throw new YearsOfExperienceException("Years of experience should be a positive number smaller than the age!");
-        }
+        ((JobSeeker) user).setYearsOfExperience(yearsOfExperience);
     }
 
     public boolean addReview(String review, int COMPANY_ID) {
@@ -227,16 +217,22 @@ public class FinderSystem {
         return applications;
     }
 
-    public void addApplication(JobVacancy jobVacancy) {
+    public boolean addApplication(JobVacancy jobVacancy) {
         String info = "My name is " + user.getNAME() + ", And I have " + ((JobSeeker) user).getAge() + " years old " + "\n I got a " +
                 ((JobSeeker) user).getDegree() +
                 " degree " + "from " + ((JobSeeker) user).getUniversity() + " university " + "also I have " +
                 ((JobSeeker) user).getYearsOfExperience()
                 + " years of experience.";
         String email = user.getEMAIL();
+        for(JobApplication application: jobVacancy.getApplications()){
+            if(application.getApplicantMail().equals(email)){
+                return false;
+            }
+        }
         JobApplication application = new JobApplication(info, jobVacancy.getCOMPANY_ID(), jobVacancy.getJobTitle(), email);
         ((JobSeeker) user).getJobApplications().add(application);
         jobVacancy.addApplication(application);
+        return true;
     }
 
     public ArrayList<JobVacancy> browseJobs(String name){

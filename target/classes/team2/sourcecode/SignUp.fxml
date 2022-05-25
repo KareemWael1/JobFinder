@@ -36,5 +36,6 @@
       <ComboBox fx:id="gender" layoutX="93.0" layoutY="116.0" prefHeight="25.0" prefWidth="149.0" />
       <Label fx:id="passwordError" layoutX="28.0" layoutY="351.0" text="Passwod &amp; Confirm Password Fields don't match" textFill="RED" visible="false" />
       <Label fx:id="ageError" alignment="TOP_LEFT" layoutX="279.0" layoutY="149.0" prefHeight="32.0" prefWidth="267.0" text="Invalid age, you should age between 14 and 70 to&#10;apply for a job." textFill="#f80505" visible="false" />
+      <Label fx:id="yearsOfExperienceError" alignment="TOP_LEFT" layoutX="287.0" layoutY="226.0" prefHeight="32.0" prefWidth="267.0" text="Invalid age, you should age between 14 and 70 to&#10;apply for a job." textFill="#f80505" visible="false" />
    </children>
 </AnchorPane>

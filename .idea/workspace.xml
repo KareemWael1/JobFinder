@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JobFinder:jar" />
+      <artifact name="JobFinderGUI:jar2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,13 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21eb03c-2b96-44b5-9c17-57985d4ba620" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/YearsOfExperienceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JobFinder_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JobFinderGUI_jar2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobSeekerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/JobSeekerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/UpdateMyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/UpdateMyInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/JobSeeker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/JobSeeker.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobSeekerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/JobSeekerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateMyInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateMyInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobseeker.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/jobseeker.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +54,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/project/Company.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/jobseeker.fxml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobSeeker.fxml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/AddJobVacancyController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,6 +79,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JavaFX/javafx-sdk-18.0.1/bin/vcruntime140_1.dll" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -143,6 +156,8 @@
       <workItem from="1653363047232" duration="208000" />
       <workItem from="1653426523844" duration="9611000" />
       <workItem from="1653442302462" duration="2443000" />
+      <workItem from="1653489394497" duration="4725000" />
+      <workItem from="1653494549212" duration="1014000" />
     </task>
     <servers />
   </component>

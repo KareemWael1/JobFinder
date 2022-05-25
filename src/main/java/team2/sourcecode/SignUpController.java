@@ -30,6 +30,7 @@ public class SignUpController implements Initializable {
     @FXML TextField confirmPassword;
     @FXML Label passwordError;
     @FXML Label ageError;
+    @FXML Label yearsOfExperienceError;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,6 +39,8 @@ public class SignUpController implements Initializable {
         genders.add("Female");
         gender.setItems(FXCollections.observableArrayList(genders));
         passwordError.setVisible(false);
+        ageError.setVisible(false);
+        yearsOfExperienceError.setVisible(false);
     }
 
     public void onSignUpButtonClicked() throws IOException, YearsOfExperienceException {
@@ -55,14 +58,22 @@ public class SignUpController implements Initializable {
                 ageError.setVisible(true);
                 ageError.setText(e.getMessage());
                 passwordError.setVisible(false);
+                yearsOfExperienceError.setVisible(false);
             } catch (NumberFormatException e){
                 ageError.setVisible(true);
                 ageError.setText("Invalid age, Please enter a number.");
                 passwordError.setVisible(false);
+                yearsOfExperienceError.setVisible(false);
+            } catch (YearsOfExperienceException e){
+                yearsOfExperienceError.setVisible(true);
+                yearsOfExperienceError.setText(e.getMessage());
+                passwordError.setVisible(false);
+                ageError.setVisible(false);
             }
         }
         else{
             ageError.setVisible(false);
+            yearsOfExperienceError.setVisible(false);
             passwordError.setVisible(true);
         }
     }
