@@ -1,6 +1,7 @@
 package project;
 
 import team2.sourcecode.AgeHandling;
+import team2.sourcecode.YearsOfExperienceException;
 
 import java.util.*;
 
@@ -96,12 +97,14 @@ public class FinderSystem {
     }
 
 
-    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling {
-        if (age >= 14 && age <= 70) {
+    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling, YearsOfExperienceException {
+        if (age >= 14 && age <= 70 && exp < age && exp >= 0) {
             JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
             jobSeekers.add(seeker);
-        }else{
+        } else if (age < 14 || age > 70) {
             throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
+        } else {
+            throw new YearsOfExperienceException("Years of experience should be a positive number smaller than the age!");
         }
     }
 
@@ -155,11 +158,21 @@ public class FinderSystem {
         return companies;
     }
 
-    public void updateInfo(int age, String degree, String university, int yearsOfExperience) {
-        ((JobSeeker) user).setAge(age);
+    public void updateInfo(int age, String degree, String university, int yearsOfExperience) throws YearsOfExperienceException, AgeHandling {
+        if (age >= 14 && age <= 70) {
+            ((JobSeeker) user).setAge(age);
+        }else{
+            throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
+        }
+
         ((JobSeeker) user).setDegree(degree);
         ((JobSeeker) user).setUniversity(university);
-        ((JobSeeker) user).setYearsOfExperience(yearsOfExperience);
+
+        if (yearsOfExperience >= 0 && yearsOfExperience < age) {
+            ((JobSeeker) user).setYearsOfExperience(yearsOfExperience);
+        } else {
+            throw new YearsOfExperienceException("Years of experience should be a positive number smaller than the age!");
+        }
     }
 
     public boolean addReview(String review, int COMPANY_ID) {

@@ -28,7 +28,7 @@ public class UpdateMyInfoController implements Initializable {
         yearsOfExperience.setText(String.valueOf(finderSystem.getYearsOfExperience()));
     }
 
-    public void onDoneButtonClicked() throws IOException {
+    public void onDoneButtonClicked() throws IOException, YearsOfExperienceException, AgeHandling {
         finderSystem.updateInfo(Integer.parseInt(age.getText()), degree.getText(), university.getText(),
                 Integer.parseInt(yearsOfExperience.getText()));
         FXMLLoader fxmlLoader = new FXMLLoader(JobFinderApplication.class.getResource("JobSeeker.fxml"));

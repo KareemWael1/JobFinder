@@ -10,34 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21eb03c-2b96-44b5-9c17-57985d4ba620" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/YearsOfExperienceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_5_2022_5_29_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/FinderSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobPoster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobPoster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/JobVacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/JobVacancy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/CompanyPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/CompanyPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/team2/sourcecode/UpdateMyInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/team2/sourcecode/UpdateMyInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/AddNewCompany_Admin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/CompaniesSearch.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/CompanyApplication.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/UpdateCompany_Admin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/UpdateJobVacancy_JobPoster.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/team2/sourcecode/UpdateMyApplication_JobSeeker.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/FinderSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/JobFinder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/JobPoster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobPoster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/JobVacancy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/JobVacancy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/AddNewCompany_Admin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompaniesSearch.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyApplication.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/CompanyPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateCompany_Admin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateJobVacancy_JobPoster.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateMyApplication_JobSeeker.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateMyInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/team2/sourcecode/UpdateMyInfoController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +42,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/jobseeker.fxml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/SignUpController.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/AddJobVacancyController.class" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobSeeker.fxml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/project/Company.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/team2/sourcecode/JobFinderApplication.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/target/classes/team2/sourcecode/JobPosterController.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

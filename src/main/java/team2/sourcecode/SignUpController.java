@@ -40,7 +40,7 @@ public class SignUpController implements Initializable {
         passwordError.setVisible(false);
     }
 
-    public void onSignUpButtonClicked() throws IOException {
+    public void onSignUpButtonClicked() throws IOException, YearsOfExperienceException {
         if(password.getText().equals(confirmPassword.getText())){
             try {
                 finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
