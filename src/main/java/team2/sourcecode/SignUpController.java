@@ -43,7 +43,7 @@ public class SignUpController implements Initializable {
         yearsOfExperienceError.setVisible(false);
     }
 
-    public void onSignUpButtonClicked() throws IOException, YearsOfExperienceException {
+    public void onSignUpButtonClicked() throws IOException{
         if(password.getText().equals(confirmPassword.getText())){
             try {
                 finderSystem.addJobSeeker(name.getText(), email.getText(), gender.getValue(), password.getText(),
@@ -54,7 +54,7 @@ public class SignUpController implements Initializable {
                 Stage stage = JobFinderApplication.getStage();
                 stage.setScene(scene);
                 stage.show();
-            } catch (AgeHandling e) {
+            } catch (AgeException e) {
                 ageError.setVisible(true);
                 ageError.setText(e.getMessage());
                 passwordError.setVisible(false);

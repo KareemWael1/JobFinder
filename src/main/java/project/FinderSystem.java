@@ -1,6 +1,6 @@
 package project;
 
-import team2.sourcecode.AgeHandling;
+import team2.sourcecode.AgeException;
 import team2.sourcecode.YearsOfExperienceException;
 
 import java.util.*;
@@ -97,12 +97,12 @@ public class FinderSystem {
     }
 
 
-    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeHandling, YearsOfExperienceException {
+    public void addJobSeeker(String name, String email, String gender, String password, int age, String degree, String uni, int exp) throws AgeException, YearsOfExperienceException {
         if (age >= 14 && age <= 70 && exp < age && exp >= 0) {
             JobSeeker seeker = new JobSeeker(name, email, gender, password, age, degree, uni, exp);
             jobSeekers.add(seeker);
         } else if (age < 14 || age > 70) {
-            throw new AgeHandling("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
+            throw new AgeException("Invalid age, you should age between 14 and 70\nto apply for Jobs.");
         } else {
             throw new YearsOfExperienceException("Years of experience should be a positive number\nsmaller than the age!");
         }
